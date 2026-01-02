@@ -1,0 +1,19 @@
+# CHAIR
+halleval_ministral/CHAIR/annotations/
+halleval_ministral/CHAIR/val2014_1000/
+halleval_qwen/CHAIR/annotations/
+halleval_qwen/CHAIR/val2014_1000/
+
+# POPE
+halleval_ministral/POPE/coco/
+halleval_ministral/POPE/gqa/
+halleval_ministral/POPE/test_coco/
+halleval_ministral/POPE/test_gqa/
+halleval_qwen/POPE/coco/
+halleval_qwen/POPE/gqa/
+halleval_qwen/POPE/test_coco/
+halleval_qwen/POPE/test_gqa/
+
+# training data
+halltrain/data/data/
+halltrain/data/coco_2017.json

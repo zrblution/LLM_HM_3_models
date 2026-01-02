@@ -1,0 +1,171 @@
+{
+  "CHAIRs": 0.1,
+  "CHAIRi": 0.058823529411764705,
+  "details": [
+    {
+      "image_id": 193405,
+      "caption": "The image depicts a young girl standing in front of a bathroom sink, brushing her teeth while wearing a makeshift pirate hat made out of a towel or cloth.",
+      "generated_objects": [
+        "person",
+        "sink"
+      ],
+      "ground_truth_objects": [
+        "person",
+        "sink",
+        "toilet",
+        "toothbrush"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 470746,
+      "caption": "The image depicts a modern living room with a sophisticated and stylish design.",
+      "generated_objects": [],
+      "ground_truth_objects": [
+        "book",
+        "chair",
+        "couch",
+        "dining table",
+        "potted plant"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 560646,
+      "caption": "The image depicts a man surfing on a wave, riding a surfboard in the ocean.",
+      "generated_objects": [
+        "person",
+        "surfboard"
+      ],
+      "ground_truth_objects": [
+        "person",
+        "surfboard"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 26183,
+      "caption": "The image depicts a tall, narrow church steeple with a clock on it, located in the middle of a city.",
+      "generated_objects": [
+        "clock"
+      ],
+      "ground_truth_objects": [
+        "clock"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 121570,
+      "caption": "The image depicts a man surfing on a wave, riding a surfboard with a paddle.",
+      "generated_objects": [
+        "person",
+        "surfboard"
+      ],
+      "ground_truth_objects": [
+        "person",
+        "surfboard"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 353695,
+      "caption": "The image depicts a serene and picturesque scene of two white sheep resting on a grassy hillside, with a backdrop of majestic mountains and a cloudy sky.",
+      "generated_objects": [
+        "sheep"
+      ],
+      "ground_truth_objects": [
+        "sheep"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 517987,
+      "caption": "The image features a man sitting on a skateboard, wearing a blue shirt and jeans.",
+      "generated_objects": [
+        "person",
+        "skateboard"
+      ],
+      "ground_truth_objects": [
+        "backpack",
+        "clock",
+        "cup",
+        "person",
+        "skateboard"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 401018,
+      "caption": "The image is a black and white photograph of a woman walking down a street while holding an umbrella.",
+      "generated_objects": [
+        "person",
+        "umbrella"
+      ],
+      "ground_truth_objects": [
+        "car",
+        "person",
+        "truck",
+        "umbrella"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    },
+    {
+      "image_id": 272242,
+      "caption": "The image depicts a person sitting at a table with a laptop computer open in front of them.",
+      "generated_objects": [
+        "person",
+        "dining table",
+        "laptop"
+      ],
+      "ground_truth_objects": [
+        "bottle",
+        "chair",
+        "couch",
+        "cup",
+        "keyboard",
+        "laptop",
+        "person",
+        "remote"
+      ],
+      "hallucinated_words": [
+        "dining table"
+      ],
+      "CHAIRs": 1,
+      "CHAIRi": 0.25
+    },
+    {
+      "image_id": 185046,
+      "caption": "The image shows a tray with various food items and drinks on it, placed on a table.",
+      "generated_objects": [
+        "dining table"
+      ],
+      "ground_truth_objects": [
+        "bottle",
+        "bowl",
+        "cup",
+        "dining table",
+        "knife",
+        "spoon"
+      ],
+      "hallucinated_words": [],
+      "CHAIRs": 0,
+      "CHAIRi": 0.0
+    }
+  ]
+}

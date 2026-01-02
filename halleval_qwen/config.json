@@ -1,0 +1,15 @@
+{
+    "model_name": "Qwen3-VL-2B-Instruct",
+    "model_type": "multimodal",
+    "model_path": "/home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model_Qwen3-VL-2B",
+    "base_model_path": "/home/tos_data/code/halltrain/LLM-HM-Qwen3-VL-2B-Instruct/basemodel",
+    "supports_image": true,
+    "supports_video": false,
+    "default_device": "cuda",
+    "torch_dtype": "bfloat16"
+}
+
+
+
+
+
