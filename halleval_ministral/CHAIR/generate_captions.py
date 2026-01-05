@@ -312,6 +312,189 @@ def extract_image_id_from_filename(fname: str):
     return None
 
 
+def generate_captions_batch(files_batch, tokenizer, processor, model, device, image_dir, prompt, batch_size=8):
+    """
+    批量生成图像描述，提高GPU利用率
+    """
+    results = []
+    
+    # 启用GPU优化
+    torch.backends.cudnn.benchmark = True
+    torch.backends.cuda.matmul.allow_tf32 = True
+    
+    # 设置padding_side为left以支持批量生成
+    if hasattr(processor, 'tokenizer'):
+        processor.tokenizer.padding_side = 'left'
+    
+    for batch_start in range(0, len(files_batch), batch_size):
+        batch_end = min(batch_start + batch_size, len(files_batch))
+        batch_files = files_batch[batch_start:batch_end]
+        
+        try:
+            # 准备批量数据
+            messages_list = []
+            images_list = []
+            valid_files = []
+            
+            for fname in batch_files:
+                img_path = os.path.join(image_dir, fname)
+                if os.path.exists(img_path):
+                    try:
+                        img = Image.open(img_path).convert("RGB")
+                        images_list.append(img)
+                        messages = [
+                            {"role": "system", "content": "You are a helpful assistant."},
+                            {"role": "user", "content": [
+                                {"type": "image", "image": img, "resize_height": 224, "resize_width": 224},
+                                {"type": "text", "text": prompt}
+                            ]}
+                        ]
+                        messages_list.append(messages)
+                        valid_files.append(fname)
+                    except Exception as e:
+                        print(f"WARNING: Failed to load image {img_path}: {e}")
+                        results.append({"image_id": extract_image_id_from_filename(fname), "caption": f"[ERROR: {e}]"})
+                else:
+                    results.append({"image_id": extract_image_id_from_filename(fname), "caption": "[ERROR: Image not found]"})
+            
+            if not valid_files:
+                continue
+            
+            # 批量推理
+            texts = [processor.apply_chat_template(m, tokenize=False, add_generation_prompt=True) for m in messages_list]
+            inputs = processor(text=texts, images=images_list, return_tensors="pt", padding=True)
+            
+            model_device = next(model.parameters()).device
+            inputs = {k: v.to(model_device) if hasattr(v, 'to') else v for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                outputs = model.generate(**inputs, max_new_tokens=64, do_sample=False, num_beams=1,
+                                        pad_token_id=tokenizer.pad_token_id, eos_token_id=tokenizer.eos_token_id)
+            
+            decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
+            
+            # 提取assistant回答
+            for i, (fname, text) in enumerate(zip(valid_files, decoded)):
+                if "assistant" in text:
+                    ans = text.split("assistant")[-1].strip()
+                else:
+                    ans = text.strip()
+                
+                # 提取第一句话
+                m = re.search(r'(.+?[。\.!?？])', ans)
+                if m:
+                    caption = m.group(1).strip()
+                else:
+                    lines = [ln.strip() for ln in ans.splitlines() if ln.strip()]
+                    caption = lines[0] if lines else ans
+                
+                image_id = extract_image_id_from_filename(fname)
+                results.append({"image_id": image_id, "caption": caption})
+                
+        except Exception as e:
+            print(f"ERROR in batch {batch_start}-{batch_end}: {e}")
+            import traceback
+            traceback.print_exc()
+            # 回退到逐个处理
+            for fname in batch_files:
+                if not any(r.get("image_id") == extract_image_id_from_filename(fname) for r in results):
+                    results.append({"image_id": extract_image_id_from_filename(fname), "caption": f"[ERROR: {e}]"})
+        
+        # 打印进度
+        processed = min(batch_end, len(files_batch))
+        if processed % 50 == 0 or processed == len(files_batch):
+            print(f"Processed {processed}/{len(files_batch)} images")
+    
+    return results
+
+
+def run_multi_gpu_generation(all_files, model_dir, model_type, image_dir, prompt, gpus, use_vcd, use_inter, batch_size=8):
+    """
+    在多个GPU上并行生成图像描述
+    """
+    import threading
+    import queue
+    
+    gpu_list = [g.strip() for g in gpus.split(",")]
+    num_gpus = len(gpu_list)
+    
+    # 将文件分配到不同GPU
+    files_per_gpu = len(all_files) // num_gpus
+    gpu_file_assignments = []
+    for i, gpu in enumerate(gpu_list):
+        start_idx = i * files_per_gpu
+        end_idx = start_idx + files_per_gpu if i < num_gpus - 1 else len(all_files)
+        gpu_file_assignments.append((gpu, all_files[start_idx:end_idx]))
+    
+    print(f"=== Multi-GPU CHAIR Generation ===")
+    print(f"Total images: {len(all_files)}")
+    print(f"GPUs: {gpu_list}")
+    for gpu, files in gpu_file_assignments:
+        print(f"  GPU {gpu}: {len(files)} images")
+    print()
+    
+    results_queue = queue.Queue()
+    
+    def gpu_worker(gpu_id, files, worker_id):
+        """Worker function for each GPU"""
+        try:
+            device = f"cuda:{gpu_id}"
+            print(f"[GPU {gpu_id}] Loading model...")
+            
+            # 设置CUDA设备
+            import os
+            os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+            
+            tokenizer, processor, model = load_model_and_tools(
+                model_dir,
+                "cuda:0",  # 因为设置了CUDA_VISIBLE_DEVICES，所以用cuda:0
+                model_type=model_type,
+                use_vcd=use_vcd,
+                use_inter=use_inter,
+            )
+            
+            print(f"[GPU {gpu_id}] Model loaded, starting generation...")
+            
+            batch_results = generate_captions_batch(
+                files, tokenizer, processor, model, "cuda:0", image_dir, prompt, batch_size
+            )
+            
+            results_queue.put((worker_id, batch_results, None))
+            print(f"[GPU {gpu_id}] Completed {len(batch_results)} images")
+            
+        except Exception as e:
+            import traceback
+            results_queue.put((worker_id, [], traceback.format_exc()))
+            print(f"[GPU {gpu_id}] Error: {e}")
+    
+    # 启动线程
+    threads = []
+    for i, (gpu, files) in enumerate(gpu_file_assignments):
+        t = threading.Thread(target=gpu_worker, args=(gpu, files, i))
+        threads.append(t)
+        t.start()
+    
+    # 等待所有线程完成
+    for t in threads:
+        t.join()
+    
+    # 收集结果
+    all_results = [None] * num_gpus
+    while not results_queue.empty():
+        worker_id, batch_results, error = results_queue.get()
+        if error:
+            print(f"Worker {worker_id} error: {error}")
+        all_results[worker_id] = batch_results
+    
+    # 合并结果
+    final_results = []
+    for batch in all_results:
+        if batch:
+            final_results.extend(batch)
+    
+    return final_results
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sample images from val2014 and generate captions using the model.")
     parser.add_argument("--image_dir", default="/media/ubuntu/data/xican/coco_2014_data/val2014")
@@ -328,6 +511,9 @@ def main():
     parser.add_argument("--prompt", default="Please describe this image in detail.")
     parser.add_argument("--use_vcd", action="store_true", help="Wrap model with VCD integration")
     parser.add_argument("--use_inter", action="store_true", help="Wrap model with INTER integration")
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size for inference (default: 8)")
+    parser.add_argument("--multi_gpu", action="store_true", help="Enable multi-GPU parallel generation")
+    parser.add_argument("--gpus", default="0,1", help="Comma-separated GPU ids for multi-GPU mode (e.g., '0,1')")
     args = parser.parse_args()
 
     # pick image files
@@ -335,31 +521,57 @@ def main():
     if len(all_files) == 0:
         raise RuntimeError(f"No images found in {args.image_dir}")
     num = min(args.num_samples, len(all_files))
-    sampled = random.sample(all_files, num)
+    
+    # 如果num_samples小于总数，随机采样；否则使用全部
+    if num < len(all_files):
+        sampled = random.sample(all_files, num)
+    else:
+        sampled = all_files
+    
+    print(f"Processing {len(sampled)} images...")
+    
+    if args.multi_gpu:
+        # 多GPU并行模式
+        results = run_multi_gpu_generation(
+            sampled, args.model_dir, args.model_type, args.image_dir, 
+            args.prompt, args.gpus, args.use_vcd, args.use_inter, args.batch_size
+        )
+    else:
+        # 单GPU模式（带批量处理）
+        tokenizer, processor, model = load_model_and_tools(
+            args.model_dir,
+            args.device,
+            model_type=args.model_type,
+            use_vcd=args.use_vcd,
+            use_inter=args.use_inter,
+        )
+        
+        if args.batch_size > 1:
+            # 使用批量处理
+            results = generate_captions_batch(
+                sampled, tokenizer, processor, model, args.device, 
+                args.image_dir, args.prompt, args.batch_size
+            )
+        else:
+            # 原始逐个处理模式
+            results = []
+            for i, fname in enumerate(sampled):
+                sample = {
+                    "filename": fname,
+                    "visual_input": 1,
+                    "question": args.prompt,
+                }
+                try:
+                    caption = generate_answer_for_sample(sample, tokenizer, processor, model, args.device, args.image_dir)
+                except Exception as e:
+                    caption = f"[ERROR during generation: {e}]"
+                image_id = extract_image_id_from_filename(fname)
+                results.append({"image_id": image_id, "caption": caption})
+                
+                if (i + 1) % 10 == 0:
+                    print(f"Processed {i + 1}/{len(sampled)} images")
 
-    tokenizer, processor, model = load_model_and_tools(
-        args.model_dir,
-        args.device,
-        model_type=args.model_type,
-        use_vcd=args.use_vcd,
-        use_inter=args.use_inter,
-    )
-
-    results = []
-    for fname in sampled:
-        sample = {
-            "filename": fname,
-            "visual_input": 1,
-            "question": args.prompt,
-        }
-        try:
-            caption = generate_answer_for_sample(sample, tokenizer, processor, model, args.device, args.image_dir)
-        except Exception as e:
-            caption = f"[ERROR during generation: {e}]"
-        image_id = extract_image_id_from_filename(fname)
-        results.append({"image_id": image_id, "caption": caption})
-
-    os.makedirs(os.path.dirname(args.output_json), exist_ok=True)
+    os.makedirs(os.path.dirname(args.output_json) or ".", exist_ok=True)
     with open(args.output_json, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(results)} captions to {args.output_json}")

@@ -136,9 +136,8 @@ class CustomQwen3VLTextDecoderLayer(nn.Module):
         self.config = config
         self.layer_idx = layer_idx
 
-        # 是否启用视觉门控
-        self.enable_vision_gate = getattr(config, "enable_vision_gate", True)
-        self.gate_layers = getattr(config, "gate_layers", None)
+        # 注意：enable_vision_gate 和 gate_layers 不再缓存为实例变量
+        # 而是在 forward 中动态从 self.config 读取，以支持配置的后期更新
 
         # 标准 Qwen3-VL 组件
         self.self_attn = Qwen3VLTextAttention(config, layer_idx)
@@ -189,11 +188,15 @@ class CustomQwen3VLTextDecoderLayer(nn.Module):
         hidden_states = residual + hidden_states
 
         # 视觉证据推理
+        # 动态从 config 读取配置，支持配置的后期更新（如 from_pretrained 后同步配置）
+        enable_vision_gate = getattr(self.config, "enable_vision_gate", True)
+        gate_layers = getattr(self.config, "gate_layers", None)
+        
         aux = None
         if (
-            self.enable_vision_gate
+            enable_vision_gate
             and v_mem is not None
-            and (self.gate_layers is None or self.layer_idx in self.gate_layers)
+            and (gate_layers is None or self.layer_idx in gate_layers)
         ):
             inject_op = getattr(self.config, "inject_op", "ours").lower()
             use_u = getattr(self.config, "use_utilization", True)
@@ -314,6 +317,13 @@ class CustomQwen3VLTextModel(Qwen3VLPreTrainedModel):
         elif position_ids.dim() == 2:
             position_ids = position_ids[None, ...].expand(3, position_ids.shape[0], -1)
 
+        # 处理 4D position_ids（Qwen3-VL 使用 [text, temporal, height, width] 4个维度）
+        if position_ids.ndim == 3 and position_ids.shape[0] == 4:
+            text_position_ids = position_ids[0]
+            position_ids = position_ids[1:]  # 变成 [3, batch, seq_len] 用于 rotary_emb
+        else:
+            text_position_ids = position_ids[0] if position_ids.ndim == 3 else position_ids
+
         causal_mask = self._update_causal_mask(
             attention_mask, inputs_embeds, cache_position, past_key_values, output_attentions
         )
@@ -338,7 +348,7 @@ class CustomQwen3VLTextModel(Qwen3VLPreTrainedModel):
                 hidden_states,
                 position_embeddings=position_embeddings,
                 attention_mask=causal_mask,
-                position_ids=position_ids,
+                position_ids=text_position_ids,
                 past_key_values=past_key_values,
                 use_cache=use_cache,
                 cache_position=cache_position,
@@ -480,15 +490,49 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
     """
     _tied_weights_keys = {"lm_head.weight": "model.language_model.embed_tokens.weight"}
 
+    # 需要从主 config 同步到 text_config 的实验开关
+    _EXPERIMENT_CONFIG_KEYS = [
+        "enable_vision_gate",
+        "gate_layers", 
+        "inject_position",
+        "inject_op",
+        "use_utilization",
+        "evidence_source",
+        "export_u_stats",
+        "export_u_stats_path",
+    ]
+
     def __init__(self, config: Qwen3VLConfig):
+        # 在调用 super().__init__ 之前，先同步配置到 text_config
+        self._sync_config_to_text_config(config)
         super().__init__(config)
         # 替换文本模型为自定义版本（只替换语言模型部分，保留视觉模型）
         self.model.language_model = CustomQwen3VLTextModel(config.text_config)
+
+    @staticmethod
+    def _sync_config_to_text_config(config: Qwen3VLConfig):
+        """将主 config 中的实验开关同步到 text_config，确保 decoder layer 能读取到"""
+        if not hasattr(config, 'text_config') or config.text_config is None:
+            return
+        
+        for key in Qwen2_5_CustomVLForConditionalGeneration._EXPERIMENT_CONFIG_KEYS:
+            if hasattr(config, key):
+                setattr(config.text_config, key, getattr(config, key))
 
     @classmethod
     def from_pretrained(cls, pretrained_model_name_or_path, *model_args, **kwargs):
         kwargs['ignore_mismatched_sizes'] = True
         model = super().from_pretrained(pretrained_model_name_or_path, *model_args, **kwargs)
+        
+        # 加载后再次同步配置（确保从 checkpoint 加载的配置也能正确传递）
+        cls._sync_config_to_text_config(model.config)
+        
+        # 同步到已创建的 language_model 的 config
+        if hasattr(model.model, 'language_model') and hasattr(model.model.language_model, 'config'):
+            for key in cls._EXPERIMENT_CONFIG_KEYS:
+                if hasattr(model.config, key):
+                    setattr(model.model.language_model.config, key, getattr(model.config, key))
+        
         return model
 
     def forward(

@@ -169,24 +169,55 @@ class MinistralVLCausalLMOutputWithPast(CausalLMOutputWithPast):
 class CustomMinistralDecoderLayer(nn.Module):
     """
     自定义的 Ministral 解码器层，添加视觉证据推理模块
+    
+    注意：original_layer 不注册为子模块，避免参数重复
     """
     def __init__(self, original_layer, hidden_size: int, layer_idx: int, config):
         super().__init__()
-        self.original_layer = original_layer
+        # 使用 object.__setattr__ 避免将 original_layer 注册为子模块
+        # 这样 original_layer 的参数不会被重复计算
+        object.__setattr__(self, '_original_layer', original_layer)
         self.hidden_size = hidden_size
         self.layer_idx = layer_idx
         self.config = config
 
-        # 是否启用视觉门控
-        self.enable_vision_gate = getattr(config, "enable_vision_gate", True)
-        self.gate_layers = getattr(config, "gate_layers", None)
+        # 注意：enable_vision_gate 和 gate_layers 不再缓存为实例变量
+        # 而是在 forward 中动态从 self.config 读取，以支持配置的后期更新
+        # 保留这两个属性是为了兼容训练脚本中的同步逻辑
+        self._enable_vision_gate = getattr(config, "enable_vision_gate", True)
+        self._gate_layers = getattr(config, "gate_layers", None)
 
-        # 视觉证据推理模块
+        # 视觉证据推理模块 (只有这些是新增的可训练参数)
         self.retriever = EvidenceRetriever(hidden_size)
         self.analyzer = EvidenceAnalyzer(hidden_size)
         self.util = EvidenceUtilization(hidden_size)
         self.corrector = EvidenceCorrector(hidden_size)
         self.concat_proj = nn.Linear(2 * hidden_size, hidden_size, bias=False)
+    
+    @property
+    def original_layer(self):
+        """访问原始层（不作为子模块）"""
+        return self._original_layer
+    
+    @property
+    def enable_vision_gate(self):
+        """动态获取 enable_vision_gate，优先从 config 读取"""
+        return getattr(self.config, "enable_vision_gate", self._enable_vision_gate)
+    
+    @enable_vision_gate.setter
+    def enable_vision_gate(self, value):
+        """设置 enable_vision_gate"""
+        self._enable_vision_gate = value
+    
+    @property
+    def gate_layers(self):
+        """动态获取 gate_layers，优先从 config 读取"""
+        return getattr(self.config, "gate_layers", self._gate_layers)
+    
+    @gate_layers.setter
+    def gate_layers(self, value):
+        """设置 gate_layers"""
+        self._gate_layers = value
 
     def forward(
         self,
@@ -238,11 +269,15 @@ class CustomMinistralDecoderLayer(nn.Module):
             hidden_states = layer_outputs
 
         # 视觉证据推理
+        # 动态从 config 读取配置，支持配置的后期更新（如训练脚本中设置后同步）
+        enable_vision_gate = getattr(self.config, "enable_vision_gate", self._enable_vision_gate)
+        gate_layers = getattr(self.config, "gate_layers", self._gate_layers)
+        
         aux = None
         if (
-            self.enable_vision_gate
+            enable_vision_gate
             and v_mem is not None
-            and (self.gate_layers is None or self.layer_idx in self.gate_layers)
+            and (gate_layers is None or self.layer_idx in gate_layers)
         ):
             inject_op = getattr(self.config, "inject_op", "ours").lower()
             use_u = getattr(self.config, "use_utilization", True)
@@ -398,34 +433,151 @@ class Qwen2_5_CustomVLForConditionalGeneration(nn.Module):
         # 包装解码器层，添加 VEM 模块
         instance._wrap_decoder_layers()
         
+        # 加载 VEM 模块的权重（如果存在）
+        instance._load_custom_layers_weights(pretrained_model_name_or_path)
+        
+        # 打印 LOAD REPORT（类似 Qwen 模型的输出）
+        instance._print_load_report(pretrained_model_name_or_path)
+        
         return instance
+    
+    def _print_load_report(self, model_path):
+        """打印 VEM 模块加载报告，类似 Qwen 模型的 LOAD REPORT"""
+        if self.custom_layers is None:
+            print(f"\nMinistralCustomVLForConditionalGeneration LOAD REPORT from: {model_path}")
+            print("WARNING: No custom layers were created. VEM modules not added.")
+            return
+        
+        num_layers = len(self.custom_layers)
+        
+        # 收集新增的 VEM 模块参数名
+        vem_params = []
+        for idx, layer in enumerate(self.custom_layers):
+            for module_name in ['retriever', 'analyzer', 'util', 'corrector', 'concat_proj']:
+                if hasattr(layer, module_name):
+                    module = getattr(layer, module_name)
+                    for name, _ in module.named_parameters():
+                        param_name = f"custom_layers.{idx}.{module_name}.{name}"
+                        vem_params.append(param_name)
+        
+        # 按模块类型分组
+        param_groups = {}
+        for param in vem_params:
+            # 提取模块类型和参数名
+            parts = param.split('.')
+            if len(parts) >= 4:
+                module_type = parts[2]  # retriever, analyzer, etc.
+                param_type = '.'.join(parts[3:])  # w_q.weight, mlp.0.weight, etc.
+                key = f"custom_layers.{{0...{num_layers-1}}}.{module_type}.{param_type}"
+                param_groups[key] = "MISSING (newly initialized)"
+        
+        # 打印报告
+        print(f"\nMinistralCustomVLForConditionalGeneration LOAD REPORT from: {model_path}")
+        print("-" * 80)
+        print(f"{'Key':<65} | {'Status':<12} |")
+        print("-" * 80)
+        
+        for key, status in sorted(param_groups.items()):
+            print(f"{key:<65} | {status:<12} |")
+        
+        print("-" * 80)
+        print(f"\nNotes:")
+        print(f"- MISSING (newly initialized): VEM modules were newly initialized for training.")
+        print(f"- Total VEM parameters: {len(vem_params)} across {num_layers} layers.")
+        print(f"- These parameters will be trained during fine-tuning.\n")
+    
+    def _load_custom_layers_weights(self, model_path):
+        """从 checkpoint 加载 VEM 模块的权重"""
+        if self.custom_layers is None:
+            return
+        
+        import os
+        from safetensors.torch import load_file
+        
+        # 查找 safetensors 文件
+        safetensors_files = []
+        if os.path.isdir(model_path):
+            for f in os.listdir(model_path):
+                if f.endswith('.safetensors'):
+                    safetensors_files.append(os.path.join(model_path, f))
+        
+        if not safetensors_files:
+            print(f"No safetensors files found in {model_path}, VEM modules will use random initialization.")
+            return
+        
+        # 加载所有 safetensors 文件中的 custom_layers 权重
+        loaded_count = 0
+        for sf_path in safetensors_files:
+            try:
+                state_dict = load_file(sf_path)
+                # 筛选出 custom_layers 相关的权重
+                custom_weights = {k: v for k, v in state_dict.items() if k.startswith('custom_layers.')}
+                
+                if custom_weights:
+                    # 加载权重到 custom_layers
+                    missing, unexpected = self.custom_layers.load_state_dict(custom_weights, strict=False)
+                    loaded_count += len(custom_weights) - len(missing)
+                    
+                    if loaded_count > 0:
+                        print(f"✅ Loaded {loaded_count} VEM parameters from {os.path.basename(sf_path)}")
+                        
+            except Exception as e:
+                print(f"Warning: Failed to load weights from {sf_path}: {e}")
+        
+        if loaded_count == 0:
+            print("No VEM weights found in checkpoint, using random initialization.")
+        else:
+            # 确保数据类型一致
+            model_dtype = next(self._model.parameters()).dtype
+            for layer in self.custom_layers:
+                for module_name in ['retriever', 'analyzer', 'util', 'corrector', 'concat_proj']:
+                    if hasattr(layer, module_name):
+                        module = getattr(layer, module_name)
+                        module.to(dtype=model_dtype)
     
     def _wrap_decoder_layers(self):
         """包装解码器层，添加 VEM 模块"""
         # 查找解码器层 - Mistral3 的结构
         decoder_layers = None
         
-        # Mistral3ForConditionalGeneration 的结构
-        # model.language_model.model.layers 或 model.model.layers
-        if hasattr(self._model, 'language_model'):
-            if hasattr(self._model.language_model, 'model') and hasattr(self._model.language_model.model, 'layers'):
-                decoder_layers = self._model.language_model.model.layers
-                print("Found decoder layers at: language_model.model.layers")
-            elif hasattr(self._model.language_model, 'layers'):
-                decoder_layers = self._model.language_model.layers
-                print("Found decoder layers at: language_model.layers")
-        elif hasattr(self._model, 'model') and hasattr(self._model.model, 'layers'):
+        # Mistral3ForConditionalGeneration 的实际结构:
+        # model.model.language_model.layers (26 layers of Ministral3DecoderLayer)
+        
+        # 路径1: model.model.language_model.layers (Mistral3ForConditionalGeneration)
+        if hasattr(self._model, 'model') and hasattr(self._model.model, 'language_model'):
+            lm = self._model.model.language_model
+            if hasattr(lm, 'layers'):
+                decoder_layers = lm.layers
+                print(f"Found decoder layers at: model.model.language_model.layers (len={len(decoder_layers)})")
+        
+        # 路径2: model.language_model.layers (备选)
+        if decoder_layers is None and hasattr(self._model, 'language_model'):
+            lm = self._model.language_model
+            if hasattr(lm, 'layers'):
+                decoder_layers = lm.layers
+                print(f"Found decoder layers at: language_model.layers (len={len(decoder_layers)})")
+            elif hasattr(lm, 'model') and hasattr(lm.model, 'layers'):
+                decoder_layers = lm.model.layers
+                print(f"Found decoder layers at: language_model.model.layers (len={len(decoder_layers)})")
+        
+        # 路径3: model.model.layers (其他模型)
+        if decoder_layers is None and hasattr(self._model, 'model') and hasattr(self._model.model, 'layers'):
             decoder_layers = self._model.model.layers
-            print("Found decoder layers at: model.layers")
-        elif hasattr(self._model, 'transformer') and hasattr(self._model.transformer, 'h'):
+            print(f"Found decoder layers at: model.layers (len={len(decoder_layers)})")
+        
+        # 路径4: transformer.h (GPT-style)
+        if decoder_layers is None and hasattr(self._model, 'transformer') and hasattr(self._model.transformer, 'h'):
             decoder_layers = self._model.transformer.h
-            print("Found decoder layers at: transformer.h")
-        elif hasattr(self._model, 'layers'):
+            print(f"Found decoder layers at: transformer.h (len={len(decoder_layers)})")
+        
+        # 路径5: layers (直接)
+        if decoder_layers is None and hasattr(self._model, 'layers'):
             decoder_layers = self._model.layers
-            print("Found decoder layers at: layers")
+            print(f"Found decoder layers at: layers (len={len(decoder_layers)})")
             
         if decoder_layers is None:
             logger.warning("Could not find decoder layers to wrap. VEM modules will not be added per-layer.")
+            print(f"[DEBUG] _model type: {type(self._model).__name__}")
             self.custom_layers = None
             return
             
@@ -549,6 +701,10 @@ class Qwen2_5_CustomVLForConditionalGeneration(nn.Module):
         
         if pixel_values is not None:
             model_kwargs['pixel_values'] = pixel_values
+        
+        # 添加 image_sizes（Ministral 需要）
+        if 'image_sizes' in kwargs and kwargs['image_sizes'] is not None:
+            model_kwargs['image_sizes'] = kwargs['image_sizes']
             
         if position_ids is not None:
             model_kwargs['position_ids'] = position_ids
@@ -573,6 +729,9 @@ class Qwen2_5_CustomVLForConditionalGeneration(nn.Module):
             }
             if pixel_values is not None:
                 simplified_kwargs['pixel_values'] = pixel_values
+            # 添加 image_sizes
+            if 'image_sizes' in kwargs and kwargs['image_sizes'] is not None:
+                simplified_kwargs['image_sizes'] = kwargs['image_sizes']
             outputs = self._model(**simplified_kwargs)
         
         # 从 hidden_states 构建 VEM
@@ -607,7 +766,70 @@ class Qwen2_5_CustomVLForConditionalGeneration(nn.Module):
         # 收集 aux 信息
         all_aux = []
         
-        # 如果有 VEM，通过自定义层处理
+        # ===== 支持 first_layer_input 注入模式 (+M) =====
+        inject_position = getattr(self.config, "inject_position", "per_layer").lower()
+        if inject_position == "first_layer_input" and v_mem is not None and self.custom_layers is not None:
+            if getattr(self.config, "enable_vision_gate", True):
+                # 获取最后一层的 hidden_states 作为输入
+                if hasattr(outputs, 'hidden_states') and outputs.hidden_states is not None:
+                    # 使用第一层之前的 embeddings（即 hidden_states[0]）
+                    inputs_embeds = outputs.hidden_states[0]
+                    
+                    # 使用第一个自定义层的 VEM 模块进行注入
+                    layer0 = self.custom_layers[0]
+                    inject_op = getattr(self.config, "inject_op", "add").lower()
+                    use_u = getattr(self.config, "use_utilization", False)
+                    evidence_source = getattr(self.config, "evidence_source", "candidate").lower()
+                    
+                    # 检索证据
+                    e_t, alpha = layer0.retriever(inputs_embeds, v_mem, v_mem_mask)
+                    a_t, r_t = layer0.analyzer(e_t, inputs_embeds)
+                    
+                    src = e_t if evidence_source == "candidate" else a_t
+                    
+                    if use_u:
+                        u_t = layer0.util(a_t, inputs_embeds)
+                    else:
+                        u_t = None
+                    
+                    # 应用注入操作
+                    if inject_op == "ours":
+                        if u_t is None:
+                            modified_embeds = inputs_embeds + layer0.corrector.w_c(src)
+                        else:
+                            modified_embeds = layer0.corrector(inputs_embeds, src, u_t)
+                    elif inject_op == "add":
+                        delta = layer0.corrector.w_c(src)
+                        if u_t is None:
+                            modified_embeds = inputs_embeds + delta
+                        else:
+                            modified_embeds = inputs_embeds + u_t * delta
+                    elif inject_op == "concat":
+                        cat = torch.cat([inputs_embeds, src], dim=-1)
+                        delta = layer0.concat_proj(cat)
+                        if u_t is None:
+                            modified_embeds = inputs_embeds + delta
+                        else:
+                            modified_embeds = inputs_embeds + u_t * delta
+                    else:
+                        raise ValueError(f"Unknown inject_op: {inject_op}")
+                    
+                    # 记录 aux 信息
+                    all_aux.append({
+                        "layer_idx": 0,
+                        "e": e_t,
+                        "a": a_t,
+                        "r": r_t,
+                        "u": u_t if u_t is not None else inputs_embeds.new_ones(inputs_embeds.size(0), inputs_embeds.size(1), 1),
+                        "alpha": alpha,
+                    })
+                    
+                    # first_layer_input 模式下，禁用 per_layer 注入
+                    v_mem = None
+                    v_mem_mask = None
+        # =====================================================
+        
+        # 如果有 VEM，通过自定义层处理（per_layer 模式）
         if v_mem is not None and self.custom_layers is not None:
             if hasattr(outputs, 'hidden_states') and outputs.hidden_states is not None:
                 hidden_states = outputs.hidden_states[-1]
@@ -732,20 +954,41 @@ class Qwen2_5_CustomVLForConditionalGeneration(nn.Module):
             self.custom_layers.load_state_dict(custom_state, *args, **kwargs)
     
     def parameters(self, recurse=True):
-        """获取参数"""
+        """获取参数 - 只返回唯一的参数，避免重复"""
+        # 返回原始模型的参数
         for p in self._model.parameters(recurse=recurse):
             yield p
+        # 返回 custom_layers 中 VEM 模块的参数（不包括 original_layer）
         if self.custom_layers is not None:
-            for p in self.custom_layers.parameters(recurse=recurse):
-                yield p
+            for layer in self.custom_layers:
+                # 只返回 VEM 模块的参数，不返回 original_layer 的参数
+                for name, p in layer.named_parameters(recurse=False):
+                    # 跳过 original_layer 相关的参数（虽然现在不应该有了）
+                    if not name.startswith('_original_layer'):
+                        yield p
+                # 返回 VEM 子模块的参数
+                for module_name in ['retriever', 'analyzer', 'util', 'corrector', 'concat_proj']:
+                    if hasattr(layer, module_name):
+                        module = getattr(layer, module_name)
+                        for p in module.parameters(recurse=recurse):
+                            yield p
     
     def named_parameters(self, prefix='', recurse=True):
-        """获取命名参数"""
+        """获取命名参数 - 只返回唯一的参数，避免重复"""
+        # 返回原始模型的参数
         for name, p in self._model.named_parameters(prefix=prefix, recurse=recurse):
             yield name, p
+        # 返回 custom_layers 中 VEM 模块的参数
         if self.custom_layers is not None:
-            for name, p in self.custom_layers.named_parameters(prefix='custom_layers.' + prefix, recurse=recurse):
-                yield name, p
+            for idx, layer in enumerate(self.custom_layers):
+                layer_prefix = f'custom_layers.{idx}' if not prefix else f'{prefix}.custom_layers.{idx}'
+                # 只返回 VEM 模块的参数
+                for module_name in ['retriever', 'analyzer', 'util', 'corrector', 'concat_proj']:
+                    if hasattr(layer, module_name):
+                        module = getattr(layer, module_name)
+                        module_prefix = f'{layer_prefix}.{module_name}'
+                        for name, p in module.named_parameters(prefix=module_prefix, recurse=recurse):
+                            yield name, p
     
     def train(self, mode=True):
         """设置训练模式"""

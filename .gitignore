@@ -17,3 +17,10 @@ halleval_qwen/POPE/test_gqa/
 # training data
 halltrain/data/data/
 halltrain/data/coco_2017.json
+
+# ignore model
+Fintune_model_output/
+Fitntune_model_output_new/
+Fitune_model_ours_gas2_lr5e6/
+Fitune_model_ours_gas4_lr1e6/
+halltrain/basemodel/

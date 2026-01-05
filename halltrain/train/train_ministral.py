@@ -610,6 +610,17 @@ if model.config.inject_op not in valid_op:
 if model.config.evidence_source not in valid_src:
     raise ValueError(f"evidence_source must be one of {valid_src}, got {model.config.evidence_source}")
 
+# ---- 同步配置到 custom_layers ----
+# Ministral 模型使用包装器模式，需要更新每个 custom layer 的缓存配置
+if hasattr(model, 'custom_layers') and model.custom_layers is not None:
+    for layer in model.custom_layers:
+        layer.enable_vision_gate = model.config.enable_vision_gate
+        layer.gate_layers = model.config.gate_layers
+        layer.config = model.config  # 确保 config 引用是最新的
+    print(f"[Config Sync] Synced experiment configs to {len(model.custom_layers)} custom layers")
+else:
+    print(f"[Config Sync] Warning: No custom_layers found, config sync skipped")
+
 # 创建 collator，传入 processor 和 data_args 以便实时处理图像
 data_collator = MultiModalCollator(tokenizer=tokenizer, processor=processor, data_args=data_args)
 

@@ -18,15 +18,18 @@ import re
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
-TRAIN_ROOT = PROJECT_ROOT.parent.parent / "halltrain" / "LLM-HM-Qwen3-VL-2B-Instruct"
+# halltrain 目录在 LLM_HM_3_models 下
+HALLTRAIN_ROOT = PROJECT_ROOT.parent / "halltrain"
 OUTPUT_MODEL_PATH = "/home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model_Qwen3-VL-2B"
 
 # Ensure local project roots are importable (for model.qwen_vl_model, integrations, etc.)
-for p in (PROJECT_ROOT, TRAIN_ROOT):
+for p in (PROJECT_ROOT, HALLTRAIN_ROOT):
     if p.exists():
         p_str = str(p)
         if p_str not in sys.path:
             sys.path.insert(0, p_str)
+    else:
+        print(f"Warning: Path does not exist: {p}")
 
 try:
     import torch
@@ -75,7 +78,20 @@ def load_model_and_tools(model_dir: str, device: str = "cuda", use_vcd: bool = F
         from model.qwen_vl_model import Qwen2_5_CustomVLForConditionalGeneration
         logger.info("Custom model class (Qwen2_5_CustomVLForConditionalGeneration) imported successfully")
     except Exception as e:
-        logger.info("Custom model class not available, will use standard model: %s", e)
+        logger.info("Custom model class not available from model.qwen_vl_model, trying alternative paths: %s", e)
+        # 尝试从其他路径导入
+        try:
+            import importlib.util
+            # 尝试从 halleval_qwen/model 目录导入
+            model_path = PROJECT_ROOT / "model" / "qwen_vl_model.py"
+            if model_path.exists():
+                spec = importlib.util.spec_from_file_location("qwen_vl_model", str(model_path))
+                qwen_mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(qwen_mod)
+                Qwen2_5_CustomVLForConditionalGeneration = qwen_mod.Qwen2_5_CustomVLForConditionalGeneration
+                logger.info("Custom model class imported from %s", model_path)
+        except Exception as e2:
+            logger.warning("Failed to import custom model class from alternative path: %s", e2)
 
     # If the caller requested VCD or INTER wrappers, try to load from integration loaders.
     try:
@@ -111,7 +127,8 @@ def load_model_and_tools(model_dir: str, device: str = "cuda", use_vcd: bool = F
         # fall back to regular loading below
 
     try:
-        tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False, trust_remote_code=True)
+        # 使用 use_fast=True（默认）来加载 tokenizer，避免某些配置问题
+        tokenizer = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
     except Exception as e:
         logger.warning("Failed to load tokenizer from %s: %s", model_dir, e)
         tokenizer = None

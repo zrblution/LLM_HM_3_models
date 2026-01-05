@@ -29,6 +29,10 @@ def main():
     parser.add_argument("--result_root", default=os.path.join(chair_root, "result"))
     parser.add_argument("--use_vcd", action="store_true", help="Wrap model with VCD integration (forwarded to generate_captions.py)")
     parser.add_argument("--use_inter", action="store_true", help="Wrap model with INTER integration (forwarded to generate_captions.py)")
+    # Multi-GPU and batch size support
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size for inference (default: 8)")
+    parser.add_argument("--multi_gpu", action="store_true", help="Enable multi-GPU parallel generation")
+    parser.add_argument("--gpus", type=str, default="0,1,2,3", help="Comma-separated GPU IDs to use (e.g., '0,1,2,3')")
     args = parser.parse_args()
 
     model_name = os.path.basename(os.path.normpath(args.model_dir))
@@ -48,11 +52,15 @@ def main():
         "--num_samples", str(args.num_samples),
         "--device", args.device,
         "--prompt", args.prompt,
+        "--batch_size", str(args.batch_size),
     ]
     if args.use_vcd:
         gen_cmd.append("--use_vcd")
     if args.use_inter:
         gen_cmd.append("--use_inter")
+    if args.multi_gpu:
+        gen_cmd.append("--multi_gpu")
+        gen_cmd.extend(["--gpus", args.gpus])
     run_command(gen_cmd)
 
     # 2) run chair.py with cwd set to result_dir so output file is written there

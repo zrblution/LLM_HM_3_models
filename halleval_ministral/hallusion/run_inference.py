@@ -16,15 +16,18 @@ import re
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
-TRAIN_ROOT = PROJECT_ROOT.parent.parent / "halltrain" / "LLM-HM-Ministral-3-8B-Instruct"
+# halltrain 目录在 LLM_HM_3_models 下
+HALLTRAIN_ROOT = PROJECT_ROOT.parent / "halltrain"
 OUTPUT_MODEL_PATH = "/home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model_Ministral-3-8B"
 
-# Ensure local project roots are importable
-for p in (PROJECT_ROOT, TRAIN_ROOT):
+# Ensure local project roots are importable (for model.ministral_vl_model, integrations, etc.)
+for p in (PROJECT_ROOT, HALLTRAIN_ROOT):
     if p.exists():
         p_str = str(p)
         if p_str not in sys.path:
             sys.path.insert(0, p_str)
+    else:
+        print(f"Warning: Path does not exist: {p}")
 
 try:
     import torch
@@ -74,7 +77,20 @@ def load_model_and_tools(model_dir: str, device: str = "cuda", use_vcd: bool = F
         from model.ministral_vl_model import Qwen2_5_CustomVLForConditionalGeneration
         logger.info("Custom model class (Qwen2_5_CustomVLForConditionalGeneration for Ministral) imported successfully")
     except Exception as e:
-        logger.info("Custom model class not available, will use standard model: %s", e)
+        logger.info("Custom model class not available from model.ministral_vl_model, trying alternative paths: %s", e)
+        # 尝试从其他路径导入
+        try:
+            import importlib.util
+            # 尝试从 halleval_ministral/model 目录导入
+            model_path = PROJECT_ROOT / "model" / "ministral_vl_model.py"
+            if model_path.exists():
+                spec = importlib.util.spec_from_file_location("ministral_vl_model", str(model_path))
+                ministral_mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(ministral_mod)
+                Qwen2_5_CustomVLForConditionalGeneration = ministral_mod.Qwen2_5_CustomVLForConditionalGeneration
+                logger.info("Custom model class imported from %s", model_path)
+        except Exception as e2:
+            logger.warning("Failed to import custom model class from alternative path: %s", e2)
 
     try:
         tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False, trust_remote_code=True)
@@ -103,11 +119,16 @@ def load_model_and_tools(model_dir: str, device: str = "cuda", use_vcd: bool = F
             with open(config_path, 'r') as f:
                 config = json.load(f)
             architectures = config.get('architectures', [])
-            # Check for custom model class (named Qwen2_5_CustomVLForConditionalGeneration for compatibility)
-            if 'Qwen2_5_CustomVLForConditionalGeneration' in architectures:
+            # Check for custom model class - either by architecture name or by inject_op config
+            # inject_op 存在说明是微调过的模型，需要使用自定义类加载
+            has_inject_op = config.get('inject_op') is not None
+            is_custom_arch = 'Qwen2_5_CustomVLForConditionalGeneration' in architectures
+            
+            if is_custom_arch or has_inject_op:
                 if Qwen2_5_CustomVLForConditionalGeneration is not None:
                     model_class = Qwen2_5_CustomVLForConditionalGeneration
                     print("✅ Using custom model class: Qwen2_5_CustomVLForConditionalGeneration (Ministral)")
+                    print(f"   Detected: inject_op={config.get('inject_op')}, architectures={architectures}")
                     print("   Injection modules will be loaded and used during inference!")
                 else:
                     print("⚠️  Model requires custom class but it's not available, using standard model")

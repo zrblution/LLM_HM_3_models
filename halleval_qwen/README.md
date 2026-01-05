@@ -1,4 +1,9 @@
-# Hallucination Evaluation (halleval)
+python run_eval.py \
+  --dataset coco \
+  --model_dir /home/tos_data/LLM_HM_3_models/Fintune_model_output/Qwen3-VL-4B/Ours \
+  --multi_gpu \
+  --gpus "0,1" \
+  --batch_size 32# Hallucination Evaluation (halleval)
 
 本目录封装了两套常用的多模态幻觉测评：
 

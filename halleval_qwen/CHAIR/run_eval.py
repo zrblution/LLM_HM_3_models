@@ -11,7 +11,7 @@ def run_command(cmd, cwd=None):
         raise RuntimeError(f"Command failed with exit code {res.returncode}: {' '.join(cmd)}")
 
 def main():
-    chair_root = os.path.dirname(os.path.dirname(__file__))  # .../CHAIR
+    chair_root = os.path.dirname(os.path.abspath(__file__))  # .../CHAIR
     parser = argparse.ArgumentParser(description="Orchestrate CHAIR evaluation: generate captions then run chair.py")
     parser.add_argument("--model_dir", required=True, help="Path to model directory")
     parser.add_argument(
@@ -29,9 +29,13 @@ def main():
     parser.add_argument("--result_root", default=os.path.join(chair_root, "result"))
     parser.add_argument("--use_vcd", action="store_true", help="Wrap model with VCD integration (forwarded to generate_captions.py)")
     parser.add_argument("--use_inter", action="store_true", help="Wrap model with INTER integration (forwarded to generate_captions.py)")
+    parser.add_argument("--batch_size", type=int, default=8, help="Batch size for inference (forwarded to generate_captions.py)")
+    parser.add_argument("--multi_gpu", action="store_true", help="Enable multi-GPU parallel generation (forwarded to generate_captions.py)")
+    parser.add_argument("--gpus", default="0,1", help="Comma-separated GPU ids for multi-GPU mode (forwarded to generate_captions.py)")
+    parser.add_argument("--model_name", default=None, help="Custom model name for result directory (default: derived from model_dir)")
     args = parser.parse_args()
 
-    model_name = os.path.basename(os.path.normpath(args.model_dir))
+    model_name = args.model_name if args.model_name else os.path.basename(os.path.normpath(args.model_dir))
     result_dir = os.path.join(args.result_root, model_name)
     os.makedirs(result_dir, exist_ok=True)
 
@@ -48,11 +52,15 @@ def main():
         "--num_samples", str(args.num_samples),
         "--device", args.device,
         "--prompt", args.prompt,
+        "--batch_size", str(args.batch_size),
     ]
     if args.use_vcd:
         gen_cmd.append("--use_vcd")
     if args.use_inter:
         gen_cmd.append("--use_inter")
+    if args.multi_gpu:
+        gen_cmd.append("--multi_gpu")
+        gen_cmd.extend(["--gpus", args.gpus])
     run_command(gen_cmd)
 
     # 2) run chair.py with cwd set to result_dir so output file is written there

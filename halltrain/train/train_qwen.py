@@ -527,6 +527,15 @@ if model.config.inject_op not in valid_op:
 if model.config.evidence_source not in valid_src:
     raise ValueError(f"evidence_source must be one of {valid_src}, got {model.config.evidence_source}")
 
+# ---- 同步配置到 text_config 和 language_model.config ----
+# 这是关键步骤：确保 decoder layer 能读取到正确的配置
+Qwen2_5_CustomVLForConditionalGeneration._sync_config_to_text_config(model.config)
+if hasattr(model.model, 'language_model') and hasattr(model.model.language_model, 'config'):
+    for key in Qwen2_5_CustomVLForConditionalGeneration._EXPERIMENT_CONFIG_KEYS:
+        if hasattr(model.config, key):
+            setattr(model.model.language_model.config, key, getattr(model.config, key))
+print(f"[Config Sync] Synced experiment configs to text_config and language_model.config")
+
 # 创建 collator，传入 processor 和 data_args 以便实时处理图像
 data_collator = MultiModalCollator(tokenizer=tokenizer, processor=processor, data_args=data_args)
 

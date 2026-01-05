@@ -42,11 +42,13 @@ def ensure_dir(p: Path):
     if not p.exists():
         p.mkdir(parents=True, exist_ok=True)
 
-def eval_dataset(dataset: str, model_dir: str, model_name: str = None, gpu: str = None, dry_run: bool = False, use_vcd: bool = False, use_inter: bool = False):
+def eval_dataset(dataset: str, model_dir: str, model_name: str = None, gpu: str = None, dry_run: bool = False, use_vcd: bool = False, use_inter: bool = False, batch_size: int = 64, multi_gpu: bool = False, gpus: str = "0,1"):
     """
     Unified evaluation for test datasets (test_gqa, test_coco).
     - Uses VARIANTS = ['random','popular','adversarial'] with input files
       named '{base_dataset}_pope_{variant}.json' where base_dataset is 'gqa' or 'coco'.
+    - multi_gpu: Enable multi-GPU data parallel inference (single test uses multiple GPUs)
+    - gpus: Comma-separated GPU ids for multi-GPU mode (e.g., '0,1')
     """
     dataset = dataset.lower()
     model_dir = str(Path(model_dir).resolve())
@@ -73,8 +75,11 @@ def eval_dataset(dataset: str, model_dir: str, model_name: str = None, gpu: str 
     ensure_dir(eval_out_root)
 
     env = os.environ.copy()
-    if gpu is not None:
+    if gpu is not None and not multi_gpu:
         env["CUDA_VISIBLE_DEVICES"] = str(gpu)
+    elif multi_gpu:
+        # For multi-GPU mode, set all GPUs visible
+        env["CUDA_VISIBLE_DEVICES"] = gpus
 
     variants_pairs = []
     # For test datasets, use the base_dataset name in the json filename
@@ -103,11 +108,14 @@ def eval_dataset(dataset: str, model_dir: str, model_name: str = None, gpu: str 
             "--model_dir", model_dir,
             "--image_root", str(image_root),
             "--output_json", str(pred_json),
+            "--batch_size", str(batch_size),
         ]
         if use_vcd:
             convert_cmd.append("--use_vcd")
         if use_inter:
             convert_cmd.append("--use_inter")
+        if multi_gpu:
+            convert_cmd.extend(["--multi_gpu", "--gpus", gpus])
         run_cmd(convert_cmd, env=env, dry_run=dry_run)
 
     # Step 2: run pope.py for each generated prediction
@@ -126,25 +134,40 @@ def eval_dataset(dataset: str, model_dir: str, model_name: str = None, gpu: str 
         ]
         run_cmd(pope_cmd, env=env, dry_run=dry_run)
 
-def eval_generic(dataset: str, model_dir: str, model_name: str = None, gpu: str = None, dry_run: bool = False, use_vcd: bool = False, use_inter: bool = False):
+def eval_generic(dataset: str, model_dir: str, model_name: str = None, gpu: str = None, dry_run: bool = False, use_vcd: bool = False, use_inter: bool = False, batch_size: int = 64, multi_gpu: bool = False, gpus: str = "0,1"):
     dataset = dataset.lower()
-    return eval_dataset(dataset=dataset, model_dir=model_dir, model_name=model_name, gpu=gpu, dry_run=dry_run, use_vcd=use_vcd, use_inter=use_inter)
+    return eval_dataset(dataset=dataset, model_dir=model_dir, model_name=model_name, gpu=gpu, dry_run=dry_run, use_vcd=use_vcd, use_inter=use_inter, batch_size=batch_size, multi_gpu=multi_gpu, gpus=gpus)
 
 def parse_args():
     p = argparse.ArgumentParser(description="Run POPE evaluation workflow for a model using test datasets (test_gqa, test_coco).")
     p.add_argument("--dataset", choices=["test_coco", "test_gqa"], default="test_coco", help="Test dataset to evaluate")
     p.add_argument("--model_dir", required=True, help="Path to model directory (e.g. /home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model/checkpoint-6813)")
     p.add_argument("--model_name", required=False, help="Optional name for model (defaults to basename of model_dir)")
-    p.add_argument("--gpu", required=False, help="GPU id to set in CUDA_VISIBLE_DEVICES")
+    p.add_argument("--gpu", required=False, help="GPU id to set in CUDA_VISIBLE_DEVICES (for single GPU mode)")
+    p.add_argument("--batch_size", type=int, default=64, help="Batch size for inference (default: 64)")
+    p.add_argument("--multi_gpu", action="store_true", help="Enable multi-GPU data parallel inference (single test uses multiple GPUs)")
+    p.add_argument("--gpus", default="0,1", help="Comma-separated GPU ids for multi-GPU mode (e.g., '0,1' or '0,1,2,3')")
     p.add_argument("--dry_run", action="store_true", help="Print commands but do not execute them")
     p.add_argument("--use_vcd", action="store_true", help="Wrap model with VCD integration (forward to convert_output.py)")
     p.add_argument("--use_inter", action="store_true", help="Wrap model with INTER integration (forward to convert_output.py)")
     return p.parse_args()
 
+
 def main():
     args = parse_args()
     try:
-        eval_generic(dataset=args.dataset, model_dir=args.model_dir, model_name=args.model_name, gpu=args.gpu, dry_run=args.dry_run, use_vcd=getattr(args, "use_vcd", False), use_inter=getattr(args, "use_inter", False))
+        eval_generic(
+            dataset=args.dataset, 
+            model_dir=args.model_dir, 
+            model_name=args.model_name, 
+            gpu=args.gpu, 
+            dry_run=args.dry_run, 
+            use_vcd=getattr(args, "use_vcd", False), 
+            use_inter=getattr(args, "use_inter", False),
+            batch_size=args.batch_size,
+            multi_gpu=args.multi_gpu,
+            gpus=args.gpus
+        )
     except Exception as e:
         print("Error during evaluation:", e, file=sys.stderr)
         sys.exit(2)
