@@ -4,6 +4,7 @@ import json
 import random
 import argparse
 import re
+import threading
 from pathlib import Path
 
 import torch
@@ -26,6 +27,12 @@ for p in (HALLEVAL_DIR, HALLTRAIN_DIR):
 DEFAULT_MODEL_PATH = "/home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model_Qwen3-VL-2B"
 
 from transformers import AutoTokenizer, AutoProcessor
+
+
+# `transformers` v5 model loading uses global monkey-patching (e.g. meta init / register_parameter),
+# which is not thread-safe. Multi-threaded `from_pretrained()` can leave some params on `meta` and
+# later crash on `model.to(device)`. Serialize model loads to keep multi-GPU generation stable.
+_MODEL_LOAD_LOCK = threading.Lock()
 
 
 def _read_model_config(model_dir: str) -> dict:
@@ -124,12 +131,24 @@ def load_model_and_tools(
                 ) from e
 
         print(f"Using custom Ministral loader: {model_class.__name__}")
-        model = model_class.from_pretrained(
-            model_dir,
-            trust_remote_code=True,
-            torch_dtype=torch.bfloat16,
-        )
+        with _MODEL_LOAD_LOCK:
+            model = model_class.from_pretrained(
+                model_dir,
+                trust_remote_code=True,
+                torch_dtype=torch.bfloat16,
+            )
         model.to(device)
+        
+        # 确保所有参数都是 bfloat16 类型,特别是自定义注入模块
+        for param in model.parameters():
+            if param.dtype == torch.float32:
+                param.data = param.data.to(torch.bfloat16)
+        
+        # 确保所有 buffer 也是正确的类型
+        for buffer in model.buffers():
+            if buffer.dtype == torch.float32:
+                buffer.data = buffer.data.to(torch.bfloat16)
+        
         model.eval()
         return tokenizer, processor, model
 
@@ -158,12 +177,24 @@ def load_model_and_tools(
     else:
         print("Using standard Qwen model class: Qwen3VLForConditionalGeneration")
 
-    model = model_class.from_pretrained(
-        model_dir,
-        trust_remote_code=True,
-        torch_dtype=torch.bfloat16,
-    )
+    with _MODEL_LOAD_LOCK:
+        model = model_class.from_pretrained(
+            model_dir,
+            trust_remote_code=True,
+            torch_dtype=torch.bfloat16,
+        )
     model.to(device)
+    
+    # 确保所有参数都是 bfloat16 类型,特别是自定义注入模块
+    for param in model.parameters():
+        if param.dtype == torch.float32:
+            param.data = param.data.to(torch.bfloat16)
+    
+    # 确保所有 buffer 也是正确的类型
+    for buffer in model.buffers():
+        if buffer.dtype == torch.float32:
+            buffer.data = buffer.data.to(torch.bfloat16)
+    
     model.eval()
     return tokenizer, processor, model
 

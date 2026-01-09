@@ -19,8 +19,14 @@ halltrain/data/data/
 halltrain/data/coco_2017.json
 
 # ignore model
-Fintune_model_output/
-Fitntune_model_output_new/
-Fitune_model_ours_gas2_lr5e6/
-Fitune_model_ours_gas4_lr1e6/
 halltrain/basemodel/
+output-model
+Ablation-qwen3-vl-2b
+
+#train-logs
+halltrain/training_logs
+
+#jiaoben
+halltrain/run_finetune.sh
+halltrain/train_qwen_all_versions.sh
+halltrain/run_ablation_pipeline.sh

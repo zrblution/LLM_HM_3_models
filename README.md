@@ -12,6 +12,8 @@ halltrain/
 ├── train/                    # 训练脚本
 │   ├── train_qwen.py
 │   └── train_ministral.py
+|   |__ train_qwen_baseline.py
+|   |__ train—_ministral_baseline.py
 ├── data/                     # 训练数据（需自行准备）
 │   ├── coco_2017.json
 │   └── data/                 # 图片目录
@@ -37,14 +39,6 @@ deepspeed==0.15.1
 accelerate==1.12.0
 ```
 
-### 安装
-
-```bash
-conda create -n llm_hm python=3.11 -y
-conda activate llm_hm
-pip install torch transformers datasets deepspeed accelerate pillow
-```
-
 ## 数据准备
 
 1. **训练数据**：`data/coco_2017.json`
@@ -56,7 +50,7 @@ pip install torch transformers datasets deepspeed accelerate pillow
 
 - [Qwen3-VL-2B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct)
 - [Qwen3-VL-4B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct)
-- [Ministral-3-3B-Instruct](https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512)
+- [Ministral-3-3B-Instruct](https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-BF16)（切记使用BF16版本）
 
 ## 训练配置
 
@@ -67,69 +61,74 @@ pip install torch transformers datasets deepspeed accelerate pillow
 | **+M** | 首层注入，仅 CE 损失 | `--inject_position first_layer_input --inject_op add`<br>`--lambda_orth 0.0 --lambda_ctr 0.0` |
 | **+M+A** | 全层注入，仅 CE 损失 | `--inject_position per_layer --inject_op ours`<br>`--lambda_orth 0.0 --lambda_ctr 0.0` |
 | **Ours** | 全层注入 + 正则化损失 | `--inject_position per_layer --inject_op ours`<br>`--lambda_orth 1.0 --lambda_ctr 1.0` |
+**若需要训练对应版本的模型，则改动上述对应地方的参数即可**
 
 ### 训练示例
 
-#### Qwen3-VL-2B Ours（4卡 DeepSpeed）
+#### Qwen3-VL-2B Ours版本（4卡 DeepSpeed）
 
 ```bash
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-
-torchrun --nnodes 1 --nproc_per_node 4 --master-port 29500 \
-  train/train_qwen.py \
-  --model_name_or_path ./basemodel/Qwen3-VL-2B-Instruct \
-  --training_data_path ./data/coco_2017.json \
-  --training_image_dir ./data/data \
-  --output_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Qwen3-VL-2B/Ours \
-  --save_total_limit 2 \
-  --report_to none \
-  --per_device_train_batch_size 1 \
-  --gradient_accumulation_steps 1 \
-  --learning_rate 1.0e-5 \
-  --num_train_epochs 3 \
-  --bf16 true \
-  --resume_from_checkpoint False \
-  --save_strategy epoch \
-  --logging_steps 2 \
-  --remove_unused_columns False \
-  --deepspeed ./ds/ds_z2_config.json \
-  --enable_evidence true \
-  --inject_position per_layer \
-  --inject_op ours \
-  --use_utilization true \
-  --evidence_source aligned \
-  --lambda_orth 1.0 \
-  --lambda_ctr 1.0 \
-  --tau 0.07 \
-  --aux_layers ""
+CUDA_VISIBLE_DEVICES=0,1,2,3（改为自己GPU数量） torchrun --nnodes 1 --nproc_per_node 4 --master-port 29500 \
+  train/train_qwen_modified.py \
+  --model_name_or_path  model_path\
+  --training_data_path  image_path \
+  --training_image_dir  data(json文本)_path \
+  --output_dir output_path \
+  --per_device_train_batch_size 1 \
+  --gradient_accumulation_steps 1 \
+  --learning_rate 1.0e-5 \
+  --num_train_epochs 3 \
+  --bf16 true \
+  --save_strategy no \
+  --logging_steps 2 \
+  --remove_unused_columns False \
+  --deepspeed ./ds/ds_z2_config.json \
+  --finetune_type full \
+  --freeze_base_model true \
+  --train_evidence_modules true \
+  --enable_evidence true \
+  --inject_position per_layer \
+  --inject_op ours \
+  --use_utilization true \
+  --evidence_source aligned \
+  --gate_layers all \
+  --lambda_orth 1.0 \
+  --lambda_ctr 1.0
+  Optional:
+  --aux_layers "l1,l2,..." 将正则限制到特定层数
 ```
 
-#### Ministral-3-3B +M（4卡 DeepSpeed）
+#### Ministral-3-3B Ours版本（4卡 DeepSpeed）
 
 ```bash
-torchrun --nnodes 1 --nproc_per_node 4 --master-port 29501 \
-  train/train_ministral.py \
-  --model_name_or_path ./basemodel/Ministral-3-3B-Instruct \
-  --training_data_path ./data/coco_2017.json \
-  --training_image_dir ./data/data \
-  --output_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Ministral-3-3B/+M \
-  --save_total_limit 2 \
-  --report_to none \
-  --per_device_train_batch_size 1 \
-  --gradient_accumulation_steps 1 \
-  --learning_rate 1.0e-5 \
-  --num_train_epochs 3 \
-  --bf16 true \
-  --save_strategy epoch \
-  --logging_steps 2 \
-  --deepspeed ./ds/ds_z2_config.json \
-  --enable_evidence true \
-  --inject_position first_layer_input \
-  --inject_op add \
-  --use_utilization false \
-  --evidence_source candidate \
-  --lambda_orth 0.0 \
-  --lambda_ctr 0.0
+CUDA_VISIBLE_DEVICES=0,1,2,3*改为自己GPU数量（ torchrun --nnodes 1 --nproc_per_node 4 --master-port 29500 \
+  train/train_ministral_modified.py \
+  --model_name_or_path  model_path\
+  --training_data_path  image_path \
+  --training_image_dir  data(json文本)_path \
+  --output_dir output_path \
+  --per_device_train_batch_size 1 \
+  --gradient_accumulation_steps 1 \
+  --learning_rate 1.0e-5 \
+  --num_train_epochs 3 \
+  --bf16 true \
+  --save_strategy no \
+  --logging_steps 2 \
+  --remove_unused_columns False \
+  --deepspeed ./ds/ds_z2_config.json \
+  --finetune_type full \
+  --freeze_base_model true \
+  --train_evidence_modules true \
+  --enable_evidence true \
+  --inject_position per_layer \
+  --inject_op ours \
+  --use_utilization true \
+  --evidence_source aligned \
+  --gate_layers all \
+  --lambda_orth 1.0 \
+  --lambda_ctr 1.0
+  Optional:
+  --aux_layers "l1,l2,..." 将正则限制到特定层数
 ```
 
 ## 自动化训练
@@ -141,11 +140,7 @@ bash run_finetune.sh
 ```
 
 该脚本自动执行：
-- **任务一**：3个基础模型 × 3个变体 = 9个训练任务
-- **任务二**：消融实验 4.1（注入位置和操作符）
-- **任务三**：消融实验 4.3（损失函数组件）
-
-**总计 17 个训练任务**，串行执行，单个任务失败不影响后续任务。
+- **任务**：3个基础模型 × 3个变体 = 9个训练任务
 
 ### 输出目录结构
 
@@ -163,16 +158,6 @@ bash run_finetune.sh
 │   ├── +M/
 │   ├── +M+A/
 │   └── Ours/
-├── Ablation_4.1/
-│   ├── First-layer-only/
-│   ├── All-layer-Concat/
-│   ├── All-layer-Add/
-│   └── All-layer-Ours/
-└── Ablation_4.3/
-    ├── Full/
-    ├── wo_L_ctr/
-    ├── wo_L_orth/
-    └── CE_only/
 ```
 
 ## 关键参数说明
@@ -239,7 +224,7 @@ source /root/miniconda3/etc/profile.d/conda.sh && \
 conda activate Hall && \
 python /home/tos_data/LLM_HM_3_models/halleval_qwen/POPE/run_eval.py \
   --dataset coco \
-  --model_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Qwen3-VL-2B/Ours \
+  --model_dir path_model \
   --model_name Qwen3-VL-2B-Ours \
   --batch_size 64 \
   --multi_gpu \
@@ -253,7 +238,7 @@ source /root/miniconda3/etc/profile.d/conda.sh && \
 conda activate Hall && \
 python /home/tos_data/LLM_HM_3_models/halleval_qwen/POPE/run_eval.py \
   --dataset gqa \
-  --model_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Qwen3-VL-2B/Ours \
+  --model_dir path_model \
   --model_name Qwen3-VL-2B-Ours \
   --batch_size 64 \
   --multi_gpu \
@@ -269,7 +254,7 @@ source /root/miniconda3/etc/profile.d/conda.sh && \
 conda activate Hall && \
 python /home/tos_data/LLM_HM_3_models/halleval_ministral/POPE/run_eval.py \
   --dataset coco \
-  --model_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Ministral-3-3B/Ours \
+  --model_dir path_model \
   --model_name Ministral-3-3B-Ours \
   --batch_size 64 \
   --multi_gpu \
@@ -283,7 +268,7 @@ source /root/miniconda3/etc/profile.d/conda.sh && \
 conda activate Hall && \
 python /home/tos_data/LLM_HM_3_models/halleval_ministral/POPE/run_eval.py \
   --dataset gqa \
-  --model_dir /home/tos_data/LLM_HM_3_models/Fitntune_model_output_new/Ministral-3-3B/Ours \
+  --model_dir path_model \
   --model_name Ministral-3-3B-Ours \
   --batch_size 64 \
   --multi_gpu \
@@ -298,10 +283,67 @@ python /home/tos_data/LLM_HM_3_models/halleval_ministral/POPE/run_eval.py \
 - `--multi_gpu`: 启用多卡推理
 - `--gpus`: 指定使用的 GPU（如 `0,1`）
 
+### CHAIR 评测
+
+CHAIR (Caption Hallucination Assessment with Image Relevance) 评测用于评估模型在图像描述任务中的幻觉程度。
+
+#### Qwen 模型评测
+
+```bash
+cd /home/tos_data/LLM_HM_3_models/halleval_qwen && \
+source /root/miniconda3/etc/profile.d/conda.sh && \
+conda activate Hall && \
+python /home/tos_data/LLM_HM_3_models/halleval_qwen/CHAIR/run_eval.py \
+  --model_dir path_model \
+  --model_name Qwen3-VL-2B-Ours \
+  --image_dir /home/tos_data/LLM_HM_3_models/halleval_qwen/CHAIR/val2014_1000 \
+  --annotation_path /home/tos_data/LLM_HM_3_models/halleval_qwen/CHAIR/annotations_1000 \
+  --synonyms_file /home/tos_data/LLM_HM_3_models/halleval_qwen/CHAIR/synonyms.txt \
+  --result_root /home/tos_data/LLM_HM_3_models/halleval_qwen/CHAIR/result \
+  --num_samples 1000 \
+  --batch_size 64 \
+  --multi_gpu \
+  --gpus 0,1 \
+  --prompt "Please describe this image in detail."
+```
+
+#### Ministral 模型评测
+
+```bash
+cd /home/tos_data/LLM_HM_3_models/halleval_ministral && \
+source /root/miniconda3/etc/profile.d/conda.sh && \
+conda activate Hall && \
+python /home/tos_data/LLM_HM_3_models/halleval_ministral/CHAIR/run_eval.py \
+  --model_dir path_model \
+  --model_name Ministral-3-3B-Ours \
+  --image_dir /home/tos_data/LLM_HM_3_models/halleval_ministral/CHAIR/val2014_1000 \
+  --annotation_path /home/tos_data/LLM_HM_3_models/halleval_ministral/CHAIR/annotations_1000 \
+  --synonyms_file /home/tos_data/LLM_HM_3_models/halleval_ministral/CHAIR/synonyms.txt \
+  --result_root /home/tos_data/LLM_HM_3_models/halleval_ministral/CHAIR/result \
+  --num_samples 1000 \
+  --batch_size 64 \
+  --multi_gpu \
+  --gpus 0,1 \
+  --prompt "Please describe this image in detail."
+```
+
+**评测参数说明**：
+- `--model_dir`: 微调后的模型路径
+- `--model_name`: 模型名称（用于结果保存）
+- `--image_dir`: 评测图像目录（COCO val2014 的 1000 张采样图像）
+- `--annotation_path`: COCO 标注文件目录
+- `--synonyms_file`: 同义词文件路径
+- `--result_root`: 结果保存根目录
+- `--num_samples`: 评测样本数量（默认 1000）
+- `--batch_size`: 推理批次大小
+- `--multi_gpu`: 启用多卡推理
+- `--gpus`: 指定使用的 GPU（如 `0,1`）
+- `--prompt`: 图像描述提示词
+
 ## 注意事项
 
 1. **Batch Size 限制**：由于数据处理方式，`--per_device_train_batch_size` 必须为 `1`，使用 `--gradient_accumulation_steps` 增大有效 batch size
 2. **GPU 要求**：推荐 4×A100 (40GB)，使用 DeepSpeed ZeRO-2
 3. **端口冲突**：多任务并行时需修改 `--master-port`
 4. **数据路径**：确保 `--training_data_path` 和 `--training_image_dir` 正确指向数据目录
-5. **评测环境**：POPE 评测需要激活 `Hall` conda 环境
+5. **评测环境**：POPE 和 CHAIR 评测需要激活 `Hall` conda 环境

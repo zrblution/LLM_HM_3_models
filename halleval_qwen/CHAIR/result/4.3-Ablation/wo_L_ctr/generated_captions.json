@@ -1,0 +1,4002 @@
+[
+  {
+    "image_id": 428,
+    "caption": "In the image, a young child is celebrating their first birthday."
+  },
+  {
+    "image_id": 569,
+    "caption": "The image captures a woman standing on a stone platform, holding a string of colorful kites in her hand."
+  },
+  {
+    "image_id": 985,
+    "caption": "The image features a large, yellow tour bus parked in a parking lot."
+  },
+  {
+    "image_id": 1425,
+    "caption": "The image features a black and white photograph of a delicious-looking sandwich, which is cut in half and placed on a plate."
+  },
+  {
+    "image_id": 1779,
+    "caption": "The image features a street signpost with two green street signs, one for Edloie Street and the other for Westpark Drive, located at the intersection of these two streets."
+  },
+  {
+    "image_id": 2179,
+    "caption": "In the image, a man is riding a skateboard down a colorful ramp."
+  },
+  {
+    "image_id": 2255,
+    "caption": "The image features a large, majestic elephant standing in a natural environment."
+  },
+  {
+    "image_id": 2923,
+    "caption": "The image depicts a serene and picturesque coastal scene, featuring a large body of water, likely a bay or a marsh, with a dock or marina in the background."
+  },
+  {
+    "image_id": 3217,
+    "caption": "The image features a wooden bench situated in a serene, natural setting."
+  },
+  {
+    "image_id": 5184,
+    "caption": "The image features two brown bears, possibly a mother and her offspring, engaging in a playful and affectionate interaction."
+  },
+  {
+    "image_id": 5486,
+    "caption": "This image captures a cozy and inviting living room, featuring a mix of furniture and decor."
+  },
+  {
+    "image_id": 6005,
+    "caption": "The image features a group of four giraffes walking through a spacious, open-air enclosure."
+  },
+  {
+    "image_id": 6723,
+    "caption": "The image captures a city street scene, featuring a mix of modern and traditional architecture."
+  },
+  {
+    "image_id": 7260,
+    "caption": "The image captures a lively tennis match in progress on a grass tennis court."
+  },
+  {
+    "image_id": 8612,
+    "caption": "The image features a brown, horned cow standing in a grassy field."
+  },
+  {
+    "image_id": 8899,
+    "caption": "The image captures a street scene in a city, featuring a red brick building with a green door and two closed metal shutters."
+  },
+  {
+    "image_id": 9379,
+    "caption": "The image captures a street scene, featuring a modern-looking bus stop or a small shelter with a glass roof."
+  },
+  {
+    "image_id": 10591,
+    "caption": "The image captures a moment during a tennis match, where a male tennis player is walking off the court, wiping sweat from his forehead with a white towel."
+  },
+  {
+    "image_id": 11241,
+    "caption": "The image displays a buffet or breakfast spread set up on a long, black countertop."
+  },
+  {
+    "image_id": 11570,
+    "caption": "The image is a painting of a rural landscape featuring a group of white horses and a man in a harness, standing next to a wooden wagon."
+  },
+  {
+    "image_id": 12700,
+    "caption": "The image depicts a cozy and inviting living room, featuring a large, comfortable couch with a floral pattern."
+  },
+  {
+    "image_id": 13081,
+    "caption": "The image features two men sitting at separate desks in a classroom or office setting."
+  },
+  {
+    "image_id": 13729,
+    "caption": "The image captures a lively scene of four friends enjoying a game of video games in a cozy living room."
+  },
+  {
+    "image_id": 15953,
+    "caption": "The image features a delectable apple cupcake, which is the main subject."
+  },
+  {
+    "image_id": 17966,
+    "caption": "The image features a zebra standing in front of a chain-link fence, which is likely part of a zoo or wildlife sanctuary."
+  },
+  {
+    "image_id": 18058,
+    "caption": "The image features a blue traffic sign with a cartoon police officer waving to the viewer."
+  },
+  {
+    "image_id": 18136,
+    "caption": "The image features a small, blue and white motorboat cruising down a narrow, river-like waterway."
+  },
+  {
+    "image_id": 18888,
+    "caption": "The image features a wooden bench situated in a park, surrounded by lush greenery."
+  },
+  {
+    "image_id": 19158,
+    "caption": "The image features a white city bus parked on a street, with its front facing the camera."
+  },
+  {
+    "image_id": 19432,
+    "caption": "In this image, we see a male tennis player standing on a blue tennis court, holding a tennis racket."
+  },
+  {
+    "image_id": 21779,
+    "caption": "In this image, a woman is lying on her back on a red suitcase, which is placed on a tiled floor."
+  },
+  {
+    "image_id": 22446,
+    "caption": "The image displays a traditional Japanese meal, featuring a plate of grilled fish, likely a type of grilled eel, served with a side of rice and a small bowl of pickled vegetables."
+  },
+  {
+    "image_id": 22718,
+    "caption": "The image features a small, single-engine airplane in the process of landing on a grassy runway."
+  },
+  {
+    "image_id": 22861,
+    "caption": "The image features a large, pepperoni pizza sitting on a black pizza pan."
+  },
+  {
+    "image_id": 23623,
+    "caption": "The image depicts a modern bathroom with a focus on the vanity unit."
+  },
+  {
+    "image_id": 23802,
+    "caption": "In the image, a man stands confidently in front of a small, white single-engine airplane."
+  },
+  {
+    "image_id": 24480,
+    "caption": "The image features a large, black cow with white markings on its legs and a white tail."
+  },
+  {
+    "image_id": 24921,
+    "caption": "The image captures a serene lakeside scene, where a group of boats are docked at a marina."
+  },
+  {
+    "image_id": 25069,
+    "caption": "The image captures a dynamic scene on a city street, where a skateboarder is in motion, riding down the road."
+  },
+  {
+    "image_id": 25453,
+    "caption": "The image features a vintage, light blue Chevrolet pickup truck, which is a classic automobile from the 1950s."
+  },
+  {
+    "image_id": 26448,
+    "caption": "The image features three small toy figures, resembling miniature skiers, standing atop a large, white, cauliflower-like structure."
+  },
+  {
+    "image_id": 26564,
+    "caption": "The image depicts a cluttered yet organized workspace, likely a home office or a small business office."
+  },
+  {
+    "image_id": 26665,
+    "caption": "The image features a group of zebras standing together on a dry, rocky ground."
+  },
+  {
+    "image_id": 27438,
+    "caption": "The image features two sheep standing in a lush, green pasture."
+  },
+  {
+    "image_id": 28506,
+    "caption": "This image depicts a well-organized and tidy kitchen with a blue wall as the backdrop."
+  },
+  {
+    "image_id": 28826,
+    "caption": "The image features a wooden bench situated on a sandy beach, with a scenic backdrop of the ocean and a distant island."
+  },
+  {
+    "image_id": 29125,
+    "caption": "The image features a tall, imposing clock tower, which is the focal point of the scene."
+  },
+  {
+    "image_id": 29430,
+    "caption": "The image features a brown plastic bowl filled with numerous blue and black beads."
+  },
+  {
+    "image_id": 29934,
+    "caption": "In this image, a young girl is actively playing tennis on a court."
+  },
+  {
+    "image_id": 32909,
+    "caption": "The image features a collection of toy cow figurines, arranged in a neat row on a table."
+  },
+  {
+    "image_id": 33532,
+    "caption": "The image features a small, charming bird, likely a robin, perched on a branch amidst green foliage."
+  },
+  {
+    "image_id": 34811,
+    "caption": "This image depicts a small, clean, and well-organized bathroom."
+  },
+  {
+    "image_id": 35197,
+    "caption": "The image captures a young boy in action, riding a skateboard down a concrete ramp at a skate park."
+  },
+  {
+    "image_id": 36051,
+    "caption": "In this image, a woman is actively playing tennis on a court."
+  },
+  {
+    "image_id": 36230,
+    "caption": "In this image, a young boy is sitting on a concrete ledge, eagerly receiving a slice of cake from a woman."
+  },
+  {
+    "image_id": 36252,
+    "caption": "The image captures a lively scene of people enjoying their time in the ocean."
+  },
+  {
+    "image_id": 36522,
+    "caption": "The image captures a scene at a bus station or a bus stop, where a large, white, articulated bus is parked."
+  },
+  {
+    "image_id": 36539,
+    "caption": "The image captures a lively winter scene on a snowy hill, where two individuals are enjoying their time on the slopes."
+  },
+  {
+    "image_id": 37655,
+    "caption": "In this image, a woman is seated at a dining table, enjoying a meal that includes a sandwich, a cup of tea, and a small dessert."
+  },
+  {
+    "image_id": 38252,
+    "caption": "The image features a closed, silver-colored Apple laptop, specifically an Apple MacBook, resting on a dark, possibly black, fabric surface."
+  },
+  {
+    "image_id": 39726,
+    "caption": "The image features a partially eaten cinnamon roll pastry, which has been cut open to reveal its soft, fluffy interior."
+  },
+  {
+    "image_id": 39852,
+    "caption": "The image depicts a cluttered office space with a glass table, a computer monitor, a keyboard, and a laptop."
+  },
+  {
+    "image_id": 40317,
+    "caption": "In this image, a person is captured in the midst of a skiing adventure on a snowy hill."
+  },
+  {
+    "image_id": 40686,
+    "caption": "The image depicts a small, cozy, and compact living space, likely a mobile home or a converted trailer."
+  },
+  {
+    "image_id": 41899,
+    "caption": "In the image, a young girl with long brown hair is standing on a skateboard."
+  },
+  {
+    "image_id": 42204,
+    "caption": "The image captures a vibrant street market scene, where people are walking through a narrow alleyway."
+  },
+  {
+    "image_id": 42528,
+    "caption": "The image is a collage of two separate photographs."
+  },
+  {
+    "image_id": 43344,
+    "caption": "The image captures a tennis match in progress, with a male tennis player sitting on a bench, observing the game."
+  },
+  {
+    "image_id": 45920,
+    "caption": "The image captures a baseball player standing on a well-maintained grass field, facing the direction of the game."
+  },
+  {
+    "image_id": 46011,
+    "caption": "The image shows a small, single-engine airplane parked on an airport tarmac."
+  },
+  {
+    "image_id": 46099,
+    "caption": "The image features a red stop sign with a white \"STOP\" message on it, mounted on a blue pole."
+  },
+  {
+    "image_id": 46432,
+    "caption": "The image captures a view from an airplane window, looking out at a vast and rugged mountainous landscape."
+  },
+  {
+    "image_id": 46650,
+    "caption": "In this image, a ripe, yellow banana is placed on top of a vinyl record player, which is playing a vinyl record."
+  },
+  {
+    "image_id": 47204,
+    "caption": "The image features a green fire hydrant standing on a sidewalk."
+  },
+  {
+    "image_id": 47471,
+    "caption": "The image captures a lively beach scene where people are enjoying a day of kiteboarding."
+  },
+  {
+    "image_id": 47739,
+    "caption": "In this image, a woman is standing in front of a large wine rack filled with various bottles of wine."
+  },
+  {
+    "image_id": 49269,
+    "caption": "In this image, we see a serene outdoor scene featuring a horse and a dog standing together in a grassy field."
+  },
+  {
+    "image_id": 49885,
+    "caption": "The image features a red ambulance, which is a medical vehicle used for transporting patients."
+  },
+  {
+    "image_id": 49893,
+    "caption": "The image captures a dynamic moment of a tennis player in action."
+  },
+  {
+    "image_id": 50201,
+    "caption": "The image features a vase filled with an arrangement of pink and white roses, along with greenery, placed on a white table."
+  },
+  {
+    "image_id": 51258,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 52166,
+    "caption": "The image captures a lively scene at a ski resort, where a group of people are gathered around a small, snow-covered hill."
+  },
+  {
+    "image_id": 52462,
+    "caption": "The image features two zebras standing in a field of tall, dry grass."
+  },
+  {
+    "image_id": 53123,
+    "caption": "In this image, we see two young men playing tennis on a court."
+  },
+  {
+    "image_id": 53624,
+    "caption": "The image features a young, gray elephant standing in a shallow pool of water at a zoo or wildlife park."
+  },
+  {
+    "image_id": 53748,
+    "caption": "The image captures a unique scene in a natural environment, where a tall, majestic giraffe stands near a safari vehicle."
+  },
+  {
+    "image_id": 53956,
+    "caption": "The image captures a street corner with a large, white semi-trailer truck parked in front of a red brick building."
+  },
+  {
+    "image_id": 54627,
+    "caption": "The image features a group of horses, including both brown and white horses, grazing in a lush green meadow."
+  },
+  {
+    "image_id": 55109,
+    "caption": "The image features a small potted plant, possibly a spider plant, placed on a white table."
+  },
+  {
+    "image_id": 55594,
+    "caption": "The image depicts a bustling outdoor market, likely in a tropical region, where fresh produce is being sold."
+  },
+  {
+    "image_id": 56070,
+    "caption": "The image features a black motorcycle with an orange stripe on the side, parked on a sidewalk next to a yellow mailbox."
+  },
+  {
+    "image_id": 57283,
+    "caption": "In this image, a young girl with brown hair and a pink flower in her hair is sitting in a red booth at a restaurant."
+  },
+  {
+    "image_id": 58492,
+    "caption": "The image captures a large, white stork in mid-flight, with its wings spread wide."
+  },
+  {
+    "image_id": 59000,
+    "caption": "The image captures a cozy, festive living room, likely decorated for the holidays."
+  },
+  {
+    "image_id": 59295,
+    "caption": "The image features a young, brown elephant standing in an enclosure."
+  },
+  {
+    "image_id": 60569,
+    "caption": "In this image, a woman is captured in the middle of an action, possibly playing a video game or engaging in some form of interactive entertainment."
+  },
+  {
+    "image_id": 61520,
+    "caption": "The image captures a bustling cityscape, with a large, modern building dominating the skyline."
+  },
+  {
+    "image_id": 62518,
+    "caption": "The image captures a white and yellow train traveling along a set of tracks, with a yellow stripe running down the side of the train."
+  },
+  {
+    "image_id": 63144,
+    "caption": "The image captures a dynamic scene of a surfer riding a wave on a sunny day."
+  },
+  {
+    "image_id": 63791,
+    "caption": "The image captures a lively scene of a soccer game in progress on a grassy field."
+  },
+  {
+    "image_id": 63906,
+    "caption": "The image captures a group of people walking along a rocky beach, each carrying a surfboard."
+  },
+  {
+    "image_id": 64030,
+    "caption": "The image features a large, majestic adult swan swimming in a body of water, with its long neck stretched out and its white feathers contrasting against the green and brown water."
+  },
+  {
+    "image_id": 64152,
+    "caption": "The image depicts a kitchen with a refrigerator that is open, revealing its empty interior."
+  },
+  {
+    "image_id": 64390,
+    "caption": "The image captures a city street scene, with a focus on a pedestrian crossing signal."
+  },
+  {
+    "image_id": 64531,
+    "caption": "In this image, a person is wearing a unique and eye-catching tie."
+  },
+  {
+    "image_id": 64710,
+    "caption": "The image captures a scenic outdoor landscape, featuring a person walking with a dog along a dry, sandy riverbed."
+  },
+  {
+    "image_id": 64902,
+    "caption": "The image captures a street scene where a large, powerful stream of water from a fire hydrant is being sprayed onto the street, creating a dramatic effect."
+  },
+  {
+    "image_id": 65057,
+    "caption": "In this image, we see a dynamic scene of a football game in progress."
+  },
+  {
+    "image_id": 65982,
+    "caption": "In this image, a woman is leaning against a concrete wall, her arms resting on her head, and her legs are spread out on the ground."
+  },
+  {
+    "image_id": 66072,
+    "caption": "In this image, a man is seen riding a wave on a surfboard while using a blue paddle to propel himself forward."
+  },
+  {
+    "image_id": 66239,
+    "caption": "The image captures a street corner with a red stop sign prominently displayed on a metal pole."
+  },
+  {
+    "image_id": 66427,
+    "caption": "The image features a red stop sign with the word \"DRIVING\" written on it, which is a common sight in urban areas."
+  },
+  {
+    "image_id": 67463,
+    "caption": "The image features a large, white, semi-trailer truck driving down a road."
+  },
+  {
+    "image_id": 67704,
+    "caption": "The image features a train with a vibrant and colorful graffiti design on its side."
+  },
+  {
+    "image_id": 68050,
+    "caption": "The image captures a peaceful pastoral scene of a farm, where a group of sheep is grazing on a lush green pasture."
+  },
+  {
+    "image_id": 68852,
+    "caption": "The image features a blue, vintage, old-fashioned car parked in a parking lot."
+  },
+  {
+    "image_id": 69923,
+    "caption": "In this image, three individuals, two men and one woman, are standing on a sandy beach, each holding a surfboard."
+  },
+  {
+    "image_id": 70125,
+    "caption": "The image features a street signpost with three signs attached to a metal pole."
+  },
+  {
+    "image_id": 70254,
+    "caption": "The image captures a scene at a train station, where a green and yellow train is waiting to depart."
+  },
+  {
+    "image_id": 70889,
+    "caption": "The image features a large, white commercial airplane with blue and red accents, parked on an airport tarmac."
+  },
+  {
+    "image_id": 72376,
+    "caption": "In the image, a man is standing in a park or courtyard, holding a frisbee in his right hand."
+  },
+  {
+    "image_id": 73738,
+    "caption": "The image presents a top-down view of a small, cramped bathroom with a white toilet."
+  },
+  {
+    "image_id": 73773,
+    "caption": "In the image, a man is sitting on a wooden bench, reading a newspaper."
+  },
+  {
+    "image_id": 74711,
+    "caption": "The image features two large, brown and white Canada geese swimming in a body of green water."
+  },
+  {
+    "image_id": 75051,
+    "caption": "The image features a white, modern-looking toilet situated in a small bathroom with tiled flooring."
+  },
+  {
+    "image_id": 75344,
+    "caption": "The image depicts a serene and inviting backyard garden, featuring a variety of plants, a small table, a green metal chair, and a white shed."
+  },
+  {
+    "image_id": 75479,
+    "caption": "The image features a group of zebras standing together in a grassy field."
+  },
+  {
+    "image_id": 75948,
+    "caption": "The image features a large, black bear sitting on a grassy bank next to a body of water, possibly a lake or a river."
+  },
+  {
+    "image_id": 76632,
+    "caption": "The image captures a lively scene at a baseball field, where a young baseball player is in the middle of a game."
+  },
+  {
+    "image_id": 76731,
+    "caption": "The image shows a blue laptop computer sitting on a wooden table."
+  },
+  {
+    "image_id": 78858,
+    "caption": "In the image, three people are sitting at a dining table, enjoying a meal together."
+  },
+  {
+    "image_id": 79653,
+    "caption": "The image shows a green backpack with a white computer mouse inside one of its pockets."
+  },
+  {
+    "image_id": 79975,
+    "caption": "The image captures a skateboarder in action, riding down a street with a skateboard."
+  },
+  {
+    "image_id": 80300,
+    "caption": "The image features a freshly baked, golden-brown donut sitting on a piece of crumpled white paper."
+  },
+  {
+    "image_id": 80306,
+    "caption": "The image captures a female tennis player in the middle of a match, standing on a tennis court."
+  },
+  {
+    "image_id": 81361,
+    "caption": "In the image, two young girls are standing next to a large, stuffed teddy bear."
+  },
+  {
+    "image_id": 81779,
+    "caption": "In this image, we see a person's arms and hands inside a large, open cardboard box."
+  },
+  {
+    "image_id": 82846,
+    "caption": "The image features a red, vintage-style trolley bus parked on a city street."
+  },
+  {
+    "image_id": 85562,
+    "caption": "The image features a black city bus parked on a city street, with a pole in front of it."
+  },
+  {
+    "image_id": 85823,
+    "caption": "The image features two zebras standing in a grassy field, with their heads lowered to graze on the green grass."
+  },
+  {
+    "image_id": 85913,
+    "caption": "The image features a blue motorcycle parked on a brick sidewalk in front of a row of buildings."
+  },
+  {
+    "image_id": 86951,
+    "caption": "The image displays a modern, well-organized computer setup featuring three computer monitors."
+  },
+  {
+    "image_id": 87456,
+    "caption": "In this image, a cat is sitting on a table, observing a television screen that displays a large, vibrant image of two birds in flight."
+  },
+  {
+    "image_id": 87718,
+    "caption": "In this image, a large, fluffy dog is lying on a dark-colored couch, with its head resting on the backrest of the couch."
+  },
+  {
+    "image_id": 87920,
+    "caption": "In this image, a woman is riding a bicycle down a city street."
+  },
+  {
+    "image_id": 87998,
+    "caption": "The image features a black motorcycle parked on a gravel surface, with a person standing nearby."
+  },
+  {
+    "image_id": 88094,
+    "caption": "The image captures a vintage steam train traveling along a narrow, rural track."
+  },
+  {
+    "image_id": 88412,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 89032,
+    "caption": "In the image, a man is standing on a city sidewalk, holding an umbrella over his head."
+  },
+  {
+    "image_id": 91304,
+    "caption": "The image depicts a cozy living room with a comfortable couch and a unique wooden chest placed on the floor."
+  },
+  {
+    "image_id": 91406,
+    "caption": "The image captures a lively scene in a classroom or office space, where four women are standing in front of a table laden with freshly prepared pizza boxes."
+  },
+  {
+    "image_id": 92134,
+    "caption": "This image captures a vibrant beach scene, featuring a large, red and white cruise ship docked near the shore."
+  },
+  {
+    "image_id": 92558,
+    "caption": "The image captures a vast, open grassland landscape, where a herd of zebras and wildebeest are grazing on the tall grass."
+  },
+  {
+    "image_id": 93331,
+    "caption": "The image depicts a small, clean, and well-organized bathroom."
+  },
+  {
+    "image_id": 93893,
+    "caption": "The image features a small, miniature scene of a teddy bear picnic."
+  },
+  {
+    "image_id": 94336,
+    "caption": "The image features a domestic cat sitting inside a white, round-shaped sink, which is placed on a bathroom countertop."
+  },
+  {
+    "image_id": 94774,
+    "caption": "The image features a group of eleven people, mostly dressed in business attire, standing in front of a large wooden conference table."
+  },
+  {
+    "image_id": 95770,
+    "caption": "In the image, a young man is captured mid-air, performing a skateboard trick."
+  },
+  {
+    "image_id": 96097,
+    "caption": "The image features a black and orange cat sitting on a wooden chair."
+  },
+  {
+    "image_id": 96459,
+    "caption": "The image features a brown duck, likely a female mallard, swimming in a body of water."
+  },
+  {
+    "image_id": 96514,
+    "caption": "The image features a black and white bird standing in shallow water."
+  },
+  {
+    "image_id": 96711,
+    "caption": "In the image, a woman is sitting on a green bench, enjoying a sandwich she has just taken out of a plastic bag."
+  },
+  {
+    "image_id": 97599,
+    "caption": "The image captures a vintage steam train traveling along a railway track, surrounded by a lush green landscape."
+  },
+  {
+    "image_id": 98444,
+    "caption": "In the image, there is a large, imposing statue of a soldier standing in front of a red brick building."
+  },
+  {
+    "image_id": 99416,
+    "caption": "In the image, we see two men standing in a room, possibly at a social event or a formal gathering."
+  },
+  {
+    "image_id": 100138,
+    "caption": "The image features a sleek, black sport motorcycle parked on a paved surface."
+  },
+  {
+    "image_id": 100283,
+    "caption": "The image captures a nighttime scene of a city street corner, where a red stop sign is prominently displayed on a metal pole."
+  },
+  {
+    "image_id": 100801,
+    "caption": "The image captures a tennis player walking across the net, holding his tennis racket in one hand and a towel in the other."
+  },
+  {
+    "image_id": 102235,
+    "caption": "In this image, we see a birthday celebration taking place in a cozy, intimate setting."
+  },
+  {
+    "image_id": 102478,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 103306,
+    "caption": "The image depicts a small, modern-looking bathroom with a white shower curtain hanging in front of a white shower."
+  },
+  {
+    "image_id": 103585,
+    "caption": "This image depicts a modern, well-lit bathroom with a clean and organized appearance."
+  },
+  {
+    "image_id": 105156,
+    "caption": "In this image, we see a horse standing next to a horse-drawn carriage, which is likely a traditional or tourist-oriented vehicle."
+  },
+  {
+    "image_id": 105432,
+    "caption": "The image features a large, white cargo ship with multiple decks and a tall mast on top."
+  },
+  {
+    "image_id": 105689,
+    "caption": "The image features a single slice of pizza placed on a white plate, which is set on a red and white checkered tablecloth."
+  },
+  {
+    "image_id": 107123,
+    "caption": "The image presents a view of a small, clean, and well-organized bathroom."
+  },
+  {
+    "image_id": 107661,
+    "caption": "In this image, we see two men engaged in a game of frisbee on a grassy field."
+  },
+  {
+    "image_id": 107964,
+    "caption": "In this image, a young man is captured in the middle of a skateboarding maneuver, skillfully riding down a concrete ramp at a skate park."
+  },
+  {
+    "image_id": 108130,
+    "caption": "The image captures a lively scene on a sunny beach, where a group of people are enjoying a game of frisbee."
+  },
+  {
+    "image_id": 108152,
+    "caption": "The image features two large, muscular horses with black manes and harnesses, standing in front of a red horse-drawn wagon."
+  },
+  {
+    "image_id": 108326,
+    "caption": "The image is a detailed painting or mural depicting a vibrant African savanna landscape, featuring a variety of animals such as zebras, warthogs, and antelopes."
+  },
+  {
+    "image_id": 108982,
+    "caption": "The image features a small, vibrant blue bird perched on a branch of a tree."
+  },
+  {
+    "image_id": 109055,
+    "caption": "In this image, a playful and amusing scene unfolds."
+  },
+  {
+    "image_id": 109316,
+    "caption": "In the image, a woman is walking down a city street while holding a black umbrella."
+  },
+  {
+    "image_id": 109537,
+    "caption": "In this image, a young man is surfing on a large ocean wave."
+  },
+  {
+    "image_id": 111054,
+    "caption": "The image features a close-up view of a giraffe, which is the main subject."
+  },
+  {
+    "image_id": 111970,
+    "caption": "The image is a black and white photograph of a cat resting between two bicycles."
+  },
+  {
+    "image_id": 113049,
+    "caption": "The image features a woman with a large, open mouth, holding a half-cut orange in her hand."
+  },
+  {
+    "image_id": 113294,
+    "caption": "In this black and white photograph, a man is seen standing on a rocky shore, pulling a small motorboat towards the water."
+  },
+  {
+    "image_id": 114025,
+    "caption": "In this image, a woman is standing in a grassy field, holding a large, colorful, and whimsical kite shaped like a shark."
+  },
+  {
+    "image_id": 114327,
+    "caption": "The image features a red, octagonal stop sign, commonly used for traffic control, mounted on a metal pole."
+  },
+  {
+    "image_id": 114348,
+    "caption": "The image features two parking meters standing in a parking lot, with a cityscape in the background."
+  },
+  {
+    "image_id": 114634,
+    "caption": "The image captures a sunny day in a desert landscape, where a group of people are enjoying a kite-flying activity."
+  },
+  {
+    "image_id": 114717,
+    "caption": "The image features a baby lying on a white bed, with a stuffed bear toy placed beside them."
+  },
+  {
+    "image_id": 117458,
+    "caption": "The image captures a dynamic scene of a person riding a motorcycle down a highway."
+  },
+  {
+    "image_id": 117704,
+    "caption": "The image captures a large, red, double-decker tour boat cruising through the water, with a large number of people on board."
+  },
+  {
+    "image_id": 117899,
+    "caption": "The image captures a spacious, well-lit kitchen with a modern design."
+  },
+  {
+    "image_id": 118739,
+    "caption": "The image features two delicious-looking pizzas, each with a different topping combination."
+  },
+  {
+    "image_id": 119146,
+    "caption": "The image captures a person standing on a grassy field, holding a yellow kite."
+  },
+  {
+    "image_id": 119192,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 119513,
+    "caption": "In the image, a young boy is performing a trick on his skateboard."
+  },
+  {
+    "image_id": 120282,
+    "caption": "The image captures a serene and peaceful scene of a tranquil body of water, where a group of ducks and a swan are swimming together."
+  },
+  {
+    "image_id": 120420,
+    "caption": "In this image, a young man is standing in a park, holding a camera up to his face."
+  },
+  {
+    "image_id": 120566,
+    "caption": "The image captures a close-up view of a bathroom setting, where a person is using a hair dryer to blow air onto a toilet."
+  },
+  {
+    "image_id": 121215,
+    "caption": "This image depicts a modern, clean, and well-organized bathroom."
+  },
+  {
+    "image_id": 123677,
+    "caption": "The image captures a group of people, possibly friends or family, celebrating with a toast."
+  },
+  {
+    "image_id": 123842,
+    "caption": "The image is a photograph of a vintage television set, which is displaying a scene of two cows in a forest."
+  },
+  {
+    "image_id": 124013,
+    "caption": "In this image, we see three young girls enjoying a horse ride."
+  },
+  {
+    "image_id": 125107,
+    "caption": "In this image, a small, brown pug dog is lying on a concrete floor, resting its head on a large, empty plastic water bottle."
+  },
+  {
+    "image_id": 125242,
+    "caption": "The image features a close-up view of a pizza with two distinct toppings, one pepperoni and one chicken, placed on a paper plate."
+  },
+  {
+    "image_id": 125997,
+    "caption": "The image features a large, eye-catching blue wall with bold white text that reads \"U ARE ALIVE\" in a large, stylized font."
+  },
+  {
+    "image_id": 127068,
+    "caption": "In the image, a young man with short, dark hair is standing in front of a surfboard."
+  },
+  {
+    "image_id": 128372,
+    "caption": "The image captures a public transit bus, specifically a Metro Local bus, parked at a station platform."
+  },
+  {
+    "image_id": 129175,
+    "caption": "The image captures a picturesque scene of a bustling canal in Venice, Italy, with a gondola gliding through the water."
+  },
+  {
+    "image_id": 131019,
+    "caption": "In this image, we see a serene, natural setting where a group of zebras and their young are gathered in a grassy field."
+  },
+  {
+    "image_id": 131108,
+    "caption": "The image is a black and white photograph of a street scene in Rome, Italy."
+  },
+  {
+    "image_id": 132210,
+    "caption": "The image features a vintage, white fire truck parked on a grassy field."
+  },
+  {
+    "image_id": 132317,
+    "caption": "In this image, a dragonfly is perched on the top corner of a laptop computer."
+  },
+  {
+    "image_id": 132791,
+    "caption": "The image captures a scenic, rugged landscape with a large, old-fashioned bus driving through a rocky, rocky terrain."
+  },
+  {
+    "image_id": 134483,
+    "caption": "The image shows a small, cramped bathroom with a white toilet."
+  },
+  {
+    "image_id": 135029,
+    "caption": "The image displays a table set for a meal, featuring a cup of coffee, a glass of orange juice, and two pastries."
+  },
+  {
+    "image_id": 136772,
+    "caption": "This image features a clear glass bowl filled with a colorful assortment of fresh fruit, including sliced oranges, sliced strawberries, and possibly some other types of fruit."
+  },
+  {
+    "image_id": 138965,
+    "caption": "The image features a stuffed animal, possibly a panda, sitting on a chair with a book titled \"Say Cheese!"
+  },
+  {
+    "image_id": 139127,
+    "caption": "The image features a large, blue, open-top tour boat or ferry, filled with passengers, cruising on a body of water."
+  },
+  {
+    "image_id": 139623,
+    "caption": "The image captures a serene and picturesque scene of a train station, with a train parked in front of a house."
+  },
+  {
+    "image_id": 140087,
+    "caption": "In the image, a young man with glasses is standing in front of a microphone, speaking into it."
+  },
+  {
+    "image_id": 140465,
+    "caption": "The image depicts a man sitting on the ground next to a parked motorcycle."
+  },
+  {
+    "image_id": 140513,
+    "caption": "The image captures a serene, natural scene of three zebras walking through a dry, grassy field."
+  },
+  {
+    "image_id": 140636,
+    "caption": "The image captures a dynamic scene of two birds interacting in a body of water."
+  },
+  {
+    "image_id": 142323,
+    "caption": "The image captures a street corner in a city, where a blue street sign is prominently displayed."
+  },
+  {
+    "image_id": 143111,
+    "caption": "The image features a close-up view of a collection of ripe, fresh mangoes and bananas, arranged in a bowl."
+  },
+  {
+    "image_id": 143576,
+    "caption": "The image captures a chef in the middle of his work, standing in front of a large kitchen counter."
+  },
+  {
+    "image_id": 144003,
+    "caption": "In the image, a woman is cutting a large, colorful cake with a knife."
+  },
+  {
+    "image_id": 144058,
+    "caption": "This image captures a serene and foggy scene of a harbor filled with numerous sailboats and motorboats docked in a row."
+  },
+  {
+    "image_id": 144202,
+    "caption": "This image captures a cozy and inviting scene set on a black table."
+  },
+  {
+    "image_id": 145101,
+    "caption": "The image depicts a cozy, well-organized living room with a black couch, a television, and various decorative items."
+  },
+  {
+    "image_id": 145604,
+    "caption": "The image captures a street scene in a bustling city, where a man is pushing a large wooden cart loaded with a large pile of ripe, yellow bananas."
+  },
+  {
+    "image_id": 145747,
+    "caption": "The image captures a serene and picturesque scene of a lake surrounded by a scenic landscape."
+  },
+  {
+    "image_id": 146509,
+    "caption": "The image features a charming, inviting storefront of a teddy bear shop, set against a backdrop of a brick building."
+  },
+  {
+    "image_id": 146568,
+    "caption": "The image captures a lively, playful scene in a child's room, where a young child is standing in the middle of a cluttered floor."
+  },
+  {
+    "image_id": 147293,
+    "caption": "This image is a black and white photograph of a park, featuring a wooden bench, a trash can, and a street lamp."
+  },
+  {
+    "image_id": 147675,
+    "caption": "The image captures a serene scene of a small, blue fishing boat floating on calm, dark waters."
+  },
+  {
+    "image_id": 147921,
+    "caption": "The image captures a vibrant and lively scene of a seaside city, with a focus on a bustling waterfront."
+  },
+  {
+    "image_id": 148329,
+    "caption": "In the image, a man with a beard and glasses is sitting in front of a car, holding a green toothbrush in his mouth."
+  },
+  {
+    "image_id": 148739,
+    "caption": "In this image, a young woman is seen enjoying her time on a sunny day at the beach."
+  },
+  {
+    "image_id": 148968,
+    "caption": "In this image, a gray tabby cat is sitting on a white purse, which is placed on a wooden floor."
+  },
+  {
+    "image_id": 149770,
+    "caption": "The image features a person on a surfboard, riding a wave in the ocean."
+  },
+  {
+    "image_id": 149785,
+    "caption": "The image features a young, baby elephant standing in a grassy enclosure, with its back turned towards the camera."
+  },
+  {
+    "image_id": 150284,
+    "caption": "The image features a red motorcycle parked on a street, with a person standing next to it."
+  },
+  {
+    "image_id": 150576,
+    "caption": "The image features two giraffes in a grassy enclosure, with one standing and the other lying down."
+  },
+  {
+    "image_id": 151358,
+    "caption": "The image displays a neatly arranged desk with various items on it."
+  },
+  {
+    "image_id": 152012,
+    "caption": "The image captures a dynamic moment during a soccer game, with three players in black jerseys and black shorts actively engaged in the game."
+  },
+  {
+    "image_id": 152103,
+    "caption": "The image captures a cozy and inviting bedroom scene, featuring a small dog sitting on a bed."
+  },
+  {
+    "image_id": 152946,
+    "caption": "The image features two people standing in a snowy, mountainous area, likely a ski resort."
+  },
+  {
+    "image_id": 153072,
+    "caption": "The image captures a vibrant and lively scene at a kite-flying festival or park."
+  },
+  {
+    "image_id": 153697,
+    "caption": "The image features a large, ornate clock with a classic design, set against a dark wooden background."
+  },
+  {
+    "image_id": 154000,
+    "caption": "The image features a large, white, flatbed truck with a blue dumpster attached to its side."
+  },
+  {
+    "image_id": 154854,
+    "caption": "The image captures a city street scene during the evening, with a focus on a church tower in the background."
+  },
+  {
+    "image_id": 155245,
+    "caption": "In the image, a woman is seated at a dining table, enjoying a dessert."
+  },
+  {
+    "image_id": 155317,
+    "caption": "The image features a large, rectangular chocolate brownie cake sitting on a small, decorative plate."
+  },
+  {
+    "image_id": 156232,
+    "caption": "In this image, two women are riding horses down a road."
+  },
+  {
+    "image_id": 156511,
+    "caption": "The image features a young girl playing tennis on a court."
+  },
+  {
+    "image_id": 157651,
+    "caption": "The image features a person standing on a beach, holding an orange kite in their arms."
+  },
+  {
+    "image_id": 159451,
+    "caption": "The image features a large, yellow heavy-duty dump truck parked in front of a large industrial building."
+  },
+  {
+    "image_id": 160828,
+    "caption": "In this image, a woman is captured in the middle of a surfing session."
+  },
+  {
+    "image_id": 163138,
+    "caption": "The image displays a collection of intricately designed ceramic vases and pitchers arranged on a glass shelf."
+  },
+  {
+    "image_id": 163296,
+    "caption": "The image features a close-up view of a vibrant, green, broccoli plant."
+  },
+  {
+    "image_id": 164453,
+    "caption": "The image shows a neatly arranged computer workstation, featuring a laptop computer sitting on a wooden desk."
+  },
+  {
+    "image_id": 165174,
+    "caption": "The image features two men standing on a snowy hillside, posing for a photo."
+  },
+  {
+    "image_id": 165518,
+    "caption": "The image captures a lone motorcyclist riding through a foggy or misty road, creating a dramatic and atmospheric scene."
+  },
+  {
+    "image_id": 166509,
+    "caption": "The image captures a view from inside a car, looking out at a scenic, narrow road surrounded by lush green trees."
+  },
+  {
+    "image_id": 167952,
+    "caption": "The image displays a table set for a meal, featuring a variety of dishes."
+  },
+  {
+    "image_id": 168031,
+    "caption": "In this image, we see two cats, one of which is a tabby cat with a mix of brown, black, and white fur, and the other is a calico cat with a combination of orange, black, and white fur."
+  },
+  {
+    "image_id": 168692,
+    "caption": "In the image, two young boys are carrying a large, white surfboard on their shoulders."
+  },
+  {
+    "image_id": 168746,
+    "caption": "The image captures a dynamic scene of a person skiing down a snowy mountain slope."
+  },
+  {
+    "image_id": 170658,
+    "caption": "The image features a breakfast meal consisting of a bacon egg sandwich, served on a white plate."
+  },
+  {
+    "image_id": 170914,
+    "caption": "The image features a wooden-framed clock placed in the middle of a sandy beach."
+  },
+  {
+    "image_id": 171050,
+    "caption": "The image features a black fire hydrant standing on a sidewalk in front of a brick building."
+  },
+  {
+    "image_id": 172733,
+    "caption": "In this image, a man is standing in a large, open grassy field, holding up a red and black kite."
+  },
+  {
+    "image_id": 173434,
+    "caption": "This image captures a cozy and inviting living room, featuring a comfortable couch, a television, and a fireplace."
+  },
+  {
+    "image_id": 174097,
+    "caption": "The image displays a table set up with a variety of hot dogs and condiments, arranged neatly for a meal."
+  },
+  {
+    "image_id": 174871,
+    "caption": "In this image, a large, muscular dog is standing on a city street, with a small, white cat perched on its back."
+  },
+  {
+    "image_id": 176606,
+    "caption": "In the image, a white sheep with large horns is standing on its hind legs, leaning against a wooden wall."
+  },
+  {
+    "image_id": 177811,
+    "caption": "The image depicts a dirty and cluttered bathroom with a disheveled appearance."
+  },
+  {
+    "image_id": 179141,
+    "caption": "The image captures a group of friends enjoying a lively and intimate moment together at a pizza party."
+  },
+  {
+    "image_id": 179251,
+    "caption": "The image captures a lively scene in a bathroom, where a young girl is brushing her teeth while her brother stands beside her, watching her."
+  },
+  {
+    "image_id": 179327,
+    "caption": "In the image, a woman is standing in front of an open refrigerator."
+  },
+  {
+    "image_id": 179571,
+    "caption": "The image captures a dynamic scene on a tennis court."
+  },
+  {
+    "image_id": 179765,
+    "caption": "The image shows a black Honda motorcycle parked on a grassy lawn in front of a house."
+  },
+  {
+    "image_id": 180296,
+    "caption": "The image shows a doll sitting inside an open suitcase, which is filled with luggage and personal belongings."
+  },
+  {
+    "image_id": 180729,
+    "caption": "In this image, a woman is seated at a table, enjoying a breakfast meal."
+  },
+  {
+    "image_id": 180764,
+    "caption": "In the image, a man with messy brown hair and glasses is sitting in a kitchen, holding a pink frosted donut with sprinkles in his mouth."
+  },
+  {
+    "image_id": 180982,
+    "caption": "The image captures a scenic view of a train yard, where three distinct train cars are parked on separate tracks."
+  },
+  {
+    "image_id": 181446,
+    "caption": "In this image, a man is standing in front of an open refrigerator, which is filled with various condiments and ingredients."
+  },
+  {
+    "image_id": 181666,
+    "caption": "The image captures a serene pastoral scene in a desert landscape, where a herd of sheep is being herded by a man in a traditional outfit."
+  },
+  {
+    "image_id": 182162,
+    "caption": "The image captures a cozy living room with a black leather couch, a small table, and a colorful balloon decoration."
+  },
+  {
+    "image_id": 183144,
+    "caption": "The image captures a lively outdoor scene, likely a public gathering or festival, where a large number of people are walking around and enjoying the event."
+  },
+  {
+    "image_id": 183374,
+    "caption": "The image captures a lively street scene in a city, where a group of people, including children, are walking through the rain."
+  },
+  {
+    "image_id": 185622,
+    "caption": "The image captures a large, white commercial airplane, bearing the logo of ANA (Japan Airlines), in the process of taking off from an airport runway."
+  },
+  {
+    "image_id": 186130,
+    "caption": "In this image, a man is cutting a cake, which is decorated with various toppings and colors."
+  },
+  {
+    "image_id": 186711,
+    "caption": "In this image, a man is captured in the middle of a surfing session on a sunny day."
+  },
+  {
+    "image_id": 187187,
+    "caption": "In the image, a man is standing in front of a computer setup, which includes two laptops on a table."
+  },
+  {
+    "image_id": 187235,
+    "caption": "The image captures a serene and peaceful scene of a small sailboat floating on a calm body of water."
+  },
+  {
+    "image_id": 187352,
+    "caption": "In this image, a young man is captured in the middle of a tennis match."
+  },
+  {
+    "image_id": 187565,
+    "caption": "The image features a vase filled with red tulips, which are placed on a wooden floor."
+  },
+  {
+    "image_id": 187776,
+    "caption": "The image captures a lively scene inside a conference or networking room, where several people are engaged in conversations and networking."
+  },
+  {
+    "image_id": 189152,
+    "caption": "In this image, a woman in a military uniform is administering a vaccine to a large, white cow."
+  },
+  {
+    "image_id": 191218,
+    "caption": "The image features a person holding a large, appetizing sandwich, which appears to be a beef sandwich with onions and a fried egg."
+  },
+  {
+    "image_id": 191226,
+    "caption": "In this image, a man is captured in the midst of a thrilling surfing experience."
+  },
+  {
+    "image_id": 191845,
+    "caption": "The image captures a busy city street, with a large number of pedestrians crossing a crosswalk."
+  },
+  {
+    "image_id": 194277,
+    "caption": "The image captures a lively beach scene where a woman is actively engaged in flying a colorful kite."
+  },
+  {
+    "image_id": 195271,
+    "caption": "In the image, a woman is standing in a kitchen, holding a carton of milk."
+  },
+  {
+    "image_id": 196799,
+    "caption": "The image features a vintage, black steam locomotive, specifically a 70007 model, passing under a brick railway bridge."
+  },
+  {
+    "image_id": 197263,
+    "caption": "The image is a close-up, black and white photograph of a person wearing a denim shirt with a camouflage patterned tie."
+  },
+  {
+    "image_id": 197350,
+    "caption": "The image features a female tennis player, dressed in a red tennis outfit, holding a tennis racket."
+  },
+  {
+    "image_id": 197792,
+    "caption": "The image features a stuffed teddy bear, which is the main subject, sitting on a table."
+  },
+  {
+    "image_id": 198204,
+    "caption": "The image displays a row of old, vintage-style ovens, which are likely in a storage or repair facility."
+  },
+  {
+    "image_id": 198234,
+    "caption": "The image depicts a group of young people, likely teenagers, sitting in a room or a classroom, watching a video game on a Nintendo Wii console."
+  },
+  {
+    "image_id": 198805,
+    "caption": "The image features a yellow vintage pickup truck parked in a parking lot."
+  },
+  {
+    "image_id": 198959,
+    "caption": "In the image, a young female softball player is in the middle of swinging her bat at a softball ball."
+  },
+  {
+    "image_id": 199257,
+    "caption": "The image captures a street corner in a residential area, with a focus on a traffic light and surrounding elements."
+  },
+  {
+    "image_id": 199771,
+    "caption": "The image depicts a group of chefs in a professional kitchen, preparing food."
+  },
+  {
+    "image_id": 200231,
+    "caption": "The image depicts a bench, likely situated in a public park or a similar outdoor area, where various items have been placed as a tribute to a recent event."
+  },
+  {
+    "image_id": 200717,
+    "caption": "In the image, a man is actively engaged in playing a game of frisbee on a grassy field."
+  },
+  {
+    "image_id": 200739,
+    "caption": "This image is a black and white photograph of a city street, likely from the early to mid-20th century."
+  },
+  {
+    "image_id": 200945,
+    "caption": "The image features a delicious-looking hot dog, topped with various condiments and garnishes."
+  },
+  {
+    "image_id": 201241,
+    "caption": "In this image, a large, white polar bear is seen swimming in a body of water."
+  },
+  {
+    "image_id": 202445,
+    "caption": "In this image, we see a cozy scene of a cat resting on a bed."
+  },
+  {
+    "image_id": 203455,
+    "caption": "This image depicts a cozy and inviting bedroom with a focus on a breakfast spread."
+  },
+  {
+    "image_id": 204749,
+    "caption": "The image is a close-up view of a truck's side mirror, which is reflecting the surrounding environment."
+  },
+  {
+    "image_id": 205002,
+    "caption": "In this image, a man is sitting on a customized motorcycle, which is parked on the side of a city street."
+  },
+  {
+    "image_id": 205498,
+    "caption": "The image captures a serene and inviting interior space, featuring a round window with a view of a lush green tree."
+  },
+  {
+    "image_id": 205601,
+    "caption": "In the image, a woman is cooking a large, steaming skillet of meat and vegetables on a stove."
+  },
+  {
+    "image_id": 206147,
+    "caption": "The image displays a kitchen counter with various ingredients laid out on a wooden cutting board."
+  },
+  {
+    "image_id": 206271,
+    "caption": "The image depicts a public restroom with two urinals mounted on a wall."
+  },
+  {
+    "image_id": 206433,
+    "caption": "The image features two men standing next to each other, both dressed in formal attire."
+  },
+  {
+    "image_id": 207027,
+    "caption": "The image displays a collection of surfboards neatly arranged on a wooden rack, ready for use."
+  },
+  {
+    "image_id": 207180,
+    "caption": "The image captures a spacious, well-lit train station hall with a large clock hanging above a central area."
+  },
+  {
+    "image_id": 207292,
+    "caption": "In the image, a young boy stands in front of a building, holding a baseball bat."
+  },
+  {
+    "image_id": 208363,
+    "caption": "The image captures a lively scene of a group of people enjoying pizza together in a casual, indoor setting."
+  },
+  {
+    "image_id": 209044,
+    "caption": "In this image, we see a cozy living room setting where two children are engaged in a video game on a television."
+  },
+  {
+    "image_id": 209480,
+    "caption": "The image features a blue plate with a variety of fresh, crisp vegetables, including broccoli, cauliflower, and red pepper."
+  },
+  {
+    "image_id": 209747,
+    "caption": "In this image, a small, adorable kitten is sitting inside a white bathroom sink."
+  },
+  {
+    "image_id": 210502,
+    "caption": "The image features a close-up view of a red and silver train car, which appears to be a passenger train."
+  },
+  {
+    "image_id": 210980,
+    "caption": "The image captures a unique and intriguing scene of a large, majestic elephant being led by a man on a bicycle."
+  },
+  {
+    "image_id": 210988,
+    "caption": "The image features a wooden bench situated in a lush, green garden."
+  },
+  {
+    "image_id": 211097,
+    "caption": "The image captures a skateboarder performing a trick in mid-air, with his skateboard in the air above the ground."
+  },
+  {
+    "image_id": 212072,
+    "caption": "The image captures a street scene in a city, with a red stop sign prominently displayed on a metal pole."
+  },
+  {
+    "image_id": 213765,
+    "caption": "The image is a black and white photograph of a kitchen, captured in a vintage, grainy style."
+  },
+  {
+    "image_id": 213827,
+    "caption": "The image captures a dynamic moment of a person performing a high-flying trick on a water ski."
+  },
+  {
+    "image_id": 214123,
+    "caption": "The image captures a lively social gathering in a cozy kitchen setting."
+  },
+  {
+    "image_id": 214958,
+    "caption": "The image captures a beach scene with a young boy standing on the sandy shore, holding a blue surfboard."
+  },
+  {
+    "image_id": 214961,
+    "caption": "In the image, a man is seen lying in a swimming pool, performing a skateboarding trick."
+  },
+  {
+    "image_id": 215062,
+    "caption": "The image displays two plates of food, each with a different type of meal, arranged on a wooden table."
+  },
+  {
+    "image_id": 216006,
+    "caption": "The image captures a street scene in a residential neighborhood, with a focus on a street sign indicating the intersection of E."
+  },
+  {
+    "image_id": 216398,
+    "caption": "The image captures a vibrant scene in the heart of London, featuring the iconic Elizabeth Tower, also known as Big Ben, a towering clock tower that stands majestically against a backdrop of a partly cloudy blue sky."
+  },
+  {
+    "image_id": 217082,
+    "caption": "In this image, a brown dog is sitting on a wooden bench, which is located in a park or a grassy area."
+  },
+  {
+    "image_id": 217272,
+    "caption": "The image displays a dining table set with a focus on a colorful salad and two glasses of beer."
+  },
+  {
+    "image_id": 218388,
+    "caption": "The image features a red stop sign, which is a standard traffic sign, but it has been vandalized with graffiti."
+  },
+  {
+    "image_id": 218494,
+    "caption": "The image features a silver laptop computer sitting on a wooden desk, with its screen open and displaying a colorful interface."
+  },
+  {
+    "image_id": 219201,
+    "caption": "In the image, a man is actively playing tennis on a street, with a net dividing the court."
+  },
+  {
+    "image_id": 219329,
+    "caption": "The image features a picturesque church tower, which is the focal point of the scene."
+  },
+  {
+    "image_id": 220182,
+    "caption": "The image features a vibrant arrangement of yellow and purple flowers, likely a bouquet of daffodils and cornflowers, set against a white background."
+  },
+  {
+    "image_id": 220607,
+    "caption": "The image depicts a large, modern conference room or meeting hall filled with many people sitting at desks, working on laptops."
+  },
+  {
+    "image_id": 220981,
+    "caption": "In this image, a black smartphone is being held by a toy figure with a sad expression on its face."
+  },
+  {
+    "image_id": 222009,
+    "caption": "The image features a vase filled with a vibrant bouquet of red roses, arranged in a pleasing and lively manner."
+  },
+  {
+    "image_id": 222340,
+    "caption": "The image features a pink city bus, which is parked or moving along a city street."
+  },
+  {
+    "image_id": 223467,
+    "caption": "This image depicts a luxurious bathroom with a modern and inviting ambiance."
+  },
+  {
+    "image_id": 224000,
+    "caption": "The image captures a rural scene where a herd of sheep is being herded down a dirt road."
+  },
+  {
+    "image_id": 224104,
+    "caption": "In this image, a police officer is riding a large brown horse down a city street."
+  },
+  {
+    "image_id": 224155,
+    "caption": "In this image, a man with a beard and messy hair is standing in front of a bathroom mirror, taking a selfie with a camera."
+  },
+  {
+    "image_id": 224567,
+    "caption": "The image features a brown dog, possibly a Labrador or a similar breed, leaping into the air to catch a blue frisbee."
+  },
+  {
+    "image_id": 224610,
+    "caption": "The image captures a scene at a bus terminal or parking lot, where three buses are parked in a row."
+  },
+  {
+    "image_id": 224740,
+    "caption": "The image depicts a cozy and inviting living room, featuring a fireplace, two armchairs, a coffee table, and a vase of white flowers."
+  },
+  {
+    "image_id": 225177,
+    "caption": "The image features a yellow school bus, labeled with the number 22, parked on a city street."
+  },
+  {
+    "image_id": 225658,
+    "caption": "In this image, a man is dressed in a formal suit and tie."
+  },
+  {
+    "image_id": 226119,
+    "caption": "This image captures a lively birthday party scene, where a group of people, including adults and children, are gathered around a table laden with various cakes and desserts."
+  },
+  {
+    "image_id": 226496,
+    "caption": "The image features a yellow three-wheeled motorbike, also known as a tuk-tuk, parked on a street."
+  },
+  {
+    "image_id": 227845,
+    "caption": "The image features a close-up view of a giraffe standing in an enclosure, possibly at a zoo or wildlife sanctuary."
+  },
+  {
+    "image_id": 227901,
+    "caption": "In the image, we see two students sitting on a bench, each engrossed in their own devices."
+  },
+  {
+    "image_id": 228297,
+    "caption": "In the image, a tennis player is captured in the middle of a powerful serve."
+  },
+  {
+    "image_id": 228708,
+    "caption": "The image depicts two tennis players on a tennis court, engaged in a game of tennis."
+  },
+  {
+    "image_id": 228854,
+    "caption": "The image features a large, golden retriever dog resting comfortably on a gray couch."
+  },
+  {
+    "image_id": 229000,
+    "caption": "In the image, two women are standing in front of a microwave oven, facing the back of the appliance."
+  },
+  {
+    "image_id": 229270,
+    "caption": "In the image, a young man with short black hair is standing in front of a pile of luggage."
+  },
+  {
+    "image_id": 229740,
+    "caption": "In the image, a small, orange tabby cat is sitting on a bathroom countertop."
+  },
+  {
+    "image_id": 229765,
+    "caption": "In this image, we see a group of three men playing frisbee on a sandy beach."
+  },
+  {
+    "image_id": 229840,
+    "caption": "In this image, a white horse and a black and tan dog are standing in front of a chain-link fence, which separates them from the other side."
+  },
+  {
+    "image_id": 230432,
+    "caption": "The image captures a dynamic scene of a surfer riding a powerful ocean wave."
+  },
+  {
+    "image_id": 231088,
+    "caption": "The image displays a collection of colorful, open umbrellas hanging from a wire or string, creating a visually appealing and artistic display."
+  },
+  {
+    "image_id": 231508,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 232088,
+    "caption": "The image depicts a cozy, well-lit living room with a large, comfortable couch, a television, and a window."
+  },
+  {
+    "image_id": 232115,
+    "caption": "This image captures a delightful and elegant afternoon tea set, featuring a three-tiered stand of assorted pastries and cakes, arranged on a table."
+  },
+  {
+    "image_id": 232625,
+    "caption": "In this image, a person is performing a snowboarding trick on a rail."
+  },
+  {
+    "image_id": 232865,
+    "caption": "The image features a slice of layered cake, which is a dessert made with multiple layers of cake and cream."
+  },
+  {
+    "image_id": 232894,
+    "caption": "In this image, we see two young children, a girl and a boy, sitting at a wooden picnic table."
+  },
+  {
+    "image_id": 233298,
+    "caption": "The image features a large, white Japan Airlines (JAL) Boeing 747 airplane, which is in the process of taking off from a runway."
+  },
+  {
+    "image_id": 233840,
+    "caption": "The image features a delicious-looking pulled pork sandwich, which is served on a white paper napkin."
+  },
+  {
+    "image_id": 234169,
+    "caption": "The image displays a large, well-organized glass display case filled with an assortment of delicious-looking donuts."
+  },
+  {
+    "image_id": 234470,
+    "caption": "The image depicts a spacious, modern kitchen with a warm and inviting ambiance."
+  },
+  {
+    "image_id": 234934,
+    "caption": "The image features a delicious-looking breakfast dish, consisting of a folded omelette topped with a colorful mixture of diced vegetables, including diced potatoes, diced tomatoes, and diced onions."
+  },
+  {
+    "image_id": 235621,
+    "caption": "In this image, a person is sitting on a rocky shore, holding a surfboard."
+  },
+  {
+    "image_id": 235832,
+    "caption": "The image features a large, yellow garbage truck with a large, open back, revealing a collection of various items, including luggage, trash, and other miscellaneous debris."
+  },
+  {
+    "image_id": 235833,
+    "caption": "The image features a dirty, old, and dilapidated toilet situated in a dimly lit, dilapidated room."
+  },
+  {
+    "image_id": 236717,
+    "caption": "The image features a silver Nissan pickup truck parked on the side of a road."
+  },
+  {
+    "image_id": 236845,
+    "caption": "The image features a red and white \"No Stopping\" sign affixed to a metal pole, which is situated on a city street."
+  },
+  {
+    "image_id": 236884,
+    "caption": "In this image, a young boy with a messy hairstyle is standing on a sidewalk, holding a slice of pepperoni pizza in his hand."
+  },
+  {
+    "image_id": 239252,
+    "caption": "The image features a vintage-style, ornate bathtub faucet with a chrome finish, mounted on a white wall."
+  },
+  {
+    "image_id": 240727,
+    "caption": "In this image, we see a young child, possibly a toddler, sitting at a table in a dining room."
+  },
+  {
+    "image_id": 242679,
+    "caption": "The image shows a close-up view of a train toilet, which is situated in a train car."
+  },
+  {
+    "image_id": 243491,
+    "caption": "The image displays a collection of vintage airplanes, including a large Alaskan Airlines plane, a smaller private jet, and a military aircraft, all hanging in a spacious hangar."
+  },
+  {
+    "image_id": 244462,
+    "caption": "In the image, we see two women standing on a sandy beach, preparing for a surfing session."
+  },
+  {
+    "image_id": 245102,
+    "caption": "The image depicts a snowy tunnel entrance, with a red light indicating that the tunnel is closed."
+  },
+  {
+    "image_id": 245447,
+    "caption": "In the image, there are three women sitting at a table in a restaurant."
+  },
+  {
+    "image_id": 246105,
+    "caption": "In the image, a woman is cutting a cake in front of a backdrop of wine barrels."
+  },
+  {
+    "image_id": 246782,
+    "caption": "The image captures a dynamic scene of a soccer game taking place on a sandy beach."
+  },
+  {
+    "image_id": 247477,
+    "caption": "The image depicts a cluttered living room with a brown leather couch as the central focus."
+  },
+  {
+    "image_id": 248087,
+    "caption": "The image features a large, green bus traveling down a road."
+  },
+  {
+    "image_id": 248382,
+    "caption": "In the image, a woman is sitting on a bench in a park."
+  },
+  {
+    "image_id": 248400,
+    "caption": "In the image, a man is standing in front of an open pizza box, which is placed on a countertop."
+  },
+  {
+    "image_id": 248441,
+    "caption": "In this image, a woman is standing on a sandy beach next to a horse."
+  },
+  {
+    "image_id": 248559,
+    "caption": "In this image, we see a close-up view of a wooden desk with a laptop computer and a cell phone placed on it."
+  },
+  {
+    "image_id": 248793,
+    "caption": "The image captures a picturesque cityscape, featuring a large clock tower situated between two buildings."
+  },
+  {
+    "image_id": 248965,
+    "caption": "In the image, a young girl is standing on a sandy beach, holding a colorful, rainbow-colored kite in her hands."
+  },
+  {
+    "image_id": 249219,
+    "caption": "The image features a red, white, and purple double-decker bus, which is a type of public transportation vehicle."
+  },
+  {
+    "image_id": 249443,
+    "caption": "The image features a black metal bench placed in front of a large window with white curtains."
+  },
+  {
+    "image_id": 249623,
+    "caption": "The image features a large, black bear walking along a dirt and gravel path in a forested area."
+  },
+  {
+    "image_id": 249643,
+    "caption": "The image features a sleek, modern-looking train, possibly a high-speed or regional train, parked at a station."
+  },
+  {
+    "image_id": 250758,
+    "caption": "The image features two zebras in a natural-looking environment."
+  },
+  {
+    "image_id": 250766,
+    "caption": "The image features a plate of food, which includes a piece of grilled chicken, a salad, and a knife and fork."
+  },
+  {
+    "image_id": 250917,
+    "caption": "The image features an older couple sitting together in a restaurant booth."
+  },
+  {
+    "image_id": 250954,
+    "caption": "The image captures a lively social gathering among a group of people in a well-lit, modern room."
+  },
+  {
+    "image_id": 251075,
+    "caption": "The image depicts a well-organized and inviting bathroom with a modern and clean aesthetic."
+  },
+  {
+    "image_id": 251736,
+    "caption": "The image captures a street scene in a city, focusing on a large, eye-catching neon sign for a \"Polio & Burger\" restaurant."
+  },
+  {
+    "image_id": 252292,
+    "caption": "This image captures a bustling city street, likely in New York City, with a focus on the traffic and pedestrians."
+  },
+  {
+    "image_id": 253455,
+    "caption": "The image captures a busy airport baggage claim area, where travelers are waiting for their luggage to be unloaded from the conveyor belts."
+  },
+  {
+    "image_id": 253770,
+    "caption": "The image captures a lively scene of two young men, possibly friends or classmates, enjoying a game of \"Pokémon\" on a Nintendo Wii console."
+  },
+  {
+    "image_id": 253940,
+    "caption": "The image captures a train on a railway track, with a train car labeled \"173\" visible."
+  },
+  {
+    "image_id": 254750,
+    "caption": "This image depicts a small, compact bathroom with a minimalist design."
+  },
+  {
+    "image_id": 255470,
+    "caption": "The image displays a display case filled with an assortment of freshly glazed donuts, arranged in three separate trays."
+  },
+  {
+    "image_id": 255934,
+    "caption": "In this image, we see a large, adult elephant and a small, baby elephant standing together in an enclosure."
+  },
+  {
+    "image_id": 256031,
+    "caption": "In this image, a man is seen riding a wave on a surfboard."
+  },
+  {
+    "image_id": 256566,
+    "caption": "The image shows a sleeping baby boy lying on a white bedspread."
+  },
+  {
+    "image_id": 256916,
+    "caption": "The image displays a table with three separate, rectangular slices of pepperoni pizza arranged on it."
+  },
+  {
+    "image_id": 257870,
+    "caption": "The image features a man standing in front of a building, eating a hot dog."
+  },
+  {
+    "image_id": 258089,
+    "caption": "The image features a young man standing outdoors in a sunny, park-like setting."
+  },
+  {
+    "image_id": 258529,
+    "caption": "The image depicts a serene, peaceful setting in a lush, green forest."
+  },
+  {
+    "image_id": 259983,
+    "caption": "The image shows a white, two-drawer gas stove with a large, open oven door."
+  },
+  {
+    "image_id": 259986,
+    "caption": "The image displays a collection of old, well-preserved stuffed animals and dolls, which are displayed in a glass case."
+  },
+  {
+    "image_id": 260182,
+    "caption": "The image captures a city street scene, viewed through a window with a grid pattern."
+  },
+  {
+    "image_id": 260307,
+    "caption": "The image captures a city street corner, with a focus on a traffic light pole and its surrounding environment."
+  },
+  {
+    "image_id": 260925,
+    "caption": "In this image, a black and white cat is lying on the hood of a parked car."
+  },
+  {
+    "image_id": 261426,
+    "caption": "The image features a delicious-looking sandwich, cut into two halves, with a variety of ingredients including chicken, lettuce, tomatoes, and cheese."
+  },
+  {
+    "image_id": 261558,
+    "caption": "In the image, a man is leaning into an open refrigerator, looking inside."
+  },
+  {
+    "image_id": 261732,
+    "caption": "In this image, we see a tennis player in the middle of a serve."
+  },
+  {
+    "image_id": 261757,
+    "caption": "The image features a freshly baked pizza sitting on a wooden pizza board, which is placed on a metal counter."
+  },
+  {
+    "image_id": 261779,
+    "caption": "In this image, a woman is posing in a vintage style, sitting on top of a vintage trunk."
+  },
+  {
+    "image_id": 261982,
+    "caption": "In this image, a person is captured in the middle of performing a skateboard trick."
+  },
+  {
+    "image_id": 262014,
+    "caption": "The image features a fluffy, long-haired cat standing on a windowsill, looking out at a view of a garden and trees."
+  },
+  {
+    "image_id": 262054,
+    "caption": "This image depicts a cozy, well-organized kitchen with a warm, inviting atmosphere."
+  },
+  {
+    "image_id": 262284,
+    "caption": "The image features a modern, clean-looking shower enclosure with a glass door."
+  },
+  {
+    "image_id": 262404,
+    "caption": "The image captures a lively scene of a birthday party, where a group of children are gathered around a table, eagerly anticipating and enjoying a large, green-frosted cake."
+  },
+  {
+    "image_id": 262758,
+    "caption": "In this image, we see a close-up of an orange tabby cat with striking green eyes, lying comfortably on a white sheet of tissue paper."
+  },
+  {
+    "image_id": 264769,
+    "caption": "The image features a person engaged in a craft project, possibly sewing or making a decorative item."
+  },
+  {
+    "image_id": 265707,
+    "caption": "In this image, a curious orange tabby cat is sitting on a wooden desk, facing a computer monitor."
+  },
+  {
+    "image_id": 265816,
+    "caption": "In this image, we see a traditional horse-drawn carriage, also known as a \"carru,\" being pulled by a white horse."
+  },
+  {
+    "image_id": 266041,
+    "caption": "The image features a young man with tattoos on his arms, holding a basketball above his head."
+  },
+  {
+    "image_id": 266951,
+    "caption": "The image displays two hot dogs, each with a different topping, placed on separate red trays."
+  },
+  {
+    "image_id": 267537,
+    "caption": "The image is a black and white photograph of a group of women sitting on a stadium or sports field's bleachers."
+  },
+  {
+    "image_id": 268215,
+    "caption": "The image displays a well-presented plate of food, featuring a main dish of chicken, mixed with vegetables, and a garnishing of butter and lemon."
+  },
+  {
+    "image_id": 268394,
+    "caption": "The image features a creatively designed cake shaped like a red pickup truck, complete with a detailed front bumper, windshield, and side windows."
+  },
+  {
+    "image_id": 268856,
+    "caption": "The image captures a cozy, well-lit living room where two men are engaged in a game of tennis on a television set."
+  },
+  {
+    "image_id": 269975,
+    "caption": "The image captures a bustling city street scene, where a mix of vehicles, including red double-decker buses and cars, are navigating the road."
+  },
+  {
+    "image_id": 271143,
+    "caption": "This image is a black and white photograph capturing a candid, intimate moment between two women in a bedroom."
+  },
+  {
+    "image_id": 271230,
+    "caption": "The image captures a lively scene of a parade or festival taking place on a river, with a large, brown teddy bear statue being carried by a crowd of people."
+  },
+  {
+    "image_id": 271402,
+    "caption": "In the image, two young girls are standing on a tennis court, posing for a photo."
+  },
+  {
+    "image_id": 271795,
+    "caption": "The image depicts a cluttered office cubicle, which is filled with various items and decorations."
+  },
+  {
+    "image_id": 272566,
+    "caption": "The image depicts a lively outdoor market scene, where a man is sitting on the ground next to a large pile of bananas."
+  },
+  {
+    "image_id": 274291,
+    "caption": "In the image, a person is standing in front of a bathroom stall, with their feet on the floor."
+  },
+  {
+    "image_id": 274800,
+    "caption": "In the image, a small, fluffy cat is lying on the floor, partially inside an open suitcase."
+  },
+  {
+    "image_id": 275034,
+    "caption": "The image captures a young female skier in action, leaning into a sharp turn on a snowy slope."
+  },
+  {
+    "image_id": 276149,
+    "caption": "The image captures a lively scene at a ski resort, where people are enjoying the snowy slopes."
+  },
+  {
+    "image_id": 276528,
+    "caption": "The image depicts a cozy and inviting bedroom with a neatly made bed, a decorative mirror, and a window with a floral curtain."
+  },
+  {
+    "image_id": 277227,
+    "caption": "The image features three boats docked in a canal or waterway, with a backdrop of industrial buildings."
+  },
+  {
+    "image_id": 278627,
+    "caption": "The image is a collage of six pictures, each capturing a different aspect of a dining experience."
+  },
+  {
+    "image_id": 279145,
+    "caption": "The image captures a serene, lush garden scene, featuring a wooden bench with a blue metal frame."
+  },
+  {
+    "image_id": 279524,
+    "caption": "The image depicts a cozy and inviting living room, featuring a brown couch with colorful throw pillows, a small brown coffee table, and a television set on a stand."
+  },
+  {
+    "image_id": 280007,
+    "caption": "The image features a tall, white clock tower with a clock face on its side."
+  },
+  {
+    "image_id": 281028,
+    "caption": "The image shows the interior of a train car, featuring a row of empty seats."
+  },
+  {
+    "image_id": 281111,
+    "caption": "The image features a man, likely a chef or baker, standing in front of a large, traditional brick oven."
+  },
+  {
+    "image_id": 281163,
+    "caption": "The image features a soda can, a red ketchup bottle, and a hot dog."
+  },
+  {
+    "image_id": 281725,
+    "caption": "The image captures a lively scene at a ski resort, where a group of people are enjoying their time on the snowy slopes."
+  },
+  {
+    "image_id": 282231,
+    "caption": "The image features a young man with dark hair, dressed in a black t-shirt, holding a tennis racket."
+  },
+  {
+    "image_id": 282698,
+    "caption": "The image features a man with a bald head and glasses, standing in front of a house."
+  },
+  {
+    "image_id": 283168,
+    "caption": "The image features a sandwich, possibly a pulled pork sandwich, placed on a grassy lawn."
+  },
+  {
+    "image_id": 283785,
+    "caption": "The image features a man dressed in a yellow bear costume, standing in front of a group of children who are gathered in a library."
+  },
+  {
+    "image_id": 284421,
+    "caption": "In this image, a young man is captured mid-air, performing a skateboard trick."
+  },
+  {
+    "image_id": 284641,
+    "caption": "In this image, a small, fluffy, white dog is lying on a white bedspread."
+  },
+  {
+    "image_id": 285929,
+    "caption": "The image captures a serene and natural scene in a lush, green forest."
+  },
+  {
+    "image_id": 285961,
+    "caption": "The image features a close-up view of a giraffe's head and neck, set against a backdrop of green trees."
+  },
+  {
+    "image_id": 286146,
+    "caption": "The image shows a birthday cake placed on a table, surrounded by various decorations and food items."
+  },
+  {
+    "image_id": 287328,
+    "caption": "The image features two dogs, one black and white, and the other white, lying on a bed."
+  },
+  {
+    "image_id": 287527,
+    "caption": "The image features a close-up portrait of a woman and a man, both smiling and posing for the camera."
+  },
+  {
+    "image_id": 288399,
+    "caption": "The image captures a dynamic moment of a brown dog in mid-air, leaping towards the sky."
+  },
+  {
+    "image_id": 288765,
+    "caption": "The image shows a close-up of a person's hand holding a hamburger."
+  },
+  {
+    "image_id": 289618,
+    "caption": "The image captures a lively scene of several dogs frolicking in a snowy yard."
+  },
+  {
+    "image_id": 289702,
+    "caption": "The image features a black and white pitbull terrier sitting on a cluttered floor, looking at a mirror."
+  },
+  {
+    "image_id": 290248,
+    "caption": "The image captures a bustling outdoor market, likely in a European city, with a large, ornate structure serving as the central attraction."
+  },
+  {
+    "image_id": 291305,
+    "caption": "The image captures a lively street parade, where a group of people are riding in horse-drawn carriages."
+  },
+  {
+    "image_id": 292232,
+    "caption": "The image features a black cat comfortably nestled inside a large, open suitcase."
+  },
+  {
+    "image_id": 292480,
+    "caption": "The image features a small, appetizing tray of chocolate-covered donuts, arranged neatly on a table."
+  },
+  {
+    "image_id": 292663,
+    "caption": "The image features a white and red city bus, which is parked on a street."
+  },
+  {
+    "image_id": 293218,
+    "caption": "The image features a large, gray military transport aircraft, possibly a C-130 or similar model, flying low over a scenic landscape."
+  },
+  {
+    "image_id": 293452,
+    "caption": "The image features three small, brownish-gray shorebirds, also known as sandlarks or plovers, standing on a sandy beach."
+  },
+  {
+    "image_id": 294992,
+    "caption": "The image depicts a cozy and inviting bedroom with a unique touch of artistry."
+  },
+  {
+    "image_id": 295059,
+    "caption": "This image features a collection of stuffed ted bears, all dressed in festive attire, arranged on a table in front of a decorated Christmas tree."
+  },
+  {
+    "image_id": 295270,
+    "caption": "The image features a white, ornate bench situated in a lush, green garden."
+  },
+  {
+    "image_id": 295491,
+    "caption": "The image depicts a festive military gathering, where a group of soldiers are enjoying a meal at a buffet table."
+  },
+  {
+    "image_id": 295797,
+    "caption": "The image features a tall, ornate clock tower with a domed roof, set against a clear blue sky."
+  },
+  {
+    "image_id": 296014,
+    "caption": "In this image, we see three people enjoying a thrilling adventure on a green inflatable raft, navigating through a river with rapids."
+  },
+  {
+    "image_id": 296745,
+    "caption": "The image captures a lively scene at a temple or a sacred place of worship, where a large, majestic black elephant is being fed by a group of tourists."
+  },
+  {
+    "image_id": 296825,
+    "caption": "The image features a yellow and red vintage Volkswagen bus, which has been creatively modified to resemble a toy truck from the \"Teenage Mutant Ninja Turtles\" franchise."
+  },
+  {
+    "image_id": 297349,
+    "caption": "The image captures a lively scene at a small outdoor area, possibly a dock or a roadside stop, where a group of people are gathered."
+  },
+  {
+    "image_id": 297442,
+    "caption": "The image captures a close-up view of a person's feet, clad in blue Vans sneakers, standing on a skateboard deck."
+  },
+  {
+    "image_id": 298461,
+    "caption": "The image depicts a spacious, well-organized kitchen with a wooden cabinetry design."
+  },
+  {
+    "image_id": 300644,
+    "caption": "The image shows a blue and white package of ramen noodles, with a pair of scissors placed on the counter next to it."
+  },
+  {
+    "image_id": 301746,
+    "caption": "The image captures a nighttime scene on a city street, where two people are riding their bicycles."
+  },
+  {
+    "image_id": 302242,
+    "caption": "The image features a red stop sign, which is a standard traffic sign, but it has been altered by graffiti."
+  },
+  {
+    "image_id": 302710,
+    "caption": "The image features two police motorcycles parked side-by-side on a city street."
+  },
+  {
+    "image_id": 302787,
+    "caption": "This image captures a bustling city street, likely in London, with a red double-decker bus in the middle of the frame."
+  },
+  {
+    "image_id": 302789,
+    "caption": "The image depicts a small, cluttered room that appears to be a bedroom or a bedroom and kitchen combination."
+  },
+  {
+    "image_id": 303652,
+    "caption": "The image features a plate of food, which includes a sandwich or wrap, a slice of cake, and a small cup of coffee."
+  },
+  {
+    "image_id": 304341,
+    "caption": "The image depicts a quaint, old-fashioned train station with a white building, featuring a large clock mounted on the wall."
+  },
+  {
+    "image_id": 304389,
+    "caption": "The image depicts a small, cozy bathroom with a minimalist design."
+  },
+  {
+    "image_id": 305050,
+    "caption": "The image captures a person riding a horse through a rugged, rocky landscape."
+  },
+  {
+    "image_id": 306303,
+    "caption": "The image captures a cityscape with a focus on a traffic light pole and its attached traffic lights."
+  },
+  {
+    "image_id": 306749,
+    "caption": "In the image, a large, gray teddy bear statue is prominently displayed on a grassy field."
+  },
+  {
+    "image_id": 307265,
+    "caption": "In the image, a brown dog with floppy ears is standing in front of a water fountain."
+  },
+  {
+    "image_id": 308160,
+    "caption": "The image captures a lively scene on a tennis court, where four young girls are standing together, preparing to play a game of tennis."
+  },
+  {
+    "image_id": 309484,
+    "caption": "In the image, a large, brown and black dog is lying on a bed or a couch, with its mouth open."
+  },
+  {
+    "image_id": 309836,
+    "caption": "The image captures a dramatic scene of a rocket launch."
+  },
+  {
+    "image_id": 309958,
+    "caption": "The image features a basket filled with an assortment of purple and white flowers, possibly including lavender or anemone, arranged in a natural and artistic manner."
+  },
+  {
+    "image_id": 310342,
+    "caption": "The image features a large, majestic adult elephant standing in the middle of a grassy field."
+  },
+  {
+    "image_id": 310445,
+    "caption": "The image features three people sitting at a small, wooden table in a casual diner or restaurant."
+  },
+  {
+    "image_id": 310622,
+    "caption": "The image captures a city street corner, where a blue street signpost displays the names of two intersecting streets: Broadway and West Korea Way."
+  },
+  {
+    "image_id": 311883,
+    "caption": "The image features a yellow Union Pacific locomotive, numbered 6591, pulling a long train of freight cars across a railroad crossing."
+  },
+  {
+    "image_id": 312051,
+    "caption": "In this image, we see a large, majestic elephant standing in a circus arena."
+  },
+  {
+    "image_id": 312890,
+    "caption": "The image features two zebras standing in a grassy field, facing away from the camera."
+  },
+  {
+    "image_id": 313214,
+    "caption": "The image captures a lively beach scene where numerous people are enjoying the outdoors, flying colorful kites in the sky."
+  },
+  {
+    "image_id": 314865,
+    "caption": "The image depicts a room that is currently under renovation or painting."
+  },
+  {
+    "image_id": 315467,
+    "caption": "The image captures a cozy indoor scene, featuring a black and white cat standing on a polished wooden floor."
+  },
+  {
+    "image_id": 315660,
+    "caption": "The image captures a dynamic moment during a tennis match."
+  },
+  {
+    "image_id": 315846,
+    "caption": "The image features a green street signpost mounted on a metal pole, positioned in front of a large, multi-story building."
+  },
+  {
+    "image_id": 315976,
+    "caption": "The image features a red double-decker bus, which is a popular type of public transportation in the United Kingdom."
+  },
+  {
+    "image_id": 316708,
+    "caption": "This image displays a cluttered but functional workspace, featuring a wooden desk with multiple computer devices and accessories."
+  },
+  {
+    "image_id": 317330,
+    "caption": "The image is a black and white photograph of an older gentleman sitting in front of a wooden wall."
+  },
+  {
+    "image_id": 318550,
+    "caption": "This image captures a bustling cityscape, with a focus on a train station and a nearby train yard."
+  },
+  {
+    "image_id": 319127,
+    "caption": "The image captures a serene winter scene in a park, where the trees are covered in a thick layer of snow."
+  },
+  {
+    "image_id": 319487,
+    "caption": "In the image, a person wearing a full set of protective gear, including a helmet, gloves, and boots, is sitting on the ground next to a red motorcycle."
+  },
+  {
+    "image_id": 319607,
+    "caption": "The image captures a city street scene, focusing on a red traffic light that is currently signaling a red signal for vehicles."
+  },
+  {
+    "image_id": 319677,
+    "caption": "The image features a woman dressed as a schoolgirl, holding a sword in her right hand."
+  },
+  {
+    "image_id": 320180,
+    "caption": "In this image, a woman is sitting on a couch or bed, with her legs stretched out and her arms resting on the couch."
+  },
+  {
+    "image_id": 320715,
+    "caption": "In the image, a young female softball player is captured in the middle of a powerful swing."
+  },
+  {
+    "image_id": 322177,
+    "caption": "In the image, a man is lying on his back on a snowy hill, enjoying his time on a snowboard."
+  },
+  {
+    "image_id": 322968,
+    "caption": "The image features a tall, ornate clock tower, which is the focal point of the scene."
+  },
+  {
+    "image_id": 323231,
+    "caption": "The image captures a snowy mountain landscape, where two people are engaged in skiing activities."
+  },
+  {
+    "image_id": 324308,
+    "caption": "The image features a large bunch of green, unripe bananas hanging from a wooden pole."
+  },
+  {
+    "image_id": 324845,
+    "caption": "The image displays a plate of two open sandwiches, which are likely chicken sandwiches, served on a white plate."
+  },
+  {
+    "image_id": 326256,
+    "caption": "The image depicts a small, modern bathroom with a cityscape theme."
+  },
+  {
+    "image_id": 326938,
+    "caption": "In the image, a man is standing next to a large, open grill, which is currently cooking sausages."
+  },
+  {
+    "image_id": 327917,
+    "caption": "The image captures a vibrant and dynamic scene of people engaging in water sports on a sunny day."
+  },
+  {
+    "image_id": 328462,
+    "caption": "The image depicts a domestic kitchen scene with two individuals, a woman and an older man, engaged in various activities."
+  },
+  {
+    "image_id": 328785,
+    "caption": "The image features a man standing in front of a red stop sign, which is a common traffic sign used to indicate a stop or caution for drivers."
+  },
+  {
+    "image_id": 329957,
+    "caption": "The image captures a cheerful moment in a kitchen, where two women are standing together, smiling at the camera."
+  },
+  {
+    "image_id": 330478,
+    "caption": "In this image, a woman is standing on a train platform, waiting for her train."
+  },
+  {
+    "image_id": 330507,
+    "caption": "In this image, a bride and groom are standing in front of a cake, preparing to cut it."
+  },
+  {
+    "image_id": 332300,
+    "caption": "The image features a large, ornate clock face set on the side of a stone building."
+  },
+  {
+    "image_id": 332987,
+    "caption": "The image captures a dynamic scene of a skateboarder in motion, captured from a low angle, emphasizing the speed and motion of the skateboarder."
+  },
+  {
+    "image_id": 333406,
+    "caption": "In this image, we see a woman with short, light brown hair and a warm smile, holding a large, fluffy cat in her arms."
+  },
+  {
+    "image_id": 333845,
+    "caption": "The image features a basket filled with a variety of fruits, including bananas, apples, and pears."
+  },
+  {
+    "image_id": 336102,
+    "caption": "The image features a creatively designed pizza shaped like a cartoon character, specifically a Mickey Mouse, sitting inside a white cardboard pizza box."
+  },
+  {
+    "image_id": 337275,
+    "caption": "In this image, a person is sitting on a couch, holding an apple in their hand."
+  },
+  {
+    "image_id": 339344,
+    "caption": "The image features a yellow and orange city bus parked on the side of a street, with its back facing the camera."
+  },
+  {
+    "image_id": 340278,
+    "caption": "The image captures a romantic and intimate moment between a couple, standing in the middle of a crowded city street."
+  },
+  {
+    "image_id": 340420,
+    "caption": "The image displays two freshly baked pizzas sitting on top of a white stove."
+  },
+  {
+    "image_id": 340637,
+    "caption": "In this image, a pink knitted hat with a pom-pom on top is placed on top of a silver cell phone."
+  },
+  {
+    "image_id": 340811,
+    "caption": "The image features a white plate with three deliciously prepared sandwiches, each cut into two halves."
+  },
+  {
+    "image_id": 341676,
+    "caption": "The image features three silver microwave ovens lined up on a white countertop."
+  },
+  {
+    "image_id": 342770,
+    "caption": "In this image, a man is standing next to a blue pickup truck parked on a dirt road."
+  },
+  {
+    "image_id": 343229,
+    "caption": "The image shows a cluttered room with various items, including a red backpack, a black backpack, and a large cardboard box leaning against a fireplace."
+  },
+  {
+    "image_id": 343455,
+    "caption": "The image features a close-up view of a delicious-looking pizza, with two slices of pizza placed on a purple plate."
+  },
+  {
+    "image_id": 347170,
+    "caption": "In this image, a young man is captured in the middle of a skateboard trick, skillfully maneuvering his skateboard over a rail."
+  },
+  {
+    "image_id": 347233,
+    "caption": "The image features a vintage, white electric stove with four burners."
+  },
+  {
+    "image_id": 347390,
+    "caption": "The image depicts a classroom or a study room with a modern and organized setup."
+  },
+  {
+    "image_id": 347688,
+    "caption": "The image captures a dynamic moment of a tennis player, Stefan Kozlov, in the middle of a serve."
+  },
+  {
+    "image_id": 348379,
+    "caption": "The image captures a group of people standing together on a set of stairs, holding up signs that read \"STAND TOGETHER STOP FORECLOSURES."
+  },
+  {
+    "image_id": 348791,
+    "caption": "The image captures a candid moment of two women at a party or gathering, enjoying themselves."
+  },
+  {
+    "image_id": 351369,
+    "caption": "The image features a large, white, Emirates Airlines Airbus A380 jetliner on a runway, preparing for takeoff."
+  },
+  {
+    "image_id": 351823,
+    "caption": "The image captures a young male tennis player standing on a tennis court, preparing to serve or return a ball."
+  },
+  {
+    "image_id": 353149,
+    "caption": "In the image, a white and brown tabby cat is sitting on a wooden bench."
+  },
+  {
+    "image_id": 355124,
+    "caption": "The image shows a black hair dryer placed on a wooden chair."
+  },
+  {
+    "image_id": 356351,
+    "caption": "The image depicts a dilapidated and neglected bathroom, likely in a dilapidated or abandoned building."
+  },
+  {
+    "image_id": 356612,
+    "caption": "The image captures a busy street scene with a group of black cows crossing the road."
+  },
+  {
+    "image_id": 356622,
+    "caption": "The image captures a lively scene of three men enjoying a day on a makeshift raft or floatie, floating on a body of water."
+  },
+  {
+    "image_id": 356725,
+    "caption": "The image displays three white urinals mounted on a wall, likely in a public restroom."
+  },
+  {
+    "image_id": 356740,
+    "caption": "The image features a silver laptop computer sitting on a black desk, with its screen open and displaying a vibrant, blue and white wallpaper."
+  },
+  {
+    "image_id": 356742,
+    "caption": "The image displays a tall, black-and-white stack of books, arranged in a vertical manner."
+  },
+  {
+    "image_id": 357041,
+    "caption": "The image features a small, blue and orange bird perched on a thin, bare branch of a tree."
+  },
+  {
+    "image_id": 357402,
+    "caption": "The image captures a dynamic moment of a female tennis player in action."
+  },
+  {
+    "image_id": 357542,
+    "caption": "In this image, a man is sitting on the ground next to a snow-covered car, embracing a large husky dog."
+  },
+  {
+    "image_id": 357814,
+    "caption": "In this image, a woman is holding a young child, who is wearing a red jacket with white polka dots."
+  },
+  {
+    "image_id": 358901,
+    "caption": "The image shows a large, white garbage truck with a red back end, parked on a residential street."
+  },
+  {
+    "image_id": 359626,
+    "caption": "The image features a red, octagonal stop sign, commonly known as a stop sign, placed on a metal pole."
+  },
+  {
+    "image_id": 360128,
+    "caption": "In this image, a black dog is captured in motion, running across a gravel path."
+  },
+  {
+    "image_id": 360170,
+    "caption": "The image captures a lively and social scene inside a restaurant, where a group of people is gathered around a large, round dining table."
+  },
+  {
+    "image_id": 360610,
+    "caption": "The image captures a lively beach scene, where two people are enjoying the sun and sand."
+  },
+  {
+    "image_id": 360876,
+    "caption": "The image captures a moment between two tennis players, who are standing on opposite sides of a tennis court, near the net."
+  },
+  {
+    "image_id": 361400,
+    "caption": "The image captures a nighttime street scene, with a focus on a traffic light."
+  },
+  {
+    "image_id": 361819,
+    "caption": "The image captures a dynamic scene of two female cross-country skiers racing down a snowy slope."
+  },
+  {
+    "image_id": 365214,
+    "caption": "The image shows a close-up view of a black metal bench or step, situated on a wet sidewalk."
+  },
+  {
+    "image_id": 365735,
+    "caption": "In this image, we see a male tennis player standing on a blue tennis court, preparing to serve the ball."
+  },
+  {
+    "image_id": 366367,
+    "caption": "In the image, a young girl is standing in front of a display of various mobile phones and gadgets."
+  },
+  {
+    "image_id": 366782,
+    "caption": "The image captures a serene scene of a city skyline, with a large, white passenger boat cruising through the water."
+  },
+  {
+    "image_id": 370266,
+    "caption": "The image features a serene rural landscape with a group of sheep grazing on a lush green pasture."
+  },
+  {
+    "image_id": 371822,
+    "caption": "The image shows a table with several open pizza boxes, one of which has a pizza inside."
+  },
+  {
+    "image_id": 371890,
+    "caption": "In this image, a white and black cat is lying on the ground, enjoying the outdoors."
+  },
+  {
+    "image_id": 372654,
+    "caption": "The image captures a lively scene of a large group of people enjoying a meal together at a dining table."
+  },
+  {
+    "image_id": 374505,
+    "caption": "The image is a close-up, stylized photograph of a person's face, with a pair of scissors cutting through the middle of the image."
+  },
+  {
+    "image_id": 374990,
+    "caption": "In the image, a woman is standing in a doorway, holding a small dog in her arms."
+  },
+  {
+    "image_id": 375409,
+    "caption": "The image features a large, blue and silver Amtrak train parked at a train station."
+  },
+  {
+    "image_id": 375530,
+    "caption": "The image features a large, white horse with a red harness, standing in front of a large, red brick building."
+  },
+  {
+    "image_id": 375566,
+    "caption": "In the image, a woman is walking down a street, holding an umbrella."
+  },
+  {
+    "image_id": 376336,
+    "caption": "The image features a young, brown tabby cat with striking eyes, sitting on a wooden floor."
+  },
+  {
+    "image_id": 376469,
+    "caption": "The image features a glass of beer, likely a Brooklyn Brewery IPA, sitting on a table."
+  },
+  {
+    "image_id": 376767,
+    "caption": "The image features a large, ornate clock tower situated on the side of a building."
+  },
+  {
+    "image_id": 376939,
+    "caption": "In the image, a young boy is learning to surf on a white surfboard, standing in the ocean waves."
+  },
+  {
+    "image_id": 378244,
+    "caption": "The image captures a dynamic scene of a skier in action, skillfully navigating a snowy slope."
+  },
+  {
+    "image_id": 378334,
+    "caption": "The image is a vintage, black-and-white photograph of two young men, likely brothers, posing for a portrait."
+  },
+  {
+    "image_id": 378502,
+    "caption": "The image captures a person riding a motorcycle down a city street."
+  },
+  {
+    "image_id": 379475,
+    "caption": "The image displays a cluttered desk with two laptops, a mouse, and various items scattered around."
+  },
+  {
+    "image_id": 379869,
+    "caption": "In this image, we see two gray cats sitting on a wooden bench or ledge, enjoying a meal of food."
+  },
+  {
+    "image_id": 380101,
+    "caption": "The image features a person standing on a rooftop or balcony, holding an open umbrella."
+  },
+  {
+    "image_id": 380142,
+    "caption": "The image features two young horses, a mother and her foal, in a lush green meadow."
+  },
+  {
+    "image_id": 381895,
+    "caption": "The image features a woman with long, wavy, light brown hair and a fair complexion."
+  },
+  {
+    "image_id": 382207,
+    "caption": "The image displays a dining table set with a variety of appetizers and dishes, including a salad, a plate of bread, and a bottle of olive oil."
+  },
+  {
+    "image_id": 382211,
+    "caption": "The image features a majestic giraffe standing in a fenced-in enclosure."
+  },
+  {
+    "image_id": 382214,
+    "caption": "The image features a single seagull standing on a wooden railing, which is situated in a bustling harbor or marina."
+  },
+  {
+    "image_id": 382737,
+    "caption": "In this image, a woman is seen lying down on a chair, cuddling with a cat."
+  },
+  {
+    "image_id": 383282,
+    "caption": "The image features a large, majestic giraffe standing next to two zebras in a spacious, natural-looking enclosure."
+  },
+  {
+    "image_id": 383494,
+    "caption": "In this image, a small, fluffy, domestic cat is sitting on top of a large, plush teddy bear."
+  },
+  {
+    "image_id": 383842,
+    "caption": "In the image, a woman is standing in front of a computer setup, holding a white game controller in her hand."
+  },
+  {
+    "image_id": 383950,
+    "caption": "The image features a green street sign with white lettering that reads \"Flaming Lips Alley\" and the number \"100\" below it."
+  },
+  {
+    "image_id": 384038,
+    "caption": "The image features a young boy standing in front of a large, vintage steam locomotive, which is a black and red train engine."
+  },
+  {
+    "image_id": 386089,
+    "caption": "In the image, we see a man standing outside a building, holding a cell phone to his ear."
+  },
+  {
+    "image_id": 386332,
+    "caption": "The image features a woman with short blonde hair, dressed in a blue shirt, standing in front of a table laden with several pizza boxes."
+  },
+  {
+    "image_id": 386819,
+    "caption": "The image features a large, octagonal-shaped clock tower situated on a rocky shoreline next to a body of water."
+  },
+  {
+    "image_id": 386912,
+    "caption": "The image features a woman sitting at a desk in front of a computer monitor."
+  },
+  {
+    "image_id": 387515,
+    "caption": "The image features a vintage, blue and cream-colored trolleybus, also known as a tram, on a city street."
+  },
+  {
+    "image_id": 388453,
+    "caption": "The image captures a lively social gathering in a grand ballroom or hall, where a group of people are mingling and engaging in conversation."
+  },
+  {
+    "image_id": 389445,
+    "caption": "The image displays a well-organized bathroom space, featuring a sink, a mirror, and a wall-mounted rack."
+  },
+  {
+    "image_id": 389811,
+    "caption": "The image features a street signpost situated in an urban environment."
+  },
+  {
+    "image_id": 389957,
+    "caption": "The image features a small, brown bird perched on a thin, brown branch."
+  },
+  {
+    "image_id": 390463,
+    "caption": "The image displays a collection of cupcakes, each with a unique color and design."
+  },
+  {
+    "image_id": 390826,
+    "caption": "In the image, a person is standing in a grassy field, holding a bottle of water or milk for a baby panda."
+  },
+  {
+    "image_id": 391255,
+    "caption": "In the image, a bride and groom are standing in front of a yellow cake, which is decorated with black and white illustrations."
+  },
+  {
+    "image_id": 393971,
+    "caption": "The image shows a cat sitting in front of a laptop computer, with its face partially visible on the screen."
+  },
+  {
+    "image_id": 394199,
+    "caption": "The image features a woman standing next to a red motorcycle in a grassy field."
+  },
+  {
+    "image_id": 394478,
+    "caption": "The image features a green laptop computer sitting on a table, with a cat sitting on top of it."
+  },
+  {
+    "image_id": 395230,
+    "caption": "The image captures a small, white, vintage car parked on the side of a street."
+  },
+  {
+    "image_id": 395324,
+    "caption": "The image features a vintage, blue-colored motorcycle parked on a sidewalk."
+  },
+  {
+    "image_id": 395575,
+    "caption": "The image features a serene outdoor scene, with a white bench placed in the center of a tranquil garden."
+  },
+  {
+    "image_id": 396727,
+    "caption": "The image features an orange, large-sized coach bus parked on a city street."
+  },
+  {
+    "image_id": 397063,
+    "caption": "In this image, a person's hand is holding a raw, uncooked meat ring, which appears to be a type of meat product, possibly a donut or a meat ring."
+  },
+  {
+    "image_id": 397101,
+    "caption": "In this image, a female tennis player is captured in the middle of a serve."
+  },
+  {
+    "image_id": 397291,
+    "caption": "The image displays a collection of small, colorful toy figures and stuffed animals arranged on a carpet."
+  },
+  {
+    "image_id": 397658,
+    "caption": "The image is a black and white photograph of a woman standing on a city street, engaged in a phone conversation."
+  },
+  {
+    "image_id": 398066,
+    "caption": "The image captures a dynamic moment during a baseball game, featuring a young man in the middle of a swing."
+  },
+  {
+    "image_id": 398158,
+    "caption": "The image captures a man in the process of unpacking a new television from its packaging."
+  },
+  {
+    "image_id": 398554,
+    "caption": "The image depicts a modern, well-organized bathroom with a focus on the sink and countertop area."
+  },
+  {
+    "image_id": 399966,
+    "caption": "The image features a large, vintage military aircraft, likely a Soviet-era bomber, parked on a snowy ground."
+  },
+  {
+    "image_id": 399968,
+    "caption": "In the image, a male tennis player is captured in the middle of a powerful swing, his body twisted in a dynamic pose as he prepares to hit the ball."
+  },
+  {
+    "image_id": 400247,
+    "caption": "In this image, a police officer is riding a white motorcycle down a street, likely during a parade or festival."
+  },
+  {
+    "image_id": 401384,
+    "caption": "The image features a tall, black metal pole with multiple colorful signs attached to it."
+  },
+  {
+    "image_id": 402357,
+    "caption": "The image features a young, gray elephant standing in an enclosure."
+  },
+  {
+    "image_id": 402903,
+    "caption": "The image features a close-up view of a window on a yellow and white truck."
+  },
+  {
+    "image_id": 402926,
+    "caption": "The image features a young giraffe running across a dry, grassy field."
+  },
+  {
+    "image_id": 403096,
+    "caption": "The image features a bunch of ripe, yellow bananas hanging from a wooden stick or pole."
+  },
+  {
+    "image_id": 403333,
+    "caption": "The image features a dessert plate with a rich, dark chocolate brownie or cake, topped with a scoop of vanilla ice cream."
+  },
+  {
+    "image_id": 404349,
+    "caption": "In this image, a fluffy, orange tabby cat is curled up and sleeping inside a blue laundry basket."
+  },
+  {
+    "image_id": 404462,
+    "caption": "The image is a black and white photograph, likely a film strip or a photo from a vintage camera, as indicated by the \"Kodak\" branding and the \"320T\" or \"320XP\" label."
+  },
+  {
+    "image_id": 405222,
+    "caption": "The image is a black and white photograph capturing a group of soldiers on horseback, riding in a line through a grassy field."
+  },
+  {
+    "image_id": 405444,
+    "caption": "The image features a young girl with brown hair, wearing a red shirt, sitting at a table."
+  },
+  {
+    "image_id": 406152,
+    "caption": "The image captures a rainy city street scene, where three people are walking through the rain."
+  },
+  {
+    "image_id": 407644,
+    "caption": "The image captures a lively scene on a snowy mountain slope."
+  },
+  {
+    "image_id": 408746,
+    "caption": "The image captures a dynamic scene of two surfers riding waves in the ocean."
+  },
+  {
+    "image_id": 408873,
+    "caption": "The image depicts a group of elephants in an enclosure, possibly at a zoo or wildlife sanctuary."
+  },
+  {
+    "image_id": 409491,
+    "caption": "The image captures a lively scene in a park, where a group of people are engaged in kite-flying activities."
+  },
+  {
+    "image_id": 409566,
+    "caption": "The image depicts a small, compact bathroom with a white bathtub, a white toilet, and a white sink."
+  },
+  {
+    "image_id": 409867,
+    "caption": "The image captures a cozy, intimate scene inside a dimly lit room, with a focus on a windowpane."
+  },
+  {
+    "image_id": 409944,
+    "caption": "The image features a large, framed poster of a tennis player, who appears to be in a state of intense emotion, possibly celebrating a victory or expressing frustration."
+  },
+  {
+    "image_id": 410068,
+    "caption": "In this image, a woman is crossing a street while holding a green and yellow umbrella."
+  },
+  {
+    "image_id": 410339,
+    "caption": "In this image, a woman is descending a set of stairs, which are located in a narrow alleyway."
+  },
+  {
+    "image_id": 411642,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 411938,
+    "caption": "The image captures a lively street scene where a group of people are enjoying a day out on their bicycles."
+  },
+  {
+    "image_id": 411941,
+    "caption": "The image displays a small, compact kitchen with a modern design."
+  },
+  {
+    "image_id": 411968,
+    "caption": "The image depicts a well-organized and clean bathroom, likely part of a hotel or resort."
+  },
+  {
+    "image_id": 412887,
+    "caption": "The image features a close-up of a cow's face, which is the main focus."
+  },
+  {
+    "image_id": 413538,
+    "caption": "In this image, we see a lively outdoor scene at a park or a grassy field."
+  },
+  {
+    "image_id": 414133,
+    "caption": "The image features a red, octagonal stop sign with the word \"WHA\" written on it, placed on a concrete pole in a parking lot."
+  },
+  {
+    "image_id": 415538,
+    "caption": "In this image, a person is sitting on a chair, wearing a stylish outfit."
+  },
+  {
+    "image_id": 415646,
+    "caption": "The image depicts a cozy, small bedroom with a unique architectural feature."
+  },
+  {
+    "image_id": 415770,
+    "caption": "The image features a young female tennis player standing on a tennis court, ready to play."
+  },
+  {
+    "image_id": 415872,
+    "caption": "In this image, a person dressed in a yellow, bulky, and oversized snowsuit, resembling a sumo wrestler's costume, is carrying a snowboard."
+  },
+  {
+    "image_id": 415885,
+    "caption": "In this image, we see a male tennis player in the middle of a dynamic play on a purple tennis court."
+  },
+  {
+    "image_id": 416193,
+    "caption": "The image features two zebras, one standing and the other lying down, both with their heads down to graze on the lush green grass."
+  },
+  {
+    "image_id": 416311,
+    "caption": "The image captures a dynamic moment during a baseball game, with a baseball player in the middle of a swing, attempting to hit the ball."
+  },
+  {
+    "image_id": 416730,
+    "caption": "In the image, a woman is standing outdoors, holding a cell phone to her ear."
+  },
+  {
+    "image_id": 419371,
+    "caption": "The image features a single zebra standing in an open, grassy enclosure."
+  },
+  {
+    "image_id": 420002,
+    "caption": "In this image, we see a soccer game in progress."
+  },
+  {
+    "image_id": 421703,
+    "caption": "The image shows a black wok, a traditional cooking vessel, being used to stir and cook vegetables, specifically broccoli and onions, in a pan."
+  },
+  {
+    "image_id": 422176,
+    "caption": "The image features a vase filled with an arrangement of flowers, placed on a wooden surface."
+  },
+  {
+    "image_id": 422755,
+    "caption": "In this image, a young woman is joyfully riding a brown horse across a dirt road."
+  },
+  {
+    "image_id": 423519,
+    "caption": "The image features a red and yellow public transit bus, specifically a RapidRide bus, parked on a city street."
+  },
+  {
+    "image_id": 423944,
+    "caption": "The image features two mannequins, one male and one female, standing in front of a vibrant, illuminated pink and white background."
+  },
+  {
+    "image_id": 424220,
+    "caption": "The image features a black cat sitting under a blue umbrella, which is open and providing shelter."
+  },
+  {
+    "image_id": 424812,
+    "caption": "The image captures a serene and picturesque rural landscape during sunset."
+  },
+  {
+    "image_id": 426795,
+    "caption": "The image features a man with long hair and glasses, who is holding a large, brown, chocolate-covered sandwich in his hands."
+  },
+  {
+    "image_id": 427091,
+    "caption": "The image captures a bustling city street, with a yellow taxi cab as the central focus."
+  },
+  {
+    "image_id": 427094,
+    "caption": "The image captures a street corner where two buildings meet, with a street sign pole in the foreground."
+  },
+  {
+    "image_id": 427341,
+    "caption": "In the image, a woman and a young man are standing together in a kitchen, both wearing colorful, rainbow-striped hats."
+  },
+  {
+    "image_id": 428105,
+    "caption": "The image shows a close-up view of a pizza oven with two pizzas cooking inside."
+  },
+  {
+    "image_id": 428175,
+    "caption": "The image is a black and white photograph of an old, rusty pickup truck parked on a dirt road."
+  },
+  {
+    "image_id": 428291,
+    "caption": "The image displays a neatly arranged table set for a meal, featuring a sandwich, a glass of water, and a small vase of flowers."
+  },
+  {
+    "image_id": 428786,
+    "caption": "In the image, a white horse is seen peeking out from a wooden window of a barn or stable."
+  },
+  {
+    "image_id": 428858,
+    "caption": "The image features a majestic giraffe standing atop a lush green hillside, surrounded by vibrant greenery."
+  },
+  {
+    "image_id": 430002,
+    "caption": "The image shows a close-up of a workspace with a black computer keyboard and a black computer mouse."
+  },
+  {
+    "image_id": 430287,
+    "caption": "The image presents a modern, minimalist bathroom with a focus on clean lines and a sleek design."
+  },
+  {
+    "image_id": 430756,
+    "caption": "In this image, a person is standing next to a large brown horse, which is wearing a pink bridle."
+  },
+  {
+    "image_id": 431655,
+    "caption": "The image features a single, vibrant red rose placed inside a clear glass vase filled with water."
+  },
+  {
+    "image_id": 432125,
+    "caption": "The image depicts a cozy and inviting dining room setting, with a round table covered in a green tablecloth."
+  },
+  {
+    "image_id": 432547,
+    "caption": "In the image, a man is carefully cutting a piece of wrapping paper with scissors."
+  },
+  {
+    "image_id": 432843,
+    "caption": "The image captures a street corner with a green street sign that reads \"5 AV MILE\" and \"MUSEUM AV\" in white letters."
+  },
+  {
+    "image_id": 433554,
+    "caption": "The image captures a lively scene at a water park or lakefront resort, where people are enjoying various water sports activities."
+  },
+  {
+    "image_id": 434618,
+    "caption": "The image captures a joyful moment of three friends enjoying a ski vacation."
+  },
+  {
+    "image_id": 434787,
+    "caption": "In the image, a young boy is sitting at a dining table in a restaurant, eagerly eating a large, freshly-baked pepperoni pizza."
+  },
+  {
+    "image_id": 434968,
+    "caption": "The image features a brown and white dog, possibly a mix of a terrier or a spaniel breed, running along a snow-covered path."
+  },
+  {
+    "image_id": 435185,
+    "caption": "The image displays a collection of vintage green glassware, including a vase with a flower arrangement, a small green glass bowl, and a larger green glass container."
+  },
+  {
+    "image_id": 435466,
+    "caption": "The image depicts a cozy, well-organized kitchen with a unique wooden ceiling."
+  },
+  {
+    "image_id": 437303,
+    "caption": "The image captures a cityscape featuring a tall, modern building with a unique, curved design."
+  },
+  {
+    "image_id": 437363,
+    "caption": "In the image, we see an older woman standing in a crowded public transit station, possibly a subway or bus station."
+  },
+  {
+    "image_id": 437393,
+    "caption": "This image features a detailed sculpture of a white horse, which appears to be a decorative cake."
+  },
+  {
+    "image_id": 437540,
+    "caption": "The image captures a man standing on a surfboard, holding a paddle, and riding through the ocean waves."
+  },
+  {
+    "image_id": 437618,
+    "caption": "The image shows a modern office or conference room with a large, flat-screen television mounted on a stand."
+  },
+  {
+    "image_id": 437720,
+    "caption": "The image is a painting of a woman sitting at a red table, working on a laptop computer."
+  },
+  {
+    "image_id": 438774,
+    "caption": "In the image, there are three people standing in a kitchen."
+  },
+  {
+    "image_id": 439907,
+    "caption": "The image depicts a modern, luxurious bathroom with a sleek design."
+  },
+  {
+    "image_id": 440184,
+    "caption": "In the image, we see a lively tennis match taking place on a blue tennis court."
+  },
+  {
+    "image_id": 440830,
+    "caption": "In the image, a woman is standing in front of a building, holding a large suitcase."
+  },
+  {
+    "image_id": 441415,
+    "caption": "The image depicts a cozy, modern dining room with a wooden table and chairs."
+  },
+  {
+    "image_id": 441969,
+    "caption": "This image captures a cozy and inviting outdoor space, likely a rooftop or balcony, with a view of a cityscape."
+  },
+  {
+    "image_id": 442417,
+    "caption": "The image features a man with a full beard and glasses, wearing a black hat, standing in front of a store."
+  },
+  {
+    "image_id": 442478,
+    "caption": "The image features a young man, possibly a teenager, performing a skateboard trick on a wooden ramp."
+  },
+  {
+    "image_id": 442724,
+    "caption": "The image shows a large metal mixing bowl filled with a thick, yellow batter, which appears to be a mixture of butter, flour, and sugar."
+  },
+  {
+    "image_id": 442894,
+    "caption": "The image features two giraffes, one adult and one juvenile, resting on a patch of grass in a zoo enclosure."
+  },
+  {
+    "image_id": 443101,
+    "caption": "The image captures a serene and picturesque mountainous landscape, featuring a large white cow standing on a grassy hillside."
+  },
+  {
+    "image_id": 444626,
+    "caption": "This image features a colorful, appetizing plate of food, which is a mixed vegetable dish."
+  },
+  {
+    "image_id": 445014,
+    "caption": "In this image, a man wearing an orange t-shirt with the word \"PCHOLLA\" on it is standing in front of a tall, brown wooden fence, which separates the visitors from a large enclosure of a giraffe."
+  },
+  {
+    "image_id": 445365,
+    "caption": "The image features two giraffes standing in a lush, green meadow."
+  },
+  {
+    "image_id": 445569,
+    "caption": "The image features a close-up view of a majestic, wrinkled, and wrinkled elephant, captured in a black and white photograph."
+  },
+  {
+    "image_id": 445603,
+    "caption": "In this image, a large, brown cow is standing on a city street, while a man wearing a blue shirt and carrying a backpack is riding a bicycle."
+  },
+  {
+    "image_id": 445953,
+    "caption": "The image features a man dressed as a Roman soldier, sitting on a stone step."
+  },
+  {
+    "image_id": 447152,
+    "caption": "The image captures a yellow and white train, labeled as \"165004,\" parked at a train station platform."
+  },
+  {
+    "image_id": 447558,
+    "caption": "The image captures a dynamic moment during a baseball game, focusing on a batter in the middle of a swing."
+  },
+  {
+    "image_id": 447733,
+    "caption": "In this image, a young man is captured in the middle of a skateboard trick, performing a jump over a low wall or railing."
+  },
+  {
+    "image_id": 448492,
+    "caption": "The image displays a vibrant and colorful assortment of fresh vegetables, primarily focusing on a large pile of red radishes."
+  },
+  {
+    "image_id": 449114,
+    "caption": "The image captures a dynamic moment of a tennis player in action."
+  },
+  {
+    "image_id": 449312,
+    "caption": "In this image, we see a woman standing behind a counter in a bakery or cafe."
+  },
+  {
+    "image_id": 449903,
+    "caption": "The image features a female tennis player in the middle of a serve motion, with her arm extended and her racket ready to strike the ball."
+  },
+  {
+    "image_id": 450655,
+    "caption": "The image features a unique, modern-looking clock with a distorted, flowing design."
+  },
+  {
+    "image_id": 453013,
+    "caption": "In this image, we see a cozy and playful scene featuring a large, stuffed polar bear and a smaller, brown teddy bear sitting together on a wooden rocking chair."
+  },
+  {
+    "image_id": 454209,
+    "caption": "The image depicts a rustic, outdoor kitchen setup, featuring a small, black gas stove with a wooden frame and shelves."
+  },
+  {
+    "image_id": 455299,
+    "caption": "The image displays a cluttered workspace with a desktop computer setup."
+  },
+  {
+    "image_id": 455872,
+    "caption": "This image is a black and white photograph of a bustling dockside area, likely a historic or industrial port."
+  },
+  {
+    "image_id": 456012,
+    "caption": "The image depicts a lively outdoor gathering, possibly a wedding reception or a social event, taking place in a garden area."
+  },
+  {
+    "image_id": 456239,
+    "caption": "In the image, a young woman is walking along a set of railroad tracks."
+  },
+  {
+    "image_id": 456394,
+    "caption": "The image shows a blue Harley-Davidson motorcycle on display in a showroom."
+  },
+  {
+    "image_id": 457037,
+    "caption": "The image depicts a cozy and well-organized bedroom with a modern touch."
+  },
+  {
+    "image_id": 457229,
+    "caption": "The image captures a serene beach scene, where a person is riding a horse along the shoreline."
+  },
+  {
+    "image_id": 457230,
+    "caption": "The image depicts a group of police officers riding horses during a nighttime event."
+  },
+  {
+    "image_id": 457581,
+    "caption": "The image depicts a kitchen scene where a person is opening an oven door, revealing a tray of freshly baked cookies inside."
+  },
+  {
+    "image_id": 458177,
+    "caption": "The image features two young brown bears, likely cubs, foraging in a grassy field."
+  },
+  {
+    "image_id": 459141,
+    "caption": "In the image, a woman is riding a bicycle down a street."
+  },
+  {
+    "image_id": 459809,
+    "caption": "The image captures a serene day at a beach or waterfront area, where a kite is soaring high above the water."
+  },
+  {
+    "image_id": 460049,
+    "caption": "The image captures a scenic view of a train traveling through a lush, green valley."
+  },
+  {
+    "image_id": 460073,
+    "caption": "The image features a man and a woman sitting next to each other, both engrossed in their smartphones."
+  },
+  {
+    "image_id": 460107,
+    "caption": "The image captures a close-up view of a dining table set with various objects, including a vase, a wine glass, and a wine glass stand."
+  },
+  {
+    "image_id": 460982,
+    "caption": "The image is a black and white photograph, capturing two young men in a dimly lit room."
+  },
+  {
+    "image_id": 461573,
+    "caption": "The image features a pair of old, weathered metal benches placed on a concrete sidewalk, situated in a small patch of grass."
+  },
+  {
+    "image_id": 462241,
+    "caption": "In this image, a person dressed as a red mascot, resembling a dog, is standing on a green sports field."
+  },
+  {
+    "image_id": 462315,
+    "caption": "The image captures a scene of a fire incident involving a large white semi-trailer truck."
+  },
+  {
+    "image_id": 463084,
+    "caption": "The image captures a city street scene, where a blue and white city bus is parked at a bus stop."
+  },
+  {
+    "image_id": 463134,
+    "caption": "The image depicts a cozy and inviting dining room with a modern and artistic touch."
+  },
+  {
+    "image_id": 464522,
+    "caption": "The image features a white and brown dog with a chain collar, standing on a patch of grass."
+  },
+  {
+    "image_id": 464857,
+    "caption": "The image captures a lively social scene in a dimly lit bar or club."
+  },
+  {
+    "image_id": 465422,
+    "caption": "The image captures a dynamic scene of a snowboarder carving down a snowy slope."
+  },
+  {
+    "image_id": 465463,
+    "caption": "In this image, a woman is standing in front of a large, industrial oven, which is likely used for baking or cooking."
+  },
+  {
+    "image_id": 466561,
+    "caption": "In the image, a young baseball player is captured in the middle of a swing, with his red helmet and red jersey contrasting against the white pants he is wearing."
+  },
+  {
+    "image_id": 469002,
+    "caption": "The image displays a collection of six different, colorful, and delicious-looking donuts arranged in a box."
+  },
+  {
+    "image_id": 469088,
+    "caption": "The image features two small dogs, possibly a mix of breeds, engaging in playful antics on a grassy patch of land."
+  },
+  {
+    "image_id": 469721,
+    "caption": "The image is a black and white photograph of a fire hydrant situated in a grassy field, with a wooden fence in the foreground."
+  },
+  {
+    "image_id": 471073,
+    "caption": "In this image, we see two young boys playing baseball in a lush green backyard."
+  },
+  {
+    "image_id": 471179,
+    "caption": "The image features a group of black cows standing in a grassy field, separated by a wire fence."
+  },
+  {
+    "image_id": 473299,
+    "caption": "The image is a black and white photograph capturing a winter sports scene."
+  },
+  {
+    "image_id": 475301,
+    "caption": "The image captures a lively scene of a snowboarding competition taking place on a snowy hill."
+  },
+  {
+    "image_id": 475856,
+    "caption": "In the image, a man dressed in a formal black suit and tie stands in front of a door."
+  },
+  {
+    "image_id": 475889,
+    "caption": "In the image, a group of people are gathered under a large, red pop-top tent, which is set up as a makeshift picnic or food festival area."
+  },
+  {
+    "image_id": 476300,
+    "caption": "The image depicts a serene and peaceful scene of elephants walking through a lush, green field."
+  },
+  {
+    "image_id": 476349,
+    "caption": "The image captures a person sitting on a snow-covered slope, facing away from the camera."
+  },
+  {
+    "image_id": 477470,
+    "caption": "The image captures a nighttime street scene, characterized by the presence of a red traffic light."
+  },
+  {
+    "image_id": 477955,
+    "caption": "In the image, a man is standing on a sandy beach, holding a surfboard in one hand and a kite in the other."
+  },
+  {
+    "image_id": 477974,
+    "caption": "The image captures a street scene with a couple walking down a road."
+  },
+  {
+    "image_id": 478077,
+    "caption": "The image shows a kitchen with a stainless steel microwave oven placed on a countertop."
+  },
+  {
+    "image_id": 478157,
+    "caption": "In the image, a woman is sitting on a grassy lawn, enjoying a cold treat, possibly an ice cream or popsicle, while holding a dog in her lap."
+  },
+  {
+    "image_id": 478517,
+    "caption": "In this image, we see a man and a woman standing near a rocky, natural landscape, possibly a rocky riverbank or a rocky trail."
+  },
+  {
+    "image_id": 479030,
+    "caption": "The image captures a red and white electric train, possibly a freight or passenger train, traveling along a set of railway tracks."
+  },
+  {
+    "image_id": 479612,
+    "caption": "The image features a white Sharp microwave oven placed on a shelf."
+  },
+  {
+    "image_id": 479727,
+    "caption": "The image captures a street corner in a residential neighborhood, featuring a street sign, a fire hydrant, and a colorful, artistic signpost."
+  },
+  {
+    "image_id": 481413,
+    "caption": "The image captures a young boy standing on a sandy beach, facing the ocean."
+  },
+  {
+    "image_id": 481670,
+    "caption": "The image captures two young children, one in a blue jacket and the other in a red jacket, skiing down a snowy hill."
+  },
+  {
+    "image_id": 484434,
+    "caption": "The image captures a lively outdoor concert or festival under a large blue tent, which serves as a stage for the event."
+  },
+  {
+    "image_id": 484816,
+    "caption": "The image features a yellow school bus, which is the main subject."
+  },
+  {
+    "image_id": 485731,
+    "caption": "This image depicts a modern, well-organized kitchen with a clean and inviting atmosphere."
+  },
+  {
+    "image_id": 486805,
+    "caption": "The image features a single zebra, which is characterized by its distinctive black and white stripes."
+  },
+  {
+    "image_id": 487612,
+    "caption": "The image captures a lively scene at a kite festival, where several large, colorful kites are soaring high above a grassy field."
+  },
+  {
+    "image_id": 488075,
+    "caption": "The image depicts a cozy, modern apartment interior with a focus on the kitchen and living area."
+  },
+  {
+    "image_id": 488522,
+    "caption": "The image features a large, chocolate-covered cake with an assortment of chocolate eggs placed on top."
+  },
+  {
+    "image_id": 489014,
+    "caption": "The image features a white sailboat with a large sail, cruising on open water."
+  },
+  {
+    "image_id": 489924,
+    "caption": "In this image, a young woman is riding a skateboard down a paved road."
+  },
+  {
+    "image_id": 491071,
+    "caption": "The image depicts a modern, minimalist bathroom with a sleek design."
+  },
+  {
+    "image_id": 491515,
+    "caption": "The image captures a crowded scene on a boat deck, where a large number of suitcases and bags are piled up."
+  },
+  {
+    "image_id": 492371,
+    "caption": "The image features a delicious-looking pizza, presented in a cardboard box."
+  },
+  {
+    "image_id": 492562,
+    "caption": "The image captures a scenic view of a train crossing a bridge over a body of water, with a backdrop of a mountainous landscape."
+  },
+  {
+    "image_id": 494220,
+    "caption": "The image features a delicious-looking breakfast sandwich, which is cut into two halves."
+  },
+  {
+    "image_id": 497330,
+    "caption": "In this image, a woman is sitting on a chair, holding a tennis racket in her hand."
+  },
+  {
+    "image_id": 498535,
+    "caption": "The image features a baseball player, dressed in a blue Mets uniform, standing in a crouched position, ready to catch a ball."
+  },
+  {
+    "image_id": 498641,
+    "caption": "The image features a black dog with a white patch on its chest, lying on a carpeted floor in front of a green couch."
+  },
+  {
+    "image_id": 499618,
+    "caption": "The image captures a street scene in an urban area, where a large white truck is parked on the side of the road."
+  },
+  {
+    "image_id": 500079,
+    "caption": "The image features a white street sign with black lettering that reads \"Market Street\" and the abbreviation \"D Y8\" below it."
+  },
+  {
+    "image_id": 500270,
+    "caption": "The image captures a vibrant scene at a skatepark, where skateboarders are enjoying the outdoors."
+  },
+  {
+    "image_id": 500298,
+    "caption": "The image displays a colorful assortment of fresh vegetables arranged on a kitchen countertop."
+  },
+  {
+    "image_id": 501760,
+    "caption": "The image features a large, appetizing hot dog, generously topped with melted cheese and crispy fried onions, served on a red tray."
+  },
+  {
+    "image_id": 501788,
+    "caption": "The image features a black and white cat sitting on a cobblestone street, positioned between two old, ornate doors."
+  },
+  {
+    "image_id": 503144,
+    "caption": "The image features two large, brown horses standing in a fenced-in grassy field."
+  },
+  {
+    "image_id": 503148,
+    "caption": "The image features a large, rectangular pepperoni pizza, which is the main subject."
+  },
+  {
+    "image_id": 504670,
+    "caption": "The image shows a well-organized entertainment center with a large, black television set on top."
+  },
+  {
+    "image_id": 504970,
+    "caption": "The image features a public toilet situated on a sidewalk, with a wooden seat cover and a blue sign indicating parking restrictions."
+  },
+  {
+    "image_id": 504977,
+    "caption": "In the image, we see an elderly woman sitting on a wooden bench in a park."
+  },
+  {
+    "image_id": 505040,
+    "caption": "The image captures a train traveling through a rugged, arid landscape."
+  },
+  {
+    "image_id": 505576,
+    "caption": "The image captures a lively outdoor market or street scene, with a focus on a yellow umbrella being held by a person."
+  },
+  {
+    "image_id": 506178,
+    "caption": "The image captures a blurry, motion-blurred scene of a man playing a video game, possibly a Nintendo Wii game, with his arms outstretched and holding two white game controllers."
+  },
+  {
+    "image_id": 506628,
+    "caption": "The image features a street corner with a prominent clock mounted on a tall, black pole."
+  },
+  {
+    "image_id": 506717,
+    "caption": "The image captures a lively scene of a baseball game in progress, with players on the field and a chain-link fence in the foreground."
+  },
+  {
+    "image_id": 506982,
+    "caption": "The image features a stainless steel refrigerator with a modern design, standing in a kitchen."
+  },
+  {
+    "image_id": 507135,
+    "caption": "The image features a pink fire hydrant, which is a public safety device used for firefighting purposes."
+  },
+  {
+    "image_id": 507427,
+    "caption": "In this image, a man is enjoying himself in the ocean, wearing a black wetsuit."
+  },
+  {
+    "image_id": 507719,
+    "caption": "In this image, we see a group of people and horses in a river."
+  },
+  {
+    "image_id": 507782,
+    "caption": "In the image, two women are sitting at a table, working on a laptop computer."
+  },
+  {
+    "image_id": 507879,
+    "caption": "The image shows a close-up view of a white toilet in a dimly lit, red-tiled bathroom."
+  },
+  {
+    "image_id": 507918,
+    "caption": "The image features three young, brown, and scruffy-looking mountain goats, also known as sheep, walking down a rocky, rocky hillside."
+  },
+  {
+    "image_id": 508514,
+    "caption": "The image captures a serene and cozy bedroom scene."
+  },
+  {
+    "image_id": 508713,
+    "caption": "The image captures a serene beach scene where a group of cows are resting on the sandy shore."
+  },
+  {
+    "image_id": 509129,
+    "caption": "The image is a black and white photograph of three people standing in a room, likely a bar or a lounge."
+  },
+  {
+    "image_id": 510791,
+    "caption": "In the image, a male tennis player is standing on a grass tennis court, holding a tennis racket in one hand and a tennis ball in the other."
+  },
+  {
+    "image_id": 511153,
+    "caption": "The image features a blue and red locomotive, which is a freight train, moving along a set of railroad tracks."
+  },
+  {
+    "image_id": 511159,
+    "caption": "In this image, a man stands in front of a bookshelf filled with various books."
+  },
+  {
+    "image_id": 511724,
+    "caption": "The image features a group of elephants, including adults and a baby elephant, standing together in a grassy enclosure."
+  },
+  {
+    "image_id": 512112,
+    "caption": "In this image, a young girl is seen from behind, standing on a bed."
+  },
+  {
+    "image_id": 513056,
+    "caption": "The image features a large, majestic brown bear standing upright on its hind legs, with its front paws raised."
+  },
+  {
+    "image_id": 513381,
+    "caption": "In the image, a young, smiling child is sitting at a wooden dining table, proudly displaying a tall, colorful tower of food containers."
+  },
+  {
+    "image_id": 513727,
+    "caption": "The image features a large, multi-layered sandwich, resembling a burger, with a thick, sesame-seeded bun."
+  },
+  {
+    "image_id": 513971,
+    "caption": "The image shows a white cat sitting on the sill of a window, which is open."
+  },
+  {
+    "image_id": 514508,
+    "caption": "In the image, a man dressed in a white coat and a black hat stands in front of a pink, retro-style bus."
+  },
+  {
+    "image_id": 516185,
+    "caption": "The image features a large, green double-decker bus parked in front of a building."
+  },
+  {
+    "image_id": 516214,
+    "caption": "The image depicts a crowded airport baggage claim area, where numerous suitcases and bags are scattered on the floor."
+  },
+  {
+    "image_id": 517425,
+    "caption": "This image captures a bustling harbor filled with fishing boats, all docked in a large body of water."
+  },
+  {
+    "image_id": 517967,
+    "caption": "The image is a black and white photograph of a woman sitting in a chair, holding a laptop computer."
+  },
+  {
+    "image_id": 518222,
+    "caption": "In the image, a young man is captured in the middle of a skateboarding maneuver, possibly a trick or a jump."
+  },
+  {
+    "image_id": 518438,
+    "caption": "The image captures a small, quiet town street, likely in a rural or suburban area."
+  },
+  {
+    "image_id": 518551,
+    "caption": "The image features a group of elephants, including a large adult elephant, a smaller baby elephant, and two other elephants, standing together in a lush, green field."
+  },
+  {
+    "image_id": 519039,
+    "caption": "The image shows a street scene with a large, white garbage truck driving down a residential street."
+  },
+  {
+    "image_id": 519479,
+    "caption": "The image is a painting of a man sitting in a library or study room, surrounded by bookshelves filled with books."
+  },
+  {
+    "image_id": 519755,
+    "caption": "The image features a female tennis player in the middle of a match."
+  },
+  {
+    "image_id": 520077,
+    "caption": "The image displays a collection of books arranged on a cluttered desk, with a bottle of Corona Extra beer placed beside them."
+  },
+  {
+    "image_id": 520150,
+    "caption": "In this image, a young boy is sitting on a red bed, engrossed in reading a book."
+  },
+  {
+    "image_id": 520232,
+    "caption": "The image captures a serene and peaceful scene of a cityscape at dusk, with a focus on a pair of red traffic lights."
+  },
+  {
+    "image_id": 520433,
+    "caption": "The image features a long, red freight train traveling on a set of railroad tracks."
+  },
+  {
+    "image_id": 520694,
+    "caption": "In the image, a black and white cat is comfortably resting on top of a black suitcase."
+  },
+  {
+    "image_id": 521348,
+    "caption": "In this image, we see a black and white dog sitting on a brick patio, looking up at a cup of coffee placed on a table."
+  },
+  {
+    "image_id": 521419,
+    "caption": "In this image, a man is sitting on a couch in a living room, while a young child is playing under a small wooden table."
+  },
+  {
+    "image_id": 521542,
+    "caption": "The image features a kitchen with a focus on a countertop."
+  },
+  {
+    "image_id": 521956,
+    "caption": "The image features a male tennis player in the middle of a serve."
+  },
+  {
+    "image_id": 522418,
+    "caption": "In the image, a woman wearing a red uniform and a white hairnet is standing in front of a large, rectangular cake."
+  },
+  {
+    "image_id": 522613,
+    "caption": "The image features a large, majestic giraffe standing in a natural, green environment."
+  },
+  {
+    "image_id": 523230,
+    "caption": "The image features two men sitting on a wooden bench in a park."
+  },
+  {
+    "image_id": 523780,
+    "caption": "The image captures a lively scene of two people enjoying a day of skiing on a snowy slope."
+  },
+  {
+    "image_id": 523807,
+    "caption": "The image features a person holding a hot dog, which is placed on a white paper tray."
+  },
+  {
+    "image_id": 524962,
+    "caption": "In this image, a man wearing a blue helmet with an American flag design is standing on a skateboard, holding a yellow surfboard."
+  },
+  {
+    "image_id": 525361,
+    "caption": "The image features a white and blue train, labeled with the number 165026, parked at a train station."
+  },
+  {
+    "image_id": 526040,
+    "caption": "In this image, a person is captured mid-air, performing a daring jump on a snowboard."
+  },
+  {
+    "image_id": 526767,
+    "caption": "The image depicts a modern, minimalist bathroom with a focus on clean lines and simple design elements."
+  },
+  {
+    "image_id": 527573,
+    "caption": "The image captures a city street scene with several elements."
+  },
+  {
+    "image_id": 528462,
+    "caption": "The image captures a man in the middle of a baseball swing, with the baseball bat in motion and the ball in the air."
+  },
+  {
+    "image_id": 528811,
+    "caption": "The image features two green trains parked on a train platform."
+  },
+  {
+    "image_id": 528951,
+    "caption": "The image captures a bustling train station, with a train on the tracks and a small building nearby."
+  },
+  {
+    "image_id": 530367,
+    "caption": "The image features a white cat lying on a black and white zebra-patterned blanket, which is placed on a wooden floor."
+  },
+  {
+    "image_id": 530500,
+    "caption": "The image shows a woman standing in a living room, holding a framed photograph of her family."
+  },
+  {
+    "image_id": 531264,
+    "caption": "The image features a man in a suit, who is adjusting his tie."
+  },
+  {
+    "image_id": 531703,
+    "caption": "The image features a plate of delicious-looking noodles, which are coated in a savory sauce."
+  },
+  {
+    "image_id": 532503,
+    "caption": "In the image, two people are standing in front of a frozen waterfall or icy cliff."
+  },
+  {
+    "image_id": 533039,
+    "caption": "The image captures a serene urban park scene, featuring a small park with benches, a trash can, and a body of water."
+  },
+  {
+    "image_id": 534127,
+    "caption": "The image captures a lively outdoor scene of three people enjoying a game of frisbee on a large, open grassy field."
+  },
+  {
+    "image_id": 534270,
+    "caption": "The image features two people standing on a seaside promenade, enjoying the view of the ocean."
+  },
+  {
+    "image_id": 535506,
+    "caption": "In the image, a woman is standing in a cluttered kitchen, preparing food."
+  },
+  {
+    "image_id": 535934,
+    "caption": "The image captures a lively social gathering among a group of people, possibly a dinner or a casual get-together, seated around a long wooden table."
+  },
+  {
+    "image_id": 536006,
+    "caption": "In this image, we see two men engaged in a game of frisbee on a sandy beach."
+  },
+  {
+    "image_id": 536426,
+    "caption": "The image features a red traffic cone placed on the ground next to a white fire hydrant."
+  },
+  {
+    "image_id": 536653,
+    "caption": "The image features a female tennis player standing on a tennis court, holding a tennis racket in her right hand."
+  },
+  {
+    "image_id": 537905,
+    "caption": "In this image, a person is captured in the middle of a water sport activity, specifically wakeboarding."
+  },
+  {
+    "image_id": 538596,
+    "caption": "The image depicts a cozy and inviting living room with a comfortable seating arrangement."
+  },
+  {
+    "image_id": 540762,
+    "caption": "The image features a large, ornate statue of a horse, which is mounted on a tall, ornate building."
+  },
+  {
+    "image_id": 541898,
+    "caption": "In this image, we see a man and a woman sitting together in a dimly lit room, possibly a restaurant or a bar."
+  },
+  {
+    "image_id": 542325,
+    "caption": "The image captures a serene and inviting interior space, likely a living room or a small residence."
+  },
+  {
+    "image_id": 542350,
+    "caption": "The image features a large, majestic elephant standing in a lush, green forest."
+  },
+  {
+    "image_id": 542510,
+    "caption": "In the image, a man is seen walking through a grassy field, pushing a red and brown wooden wagon with wheels."
+  },
+  {
+    "image_id": 542922,
+    "caption": "The image features a delicious-looking grilled salmon fillet, seasoned with various spices, and served with a side of fresh, vibrant green broccoli."
+  },
+  {
+    "image_id": 542934,
+    "caption": "This image depicts a vintage, cluttered kitchen with a nostalgic feel."
+  },
+  {
+    "image_id": 543215,
+    "caption": "The image features a green street sign with white lettering that reads \"Greenville Road\" and \"Greenville Cemetery."
+  },
+  {
+    "image_id": 543566,
+    "caption": "The image features a sleeping cat, likely a domestic cat, curled up and resting on a white blanket or bedsheet."
+  },
+  {
+    "image_id": 543836,
+    "caption": "The image captures a cozy and intimate scene of a man and his pet cat sleeping together in a bedroom."
+  },
+  {
+    "image_id": 545220,
+    "caption": "The image features a person dressed in a red jacket and black pants, actively skiing down a snowy slope."
+  },
+  {
+    "image_id": 545475,
+    "caption": "The image features a cozy scene of a cat sleeping on a rug placed on the floor, surrounded by a collection of various shoes."
+  },
+  {
+    "image_id": 545826,
+    "caption": "In this image, a black and white cat is sitting on a cushioned chair, wearing a blue hat that resembles a stuffed elephant."
+  },
+  {
+    "image_id": 546584,
+    "caption": "The image features a small, brown puppy with a long, curled tail, standing on a patch of dry, brown grass."
+  },
+  {
+    "image_id": 546639,
+    "caption": "The image depicts a cluttered office space, with a brown leather office chair positioned in front of a wooden bookshelf."
+  },
+  {
+    "image_id": 547041,
+    "caption": "The image displays two containers of salad, each with a different type of salad and accompaniments."
+  },
+  {
+    "image_id": 547962,
+    "caption": "The image captures a street scene where a group of people are walking through the rain."
+  },
+  {
+    "image_id": 549012,
+    "caption": "The image features a sandwich, which is a type of wrap or wrap-style sandwich, filled with various ingredients."
+  },
+  {
+    "image_id": 549932,
+    "caption": "The image depicts a group of travelers standing outside a building, likely a hotel or a travel destination."
+  },
+  {
+    "image_id": 550013,
+    "caption": "The image captures a lively scene in a lush, green field."
+  },
+  {
+    "image_id": 550471,
+    "caption": "The image features a white plate with a half of an orange, garnished with green microgreens."
+  },
+  {
+    "image_id": 550552,
+    "caption": "This image captures a spacious, well-lit kitchen and dining area, featuring a large, open kitchen with white cabinetry, a central island, and a dining table."
+  },
+  {
+    "image_id": 550995,
+    "caption": "In this image, two men are sitting in front of a computer screen, both holding white Nintendo Wii controllers."
+  },
+  {
+    "image_id": 551713,
+    "caption": "In this image, a woman is captured in the act of removing freshly baked cookies from an oven."
+  },
+  {
+    "image_id": 553129,
+    "caption": "This image depicts a cozy, well-organized kitchen with a modern design."
+  },
+  {
+    "image_id": 553330,
+    "caption": "In the image, a young boy stands in a ready stance, holding a red baseball bat over his head."
+  },
+  {
+    "image_id": 554348,
+    "caption": "In this image, a woman is standing on a railway track, observing a blue train as it approaches."
+  },
+  {
+    "image_id": 554500,
+    "caption": "The image features a young woman sitting in front of a computer monitor in a classroom or office setting."
+  },
+  {
+    "image_id": 554595,
+    "caption": "In this image, a man is sitting on a sandy beach next to a yellow surfboard."
+  },
+  {
+    "image_id": 555346,
+    "caption": "The image features a large fishing vessel, named \"Kulshan,\" docked at a harbor."
+  },
+  {
+    "image_id": 555669,
+    "caption": "In this image, a young woman with curly brown hair is sitting on the floor, laughing and smiling while holding a black dog's paw."
+  },
+  {
+    "image_id": 555847,
+    "caption": "The image features a small, old wooden boat floating on a body of water, with several birds perched on its deck."
+  },
+  {
+    "image_id": 556462,
+    "caption": "The image displays a table set for a meal, featuring a plate of delicious-looking sandwiches and fries."
+  },
+  {
+    "image_id": 557916,
+    "caption": "In this image, a young child is sitting on a bed, looking at a stuffed teddy bear."
+  },
+  {
+    "image_id": 558107,
+    "caption": "The image features a red fire hydrant situated on a sidewalk, with a person standing nearby."
+  },
+  {
+    "image_id": 558483,
+    "caption": "The image captures a serene, rural landscape featuring a grassy field, a body of water, and a few sheep grazing in the open field."
+  },
+  {
+    "image_id": 559614,
+    "caption": "The image features a rusty, old, yellow forklift truck parked in front of a warehouse or industrial building."
+  },
+  {
+    "image_id": 560358,
+    "caption": "The image is a black and white photograph of a large, ornate clock hanging in a grand, possibly historic, building."
+  },
+  {
+    "image_id": 560797,
+    "caption": "The image captures a lively scene at a baseball field, where a group of people are gathered near the dugout."
+  },
+  {
+    "image_id": 561062,
+    "caption": "The image depicts a cozy bedroom scene where a man is lying in bed, surrounded by his three dogs."
+  },
+  {
+    "image_id": 561437,
+    "caption": "In this image, a person is captured mid-air, performing a daring and impressive ski trick."
+  },
+  {
+    "image_id": 561620,
+    "caption": "The image captures a serene and peaceful interior of a church, featuring a wooden cross hanging on a white wall, a wooden bench, and a wooden door."
+  },
+  {
+    "image_id": 561647,
+    "caption": "The image captures a street scene, focusing on a red stop sign."
+  },
+  {
+    "image_id": 561823,
+    "caption": "The image features a chocolate cake with strawberries on top, placed on a black plate."
+  },
+  {
+    "image_id": 561958,
+    "caption": "The image captures a lively scene at a ski resort, where a group of people, including children, are gathered in the snow-covered area."
+  },
+  {
+    "image_id": 562155,
+    "caption": "The image features a young man sitting in the front seat of a car, taking a selfie."
+  },
+  {
+    "image_id": 563337,
+    "caption": "In the image, a golden retriever dog is captured mid-air, leaping towards the camera."
+  },
+  {
+    "image_id": 564132,
+    "caption": "The image captures a first-person perspective from the rider's point of view, as they are riding a motorcycle down a scenic road."
+  },
+  {
+    "image_id": 564572,
+    "caption": "In the image, a woman is sitting in front of a laptop computer, which is open and turned on."
+  },
+  {
+    "image_id": 565622,
+    "caption": "The image shows a close-up of a delicious-looking pizza, with a variety of toppings and ingredients."
+  },
+  {
+    "image_id": 567198,
+    "caption": "The image features two giraffes standing in a zoo enclosure."
+  },
+  {
+    "image_id": 568325,
+    "caption": "In the image, a man is standing in the middle of a living room, holding a white video game controller in his right hand."
+  },
+  {
+    "image_id": 568765,
+    "caption": "The image captures a scene of a parade or street celebration, featuring a man in a red uniform riding a black horse."
+  },
+  {
+    "image_id": 568814,
+    "caption": "The image features a man with a beard and mustache, sitting in a casual environment."
+  },
+  {
+    "image_id": 569997,
+    "caption": "The image features a large, black television set placed on top of a wooden entertainment center."
+  },
+  {
+    "image_id": 570995,
+    "caption": "The image is a black and white photograph of a cat and a dog lying together on a blanket."
+  },
+  {
+    "image_id": 571437,
+    "caption": "The image features a colorful and vibrant plate of fresh vegetables, including a large yellow bell pepper, a red strawberry, and two small green broccoli stalks."
+  },
+  {
+    "image_id": 571544,
+    "caption": "In this image, a black cat is sitting on a bed, with its front paws resting on a small table."
+  },
+  {
+    "image_id": 571804,
+    "caption": "The image displays a collection of intricately designed ceramic bathroom fixtures, including sinks, a faucet, and various decorative items."
+  },
+  {
+    "image_id": 571835,
+    "caption": "In this image, a small, adorable kitten is nestled inside a black suitcase, which is open and inviting."
+  },
+  {
+    "image_id": 572331,
+    "caption": "The image depicts a cozy bedroom with a neatly made bed, featuring a variety of colorful striped and solid-colored pillows."
+  },
+  {
+    "image_id": 573881,
+    "caption": "In this image, a small, brown tabby cat is exploring the ground near a bicycle."
+  },
+  {
+    "image_id": 573928,
+    "caption": "The image features a group of cows standing in a grassy field."
+  },
+  {
+    "image_id": 574015,
+    "caption": "The image captures a train traveling through a lush, green forest."
+  },
+  {
+    "image_id": 574343,
+    "caption": "The image captures a dynamic moment of a snowboarder performing a daring trick in mid-air."
+  },
+  {
+    "image_id": 574874,
+    "caption": "The image features a playful polar bear enjoying a swim in a shallow, clear pool of water."
+  },
+  {
+    "image_id": 575719,
+    "caption": "In this image, a young woman is standing by a serene lake, holding a white frisbee in her hands."
+  },
+  {
+    "image_id": 575970,
+    "caption": "This image captures a well-lit, modern kitchen with a large wooden island counter, three stools, and various kitchen appliances."
+  },
+  {
+    "image_id": 576941,
+    "caption": "The image features a wooden bench placed in front of a brick wall."
+  },
+  {
+    "image_id": 579231,
+    "caption": "The image captures a dynamic moment during a baseball game."
+  },
+  {
+    "image_id": 579561,
+    "caption": "The image features a single, black and white striped zebra standing in a grassy enclosure."
+  }
+]

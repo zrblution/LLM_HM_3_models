@@ -508,6 +508,10 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
         super().__init__(config)
         # 替换文本模型为自定义版本（只替换语言模型部分，保留视觉模型）
         self.model.language_model = CustomQwen3VLTextModel(config.text_config)
+        
+        # 用于在 generate 过程中缓存 v_mem，确保自回归生成时新模块能持续生效
+        self._cached_v_mem = None
+        self._cached_v_mem_mask = None
 
     @staticmethod
     def _sync_config_to_text_config(config: Qwen3VLConfig):
@@ -744,11 +748,19 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
             shift_labels = shift_labels.to(shift_logits.device)
             loss = loss_fct(shift_logits, shift_labels)
 
+        # NOTE: aux stats are attached to the inner text-model outputs (BaseModelOutputWithPast)
+        # in CustomQwen3VLTextModel.forward(). We MUST propagate it to the outer
+        # Qwen3VLCausalLMOutputWithPast; otherwise Trainer-side getattr(outputs, "aux", None)
+        # will be None and regularizers (L_orth/L_ctr) will be silently skipped.
+        aux = getattr(outputs, "aux", None)
+
         if not return_dict:
             output = (logits,) + outputs[1:]
+            # (Optional) if you rely on tuple outputs, you can append aux here.
+            # However, the EvidenceTrainer expects return_dict=True to access outputs.aux.
             return (loss,) + output if loss is not None else output
 
-        return Qwen3VLCausalLMOutputWithPast(
+        final_out = Qwen3VLCausalLMOutputWithPast(
             loss=loss,
             logits=logits,
             past_key_values=outputs.past_key_values,
@@ -756,3 +768,6 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
             attentions=outputs.attentions,
             rope_deltas=self.model.rope_deltas,
         )
+        if aux is not None:
+            setattr(final_out, "aux", aux)
+        return final_out

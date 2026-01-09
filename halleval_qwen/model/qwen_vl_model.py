@@ -508,6 +508,10 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
         super().__init__(config)
         # 替换文本模型为自定义版本（只替换语言模型部分，保留视觉模型）
         self.model.language_model = CustomQwen3VLTextModel(config.text_config)
+        
+        # v_mem 缓存，用于在 generate 过程中持续使用视觉证据
+        self._cached_v_mem = None
+        self._cached_v_mem_mask = None
 
     @staticmethod
     def _sync_config_to_text_config(config: Qwen3VLConfig):
@@ -533,23 +537,12 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
                 if hasattr(model.config, key):
                     setattr(model.model.language_model.config, key, getattr(model.config, key))
         
-        # 确保注入模块的数据类型与模型主体一致
-        # 这对于使用 bfloat16 加载的模型至关重要
-        if hasattr(model.model, 'language_model') and hasattr(model.model.language_model, 'layers'):
-            model_dtype = next(model.parameters()).dtype
-            for layer in model.model.language_model.layers:
-                if hasattr(layer, 'retriever'):
-                    layer.retriever = layer.retriever.to(dtype=model_dtype)
-                if hasattr(layer, 'analyzer'):
-                    layer.analyzer = layer.analyzer.to(dtype=model_dtype)
-                if hasattr(layer, 'util'):
-                    layer.util = layer.util.to(dtype=model_dtype)
-                if hasattr(layer, 'corrector'):
-                    layer.corrector = layer.corrector.to(dtype=model_dtype)
-                if hasattr(layer, 'concat_proj'):
-                    layer.concat_proj = layer.concat_proj.to(dtype=model_dtype)
-        
         return model
+
+    def clear_v_mem_cache(self):
+        """清除 v_mem 缓存，在新的生成开始前调用"""
+        self._cached_v_mem = None
+        self._cached_v_mem_mask = None
 
     def forward(
         self,
@@ -577,6 +570,13 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
 
         v_mem = None
         v_mem_mask = None
+        
+        # 检测是否是新的生成序列（cache_position[0] == 0 表示新序列开始）
+        is_new_sequence = (cache_position is None) or (cache_position[0] == 0)
+        if is_new_sequence:
+            # 新序列开始，清除旧的缓存
+            self._cached_v_mem = None
+            self._cached_v_mem_mask = None
 
         if inputs_embeds is None:
             inputs_embeds = self.model.get_input_embeddings()(input_ids)
@@ -629,9 +629,18 @@ class Qwen2_5_CustomVLForConditionalGeneration(Qwen3VLForConditionalGeneration):
                         v_mem_mask[i, :n] = 1
 
                 v_mem = v_mem.to(dtype=inputs_embeds.dtype)
+                
+                # 缓存 v_mem 供后续 token 生成使用
+                self._cached_v_mem = v_mem
+                self._cached_v_mem_mask = v_mem_mask
             else:
-                v_mem = None
-                v_mem_mask = None
+                # 没有新的 pixel_values，尝试使用缓存的 v_mem
+                if self._cached_v_mem is not None:
+                    v_mem = self._cached_v_mem
+                    v_mem_mask = self._cached_v_mem_mask
+                else:
+                    v_mem = None
+                    v_mem_mask = None
 
             if pixel_values_videos is not None:
                 pixel_values_videos = pixel_values_videos.type(self.model.visual.dtype)

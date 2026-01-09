@@ -4,6 +4,7 @@ import json
 import random
 import argparse
 import re
+import threading
 from pathlib import Path
 
 import torch
@@ -25,6 +26,11 @@ for p in (HALLEVAL_DIR, HALLTRAIN_DIR):
 DEFAULT_MODEL_PATH = "/home/tos_data/LLM-Disentanglement-Hallucination-Mitigation/output_model_Qwen3-VL-2B"
 
 from transformers import AutoTokenizer, AutoProcessor
+
+
+# `transformers` model loading can rely on global monkey-patching (meta init / register_parameter),
+# which is not thread-safe. Multi-threaded `from_pretrained()` may leave some params on `meta` and crash later.
+_MODEL_LOAD_LOCK = threading.Lock()
 
 
 def _read_model_config(model_dir: str) -> dict:
@@ -105,32 +111,20 @@ def load_model_and_tools(
     if effective_model_type == "auto":
         effective_model_type = _detect_model_type(model_dir)
 
+    # Ministral inference is implemented in hallusion/run_inference.py (handles both baseline and injected checkpoints).
+    if effective_model_type == "ministral_vl":
+        from hallusion.run_inference import load_model_and_tools as load_ministral_model_and_tools  # type: ignore
+
+        with _MODEL_LOAD_LOCK:
+            return load_ministral_model_and_tools(
+                model_dir=model_dir,
+                device=device,
+                use_vcd=use_vcd,
+                use_inter=use_inter,
+            )
+
     tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=False, trust_remote_code=True)
     processor = AutoProcessor.from_pretrained(model_dir)
-
-    # Prefer using the repo's custom model classes if the checkpoint expects them.
-    if effective_model_type == "ministral_vl":
-        model_class = None
-        try:
-            from model.ministral_vl_model import MinistralCustomVLForConditionalGeneration as model_class  # type: ignore
-        except Exception:
-            try:
-                from model.ministral_vl_model import Qwen2_5_CustomVLForConditionalGeneration as model_class  # type: ignore
-            except Exception as e:
-                raise ImportError(
-                    "Failed to import Ministral custom model class from halltrain. "
-                    "Please ensure `/home/tos_data/LLM_HM_3_model/halltrain` is accessible and contains `model/ministral_vl_model.py`."
-                ) from e
-
-        print(f"Using custom Ministral loader: {model_class.__name__}")
-        model = model_class.from_pretrained(
-            model_dir,
-            trust_remote_code=True,
-            torch_dtype=torch.bfloat16,
-        )
-        model.to(device)
-        model.eval()
-        return tokenizer, processor, model
 
     # Qwen3-VL path (default)
     try:
@@ -157,11 +151,12 @@ def load_model_and_tools(
     else:
         print("Using standard Qwen model class: Qwen3VLForConditionalGeneration")
 
-    model = model_class.from_pretrained(
-        model_dir,
-        trust_remote_code=True,
-        torch_dtype=torch.bfloat16,
-    )
+    with _MODEL_LOAD_LOCK:
+        model = model_class.from_pretrained(
+            model_dir,
+            trust_remote_code=True,
+            torch_dtype=torch.bfloat16,
+        )
     model.to(device)
     model.eval()
     return tokenizer, processor, model
