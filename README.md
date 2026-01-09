@@ -136,7 +136,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3*改为自己GPU数量（ torchrun --nnodes 1 --npro
 ### 一键训练所有模型
 
 ```bash
-bash run_finetune.sh
+bash run_finetune_all.sh
 ```
 
 该脚本自动执行：
